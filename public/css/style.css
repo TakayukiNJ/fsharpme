@@ -1,0 +1,544 @@
+body{
+  color: #664433;
+  margin: 0 auto;
+}
+/* header部分 */
+header {
+  position: fixed;
+  top: 0;
+  background: ivory;
+  width: 100%;
+}
+
+.navbar-default{
+  background-color: #fffff0;
+  border-color:#e7e7e7
+}
+
+.header_left h1 {
+  color: #4a4a4a;
+  font-family: sans-serif;
+  text-align: left;
+  display: inline;
+}
+
+.logo{
+  width: auto;
+  max-height: 30px;
+  padding-bottom: 0px;
+}
+#left{
+  background: url("/img/structure/logo.png") no-repeat left center;
+  background-size: contain;
+  height: 40px;
+  width: 20px;
+  margin-top: 3px;
+}
+
+#up{
+  padding-bottom: 8px;
+}
+
+.header_top{
+  width: 960px;
+  display: flex;
+  margin: auto;
+}
+
+.header_left {
+  text-align: left;
+  flex: 7;
+}
+.header_right {
+  text-align: right;
+  flex: 8;
+}
+
+form  {
+  display: inline;
+}
+
+.header_right ul{
+    zoom: 18%;
+    text-align: right; /* left, right */
+    display: inline;
+}
+
+.header_right li  {
+  display: inline-block;
+}
+
+.header_list {
+  flex: 1;
+  text-align: center;
+  border-right: 1px solid black;
+}
+
+.first_choose{
+  text-align: center;
+  margin: 15px auto;
+  width: 960px;
+}
+
+.top_list{
+  text-align: left;
+  list-style-type: none;
+  display: flex;
+}
+
+li:last-child {
+  border-right: 0;
+}
+
+a {
+  flex: 1;
+  text-decoration: none;
+  color: #664433;
+}
+
+.first_choose{
+  text-align: center;
+  margin: 15px auto;
+  width: 960px;
+}
+.top_list{
+  text-align: left;
+  list-style-type: none;
+  display: flex;
+}
+
+li:last-child {
+  border-right: 0;
+}
+
+/* ここまでheader部分*/
+
+.top_content {
+    margin-top: 64px;
+    margin-left : auto ;
+    margin-right : auto ;
+    width: 960px;
+}
+
+.tokyo2020{
+  margin-top: 104px;
+  text-align: center;
+}
+
+.tokyo2020 iframe {
+    width: 960px;
+    height: 470px;
+}
+
+td{
+  zoom: 40%;
+}
+
+/* ここから本文 */
+
+section{
+  text-align: center;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  background-color: rgb(86,186,150);
+}
+
+main{
+  margin: 0 auto;
+  width: 960px;
+  display: flex;
+}
+
+/* サイド */
+nav{
+  flex: 1;
+  margin-left: 0;
+}
+
+.navigation{
+  padding: 10px;
+  padding-bottom: 0px;
+  background-color: #ffffff;
+  margin: 15px;
+  margin-left: 0;
+}
+
+.navigation ul {
+  padding-left: 0;
+}
+
+.navigation li {
+  list-style: none;
+  margin: 15px auto;
+  padding-bottom: 10px;
+  font-size: 15px;
+  border-bottom: dotted 1px #cccccc;
+}
+
+.navigation li:last-child {
+  border-bottom: 0;
+}
+
+/* 記事 */
+article {
+  flex: 3;
+  margin-top: 15px;
+}
+
+.item_all{
+  padding: 10px;
+}
+
+.center_column_top{
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+.new_contents{
+  display: flex;
+}
+
+.new_contents_all{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.new_contents p{
+  flex: 1;
+  margin: 15px auto;
+  font-size: 9px;
+}
+
+h2{
+  margin: auto;
+  padding: 5px 10px 5px;
+  text-align: left;
+  background-color: #ff4b4b;
+  color: #ffffff;
+  font-size: 19px;
+  border-radius: 20px;
+  font-weight: normal;
+}
+
+h3{
+  margin: auto;
+  padding: 5px 10px 5px;
+  text-align: left;
+  background-color: #5dafab;
+  color: #ffffff;
+  font-size: 19px;
+  border-radius: 20px;
+  font-weight: normal;
+}
+
+h4{
+  margin: auto;
+  padding: 5px 10px 5px;
+  text-align: left;
+  background-color: #64a87b;
+  color: #ffffff;
+  font-size: 19px;
+  border-radius: 20px;
+  font-weight: normal;
+}
+
+.center_column{
+  background-color: #ffffff;
+  padding: 10px;
+  margin-top: 15px;
+}
+
+.center_column_resist{
+  background-color: #ffffff;
+  padding: 10px;
+  margin: 60px auto 15px;
+}
+
+
+.japanese_contents{
+  display: flex;
+}
+
+.japanese_image,.japanese_text {
+  flex: 1;
+}
+
+.japanese_image{
+  margin-top: 15px;
+  margin-left: -15px;
+}
+
+.japanese_text{
+  margin-top: 15px;
+  text-align: left;
+  margin-left: -15px;
+  font-size: 13.7px;
+}
+
+.easy_one{
+  /*flex-direction: row | row-reverse | column | column-reverse;*/
+  /*width: 960px;*/
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  /*flex-direction: column;*/
+}
+
+.easy_img{
+  text-align: center;/*いらないかな？？2017/12/09*/
+  padding: 15px;
+  max-width: 250px;
+}
+
+.easy_img, .easy_text{
+  flex: 1;
+}
+
+
+.easy_text{
+  margin: 15px;
+  text-align: left;
+  /*float: right;*/
+  font-size: 13.7px;
+}
+
+.center_column_bottom{
+  background-color: #ffffff;
+  padding: 10px;
+  margin: 15px auto 30px;
+}
+
+.hitokoto{
+  text-align: left;
+}
+
+/* 広告 */
+aside {
+  flex: 1;
+  margin: 15px auto;
+}
+
+img .advert_top {
+  width: 160px;
+}
+
+img .advert_middle {
+  width: 160px;
+  margin: 15px auto;
+}
+
+div .advert {
+  width: 160px;
+  margin-bottom: 15px;
+}
+
+.detail{
+  color: #fc8833;
+  text-align: right;
+  margin: 15px auto;
+}
+ul {
+  text-align: left;
+}
+
+
+/* footer部分
+footer{
+
+}
+**************/
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+}
+/*footer ul{*/
+/*  text-decoration: none;*/
+/*  display: flex;*/
+/*  width: 500px;*/
+/*  font-size: 13px;*/
+/*  padding-top: 5px;*/
+/*  margin-left: auto;*/
+/*  margin-right: auto;*/
+/*}*/
+.footer_list {
+  flex: 1;
+  text-align: center;
+  border-right: 1px solid black;
+}
+
+.bottom_list{
+  margin: 20px auto;
+  text-align: left;
+  list-style-type: none;
+  display: flex;
+}
+
+#copyright{
+  text-align: center;
+}
+/* cart, finish page -------------------------------------------- */
+
+.title {
+    margin-top: 20px;
+    font-size: 1.4em;
+}
+
+.cart-list-title {
+    clear:both;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart-list-title .cart-list-price{
+    margin-left: 700px;
+}
+
+.cart-list-title .cart-list-num {
+    margin-left: 150px;
+}
+
+.cart-list .cart-item {
+    clear:both;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart-list .cart-item-img{
+    width:120px;
+}
+
+.cart-list .cart-item-name{
+    position: absolute;
+    margin-left: 30px;
+    width: 500px;
+}
+
+.cart-item-del{
+    display: inline;
+    position: absolute;
+    margin-left: 470px;
+}
+
+.cart-list .cart-item-price {
+    position: absolute;
+    margin-left: 560px;
+    color: #FF0000;
+}
+
+.cart-list .form_select_amount {
+    float:right;
+    margin-left: 50px;
+}
+
+.cart-list .cart-item-num {
+    width:100px;
+    height:30px;
+    font-size: 1.2em;
+}
+
+.buy-sum-box{
+    clear:both;
+    margin-top: 10px;
+}
+
+.buy-sum-box .buy-sum-title{
+    margin-left: 620px;
+}
+
+.buy-sum-box .buy-sum-price{
+    margin-left: 30px;
+    font-size: 2em;
+    color: #FF0000;
+}
+
+.buy-btn {
+    display:block;
+    margin-top: 10px;
+    width:100%;
+    height:60px;
+    color: #ffffff;
+    background-color: #FF8A00;
+    font-size: 1.4em;
+    border:none;
+}
+
+/* finish page -------------------------------------------- */
+
+.finish-msg{
+    margin-top: 20px;
+    height:60px;
+    font-size: 1.4em;
+    text-align: center;
+    line-height:60px;
+    background-color: #FFF2DC;
+}
+
+.finish-item-price {
+    position: absolute;
+    margin-left: 800px;
+}
+
+
+/* login/regist page ------------------------------------ */
+div .login_box {
+  margin-top: 64px;
+  text-align: center;
+}
+
+div .login_form {
+	margin-left: auto;
+	margin-right: auto;
+	width: 360px;
+}
+div .login_form dl {
+	margin-top: 20px;
+	width:360px;
+}
+div .login_form dt {
+  background-color: #ffffff;
+	margin-top: 5px;
+	padding-top: 6px;
+	float:left;
+	clear:left;
+	width:120px;
+}
+div .login_form dd {
+	margin-top: 5px;
+	padding-top: 3px;
+	float:left;
+	width: 240px;
+}
+div .login_form input[type="text"] {
+	width: 240px;
+}
+div .login_error {
+	padding-top: 10px;
+	text-align: center;
+	color: #f00;
+	font-weight: bold;
+}
+div .login_submit {
+	clear: both;
+	padding-top: 10px;
+	text-align: center;
+}
+
+
+/***********SNS*******************/
+.home-movie{
+  width: 1120;
+  height: 630;
+  /*text-align: center;*/
+}
+.sns-home{
+  width: auto;
+  max-height: 30px;
+}
+
+

@@ -1,0 +1,4 @@
+[
+  { "no": 1, "date1":"20180510", "date2":"20180510", "npo_or_person":"テストNPO", "amount":100000, "intermediary":"BitFlyer" , "hand_counting_material":500, "suitable_for": "送金"},
+  { "no": 2, "date1":"20180510", "date2":"20180510", "npo_or_person":"テストNPO", "amount":100000, "intermediary":"BitFlyer" , "hand_counting_material":500, "suitable_for": "送金"}
+]
