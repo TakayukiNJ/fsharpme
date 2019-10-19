@@ -385,3 +385,7 @@ Route::post('chat/messages', 'ChatController@sendMessage');
 Route::get('/follow/store/2019', 'FollowController@store');
 Route::post('/follow/store/2019', 'FollowController@store');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
