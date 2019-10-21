@@ -52,7 +52,7 @@ Auth::routes();
 // });
 
 // 日付を簡単に取得できるCarbon
-Route::get('/carbon', 'CarbonController@getIndex');
+//Route::get('/carbon', 'CarbonController@getIndex');
 
 Route::get('/', 'BooksController@welcome');
 Route::get('/cms', 'BooksController@welcome');
@@ -388,4 +388,8 @@ Route::post('/follow/store/2019', 'FollowController@store');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+
+//Route::get('/error', function() {
+//    I_AM_BROKEN_CODE
+//});

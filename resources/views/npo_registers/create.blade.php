@@ -34,7 +34,7 @@
                                     <br>
                                 </div>
                                 --}}
-                                
+
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     @if ((Auth::user()->npo) == "")
                                     <div class="form-group @if($errors->has('title')) has-error @endif">
