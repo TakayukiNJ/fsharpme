@@ -7,7 +7,6 @@
     <div class="page-header" style="background-image: url('https://images.unsplash.com/photo-1486310662856-32058c639c65?dpr=2&auto=format&fit=crop&w=1500&h=1125&q=80&cs=tinysrgb&crop=');">
         <div class="filter"></div>
             <div class="content-center">
-                @include('error')
                 <div class="container">
                     <form enctype="multipart/form-data" action="{{ route('npo_registers.store') }}" method="POST">
                         <div class="row">
@@ -35,39 +34,41 @@
                                 </div>
                                 --}}
 
+                                @include('error')
+
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     @if ((Auth::user()->npo) == "")
                                     <div class="form-group @if($errors->has('title')) has-error @endif">
                                         <label for="title-field">団体名 ※あとで変更不可</label>
-                                        <input type="text" id="title-field" name="title" class="form-control text-center" value="{{ old("title") }}"/>
                                         @if($errors->has("title"))
-                                        <span class="help-block">{{ $errors->first("title") }}</span>
+                                            <span class="help-block">{{ $errors->first("title") }}</span>
                                         @endif
+                                        <input type="text" id="title-field" name="title" class="form-control text-center" value="{{ old("title") }}"/>
                                     </div>
                                     @else
                                     <div class="form-group @if($errors->has('subtitle')) has-error @endif">
-                                       <label for="subtitle-field">プロジェクト名</label>
-                                    <input type="text" id="subtitle-field" name="subtitle" class="form-control text-center" value="{{ old("subtitle") }}"/>
-                                       @if($errors->has("subtitle"))
-                                        <span class="help-block">{{ $errors->first("subtitle") }}</span>
-                                       @endif
+                                        <label for="subtitle-field">プロジェクト名</label>
+                                        @if($errors->has("subtitle"))
+                                            <span class="help-block">{{ $errors->first("subtitle") }}</span>
+                                        @endif
+                                        <input type="text" id="subtitle-field" name="subtitle" class="form-control text-center" value="{{ old("subtitle") }}"/>
                                     </div>
                                     <input type="hidden" id="title-field" name="title" class="form-control text-center" value="{{ Auth::user()->npo }}"/>
                                     {{-- 一口の値段 --}}
                                     <div class="form-group @if($errors->has('support_amount')) has-error @endif">
-                                       <label for="support_amount-field">一口の値段（6桁まで）</label>
-                                    <input type="text" id="support_amount-field" name="support_amount" class="form-control text-center" value="{{ old("support_amount") }}"/>
-                                       @if($errors->has("support_amount"))
-                                        <span class="help-block">{{ $errors->first("support_amount") }}<</span>
-                                       @endif
+                                        <label for="support_amount-field">一口の値段（6桁まで）</label>
+                                        @if($errors->has("support_amount"))
+                                            <br><span class="help-block">{{ $errors->first("support_amount") }}</span>
+                                        @endif
+                                        <input type="text" id="support_amount-field" name="support_amount" class="form-control text-center" value="{{ old("support_amount") }}"/>
                                     </div>
                                     {{-- 募集支援数 --}}
                                     <div class="form-group @if($errors->has('support_limit')) has-error @endif">
-                                       <label for="support_limit-field">最大支援数（9桁まで）</label>
-                                    <input type="text" id="support_limit-field" name="support_limit" class="form-control text-center" value="{{ old("support_limit") }}"/>
-                                       @if($errors->has("support_limit"))
-                                        <span class="help-block">{{ $errors->first("support_limit") }}<</span>
-                                       @endif
+                                        <label for="support_limit-field">最大支援数（9桁まで）</label>
+                                        @if($errors->has("support_limit"))
+                                            <br><span class="help-block">{{ $errors->first("support_limit") }}</span>
+                                        @endif
+                                        <input type="text" id="support_limit-field" name="support_limit" class="form-control text-center" value="{{ old("support_limit") }}"/>
                                     </div>
                                     @endif
                                 <div class="well well-sm">
