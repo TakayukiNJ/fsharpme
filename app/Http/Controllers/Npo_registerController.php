@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
@@ -14,23 +14,22 @@ use Image;
 use Illuminate\Support\Facades\Mail;
 
 class Npo_registerController extends Controller {
-    
+
 	public function __construct()
     {
         $this->middleware('auth', ['except' => ['landing', 'pieces', 'index', 'index2', 'show']]);
     }
-    
+
 	public function index2(string $npo)
 	{
         $user_info = \DB::table('users')->where('npo', $npo)->first();
 		if(!$user_info){
-//		    dd("a");
 		    return view('/errors/503');
 		}
 		$name_auth = $user_info->name;
 	    $npo_auth  = $user_info->npo;
 	    $user_auth = $user_info->email;
-    
+
         $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user_auth)->first();
 		// データベースからnpo_nameに該当するユーザーの情報を抜き出す
         $data['npo_info'] = \DB::table('npo_registers')->where('npo_name', $npo_auth)->first();
@@ -58,7 +57,7 @@ class Npo_registerController extends Controller {
         $data['follower_count'] = count($followers);
         return view('npo_registers.index', $data, compact('npo_registers'))->with('message', 'Item created successfully.');
 	}
-	
+
 	public function index()
 	{
 		$npo = Auth::user()->npo;
@@ -69,7 +68,7 @@ class Npo_registerController extends Controller {
 		$name_auth = $user_info->name;
 	    $npo_auth  = $user_info->npo;
 	    $user_auth = $user_info->email;
-    
+
         $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user_auth)->first();
 		// データベースからnpo_nameに該当するユーザーの情報を抜き出す
         $data['npo_info'] = \DB::table('npo_registers')->where('npo_name', $npo_auth)->first();
@@ -78,7 +77,7 @@ class Npo_registerController extends Controller {
         if(!$npo_auth){
 	        return view('npo_registers/create', $data);
 	    }
-	    
+
         $data['npo_owner_info'] = \DB::table('users')->where('npo', $npo_auth)->first();
         $npo_registers = Npo_register::orderBy('proval', 'desc')->where('manager', $name_auth)->paginate(10);
     	// 金額を計算
@@ -111,7 +110,11 @@ class Npo_registerController extends Controller {
         $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user_auth)->first();
         // データベースからnpo_nameに該当するユーザーの情報を抜き出す
         $data['npo_info'] = \DB::table('npo_registers')->where('npo_name', $npo_auth)->first();
-		return redirect('npo_registers/create', $data);
+//        dd($data);
+//        return view('index');
+//        return view('home/home');
+        return view('npo_registers.create', $data);
+//        return redirect('npo_registers/create', $data);
 	}
 
 	/**
@@ -123,22 +126,22 @@ class Npo_registerController extends Controller {
 	public function store(Request $request)
 	{
 		$npo_register = new Npo_register();
-	    	
+
 	    $rules = [
             'title'         => 'required | min:1 | max:55',
 	        'support_limit' => 'digits_between:1,9',
 	    ];
-	    
+
         $this -> validate($request, $rules);
-		
+
 		$id_auth   = Auth::user()->id;
         $npo_id    = Auth::user()->npo_id;
         $name_auth = Auth::user()->name;
         $user_auth = Auth::user()->email;
         $npo_auth  = Auth::user()->npo;
-        
+
         $edit_auth = $name_auth."1";
-        
+
 		$npo_register->npo_name = ""; // URL
 		$npo_register->title    = $request->input("title"); // NPOの名前
 		// NPOの名前をヘッダーに表示
@@ -151,7 +154,7 @@ class Npo_registerController extends Controller {
                 'npo' => $npo_register->title
             ]);
         }
-        
+
         // ロゴの登録
         $avater_file = $request->file('avater');
         // 画像が空かチェック
@@ -162,7 +165,7 @@ class Npo_registerController extends Controller {
             Image::make($avater_file)->resize(150, 150)->save( './img/project_logo/' . $avater );
             // $image_file->move('./img/personal_info/', $image_id); // cloud9だけかな？
             $npo_register->avater = $avater;
-            
+
             \DB::table('npo_registers')
                 ->where('title', $npo_auth)
                 ->update(['avater' => $avater]);
@@ -177,12 +180,12 @@ class Npo_registerController extends Controller {
                 }
             }
         }
-        
+
         // 認定NPOだった時、certificated_npoに内閣府の法人idを追加
         $npo_register->certificated_npo        = $npo_id;
-        
+
         $npo_register->subtitle                = $request->input("subtitle"); // プロジェクトの名前
-        
+
         $npo_register->manager                 = $name_auth;
         $npo_register->member1                 = $name_auth;
         $npo_register->member1_twitter         = $edit_auth;
@@ -226,7 +229,7 @@ class Npo_registerController extends Controller {
 	{
 	    $currentNpoInfo = Npo_register::find($npo_name);
         $npo_manager    = $currentNpoInfo->manager;
-        
+
         $project        = $currentNpoInfo->npo_name;
         $this_user_auth = \DB::table('users')->where('name', $npo_manager)->first();
         $org            = $this_user_auth->npo;
@@ -238,12 +241,12 @@ class Npo_registerController extends Controller {
 	    }else{
             return redirect($url);
         }
-        
+
 	    if($auth_name !== $npo_manager || $currentNpoInfo->proval > 0){
             return redirect($url);
 	    }
 	    $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user_auth)->first();
-        
+
         $currentNpoInfo = Npo_register::find($npo_name);
     // 	$currentNpoInfo     = \DB::table('npo_registers')->where('id', $npo_name)->first();
     	$currentPremierData = \DB::table('premier_data')->where('vision_id', $currentNpoInfo->npo_name)->get();
@@ -317,7 +320,7 @@ class Npo_registerController extends Controller {
         $name_auth = Auth::user()->name;
         $user_auth = Auth::user()->email;
         $this->middleware('auth:api');
-        
+
 		// データベースからnpo_nameに該当するユーザーの情報をまとめて抜き出して
         // $currentNpoInfo = \DB::table('npo_registers')->where('id', $npo_name)->first();
         // NPOメンバーが画像を保存していれば、はめていく。
@@ -344,7 +347,7 @@ class Npo_registerController extends Controller {
         if($currentNpoInfo->proval > 0){
             return redirect('/'.$currentNpoInfo->npo_name);
         }
-        
+
         if($name_auth === $currentNpoInfo->manager){
     		return view('npo_registers.show', $data);
         }
@@ -410,7 +413,7 @@ class Npo_registerController extends Controller {
                 $from_pic = "placeholder.jpg";
             }
             // dd($from_user_pic->image_id);
-            
+
             $data['from']    += array($message_count+1 => $from_origin);
             $data['to']      += array($message_count+1 => $to_origin);
             $data['message'] += array($message_count+1 => $message_origin);
@@ -478,7 +481,7 @@ class Npo_registerController extends Controller {
         $data['currency_data_personal'] = $currency_amount_personal;
         $data['currency_data_company']  = $currency_amount_company; // 企業寄付の合計
         $data['currency_data_company_premier'] = $currency_amount_company_premier; // 企業寄付(プラチナ)の合計
-        
+
     	// NPOメンバーが画像を保存していれば、はめていく。
         for($i = 1; $i < 11; $i++){
             $member              = "member".$i;
@@ -499,7 +502,7 @@ class Npo_registerController extends Controller {
         }
         $data['npo_info'] = $currentNpoInfo;
         if($currentNpoInfo->proval < 1){
-            // 未公開だった時の処理 
+            // 未公開だった時の処理
             if(Auth::user()){
                 $name_auth = Auth::user()->name;
             }else{
@@ -537,7 +540,7 @@ class Npo_registerController extends Controller {
         }
         return view('npo.npo_landing_page', $data);
     }
-    
+
 	/**
 	 * Update the specified resource in storage.
 	 *
@@ -548,7 +551,7 @@ class Npo_registerController extends Controller {
 	public function update(Request $request, $npo_name)
 	{
 		$npo_register = Npo_register::findOrFail($npo_name);
- 		
+
  		$name_auth = Auth::user()->name;
         $npo_id    = Auth::user()->npo_id;
 		$npo_register->npo_name      = $request->input("npo_name"); // URL
@@ -601,13 +604,13 @@ class Npo_registerController extends Controller {
         	}
 		}
         $this -> validate($request, $rules);
-		
+
 		if($npo_register->npo_name){
 		    $npo_register->published = new Carbon(Carbon::now());
 		}
-		
+
         $npo_register->support_limit = $request->input("support_limit"); // 募集寄付数
-		
+
 		// 画像に関して(1月28日追加)
         $background_file = $request->file('background_pic');
         // 画像が空かチェック
@@ -617,7 +620,7 @@ class Npo_registerController extends Controller {
             // 画像をpublicの中に保存
             Image::make($background_file)->save( './img/project_back/' . $background_pic );
             // $image_file->move('./img/personal_info/', $image_id); // cloud9だけかな？
-            $npo_register->background_pic = $background_pic; 
+            $npo_register->background_pic = $background_pic;
         }else{
             $background_pic = "";
         }
@@ -631,24 +634,24 @@ class Npo_registerController extends Controller {
                 // 画像をpublicの中に保存
                 Image::make($code_file)->save( './img/project_code/' . $code_avater );
                 // $image_file->move('./img/personal_info/', $image_id); // cloud9だけかな？
-                $npo_register->$code = $code_avater; 
+                $npo_register->$code = $code_avater;
             }else{
                 $code_avater = "";
             }
         }
-        
+
         // 認定NPOだった時、certificated_npoに内閣府の法人idを追加
         if($npo_id && $npo_register->manager == $name_auth){
             $npo_register->certificated_npo = $npo_id;
         }
-        
+
 		$npo_register->sdgs1 = $request->input("sdgs1");
 		$npo_register->sdgs2 = $request->input("sdgs2");
 		$npo_register->sdgs3 = $request->input("sdgs3");
 		$npo_register->sdgs4 = $request->input("sdgs4");
 		$npo_register->sdgs5 = $request->input("sdgs5");
 		$npo_register->sdgs6 = $request->input("sdgs6");
-		
+
 		$npo_register->title             = $request->input("title"); // npo name
         $npo_register->subtitle          = $request->input("subtitle"); //project name
         $npo_register->embed_youtube     = $request->input("embed_youtube");
@@ -658,7 +661,7 @@ class Npo_registerController extends Controller {
         $npo_register->green_card_body   = $request->input("green_card_body");
         $npo_register->yellow_card_title = $request->input("yellow_card_title");
         $npo_register->yellow_card_body  = $request->input("yellow_card_body");
-        
+
         // メンバーには、サイトに登録済みの「ユーザー名」を入れてください。
         for($i = 1; $i < 11; $i++){
             $member           = "member".$i;
@@ -697,17 +700,17 @@ class Npo_registerController extends Controller {
         //     $npo_register->proval = 0;
         // }
         // $npo_register->support_price = $request->input("support_price"); // 目標金額
-        
+
         $npo_register->support_contents_gold = $request->input("support_contents_gold");
         $npo_register->support_contents_detail_gold = $request->input("support_contents_detail_gold");
         $npo_register->support_amount_gold = $request->input("support_amount_gold");
         $npo_register->support_price_gold = $request->input("support_price_gold"); //法人寄付の値段*公開後変更不可
-        
+
         $npo_register->support_contents_pratinum = $request->input("support_contents_pratinum"); //プラチナ寄付リターンの内容
         $npo_register->support_contents_detail_pratinum = $request->input("support_contents_detail_pratinum"); //プラチナ寄付リターンの詳細URL（無しでも可能）
         $npo_register->support_amount_pratinum = $request->input("support_amount_pratinum"); //プラチナ寄付の募集数
         $npo_register->support_price_pratinum = $request->input("support_price_pratinum"); //法人寄付の値段(プラチナ寄付)*公開後変更不可
-        
+
         $npo_register->body = $request->input("body");
         $npo_register->url  = $request->input("url");
         $npo_register->updated_at = new Carbon(Carbon::now());
@@ -732,7 +735,7 @@ class Npo_registerController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	 
+
 	public function destroy($id)
 	{
 		$npo_register = Npo_register::findOrFail($id);
@@ -740,7 +743,7 @@ class Npo_registerController extends Controller {
 
 		return redirect()->route('npo_registers.index')->with('message', 'Item deleted successfully.');
 	}
-    
+
     // 公開をしている時（下のも同時に編集する必要あり）
     public function editing(string $npo_name)
     {
@@ -748,18 +751,18 @@ class Npo_registerController extends Controller {
         $name_auth = Auth::user()->name;
         $user_auth = Auth::user()->email;
         $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user_auth)->first();
-        
+
         $this->middleware('auth:api');
-        
+
 		// データベースからnpo_nameに該当するユーザーの情報をまとめて抜き出して
         $currentNpoInfo = \DB::table('npo_registers')->where('npo_name', $npo_name)->first();
 // 		$currentNpoInfo  = Npo_register::find($npo_name);
-    	
+
 		//連想配列に入れtBladeテンプレートに渡しています。
         $data['npo_info'] = $currentNpoInfo;
-        
+
         // currentNpoInfoの中からmemberのpersonalInfoを抜き出す必要あり。
-        
+
         if($name_auth === $currentNpoInfo->manager){
             return view('npo_registers.edit', $data);
         }
@@ -775,7 +778,7 @@ class Npo_registerController extends Controller {
         // これ以外だったら、errorを返す。
         return view('/errors/503');
     }
-    
+
     // 公開をしていない時（上のも同時に編集する必要あり）
     // npo_registers/{$id}/edit で開く。まだ公開していない時に使用
     public function edit(string $npo_name)
@@ -784,16 +787,16 @@ class Npo_registerController extends Controller {
         $name_auth = Auth::user()->name;
         $user_auth = Auth::user()->email;
         $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user_auth)->first();
-        
+
         $this->middleware('auth:api');
-        
+
 		// データベースからnpo_nameに該当するユーザーの情報をまとめて抜き出して
         // $currentNpoInfo = \DB::table('npo_registers')->where('id', $npo_name)->first();
 		$currentNpoInfo  = Npo_register::find($npo_name);
-    	
+
 		//連想配列に入れtBladeテンプレートに渡しています。
         $data['npo_info'] = $currentNpoInfo;
-        
+
         if($name_auth === $currentNpoInfo->manager){
             return view('npo_registers.edit', $data);
         }
@@ -809,7 +812,7 @@ class Npo_registerController extends Controller {
         // これ以外だったら、errorを返す。
         return view('/errors/503');
     }
-    
+
     public function payment(Request $request, string $npo_name) {
         $this->middleware('auth');
         $user_request_email = $request->stripeEmail;
@@ -818,7 +821,7 @@ class Npo_registerController extends Controller {
         $name_auth = Auth::user()->name;
         $user_auth = Auth::user()->email;
         $npo_auth  = Auth::user()->npo;
-		
+
         // 個人の寄付データ取ってくる
         $currentPremierData = \DB::table('premier_data')
             ->where('vision_id', $npo_name)
@@ -833,7 +836,7 @@ class Npo_registerController extends Controller {
         }
         // ストライプ側の処理
         \Stripe\Stripe::setApiKey("sk_test_FoGhfwb6NnvDUnFHoeufcBss");
-        
+
         // Get the credit card details submitted by the form
         $token = $_POST['stripeToken'];
         // Create a charge: this will charge the user's card
@@ -847,12 +850,12 @@ class Npo_registerController extends Controller {
             $sdgs_i = 'sdgs'.$i;
             if($currentNpoInfo->$sdgs_i){
                 $sdgs_count++;
-                $sdgs_num[$i] = $currentNpoInfo->$sdgs_i;        
+                $sdgs_num[$i] = $currentNpoInfo->$sdgs_i;
             }else{
                 $sdgs_num[$i] = "";
             }
         }
-        // 
+        //
         if($sdgs_count == 0){
             $sdgs_count = 17;
         }
@@ -875,7 +878,7 @@ class Npo_registerController extends Controller {
                 }
             }
         }
-        
+
         try {
             $customer = \Stripe\Customer::create(array(
                 'email' => $user_request_email
@@ -889,7 +892,7 @@ class Npo_registerController extends Controller {
         } catch (\Stripe\Error\Card $e) {
             return view('/errors/503');
         }
-        
+
         // F#側の処理
         // titleとvision_idとpremier_idで判別
         if($currentPremierData != null){
@@ -951,7 +954,7 @@ class Npo_registerController extends Controller {
                     'total_deposit' => $npoUserInfo->total_deposit + $user_deposit
                 ]);
         }
-        
+
         // ポイント
         Auth::user()->where('name', $name_auth)->update([
             'point' => $currentUserInfo->point + $the_point,
@@ -1014,9 +1017,9 @@ class Npo_registerController extends Controller {
         // return view('/thank_you_for_support');
         return back();
     }
-    
+
     public function send_mail(Request $request, string $npo_name) {
-            
+
         // $npo_register->subtitle = $request->input("subtitle"); // プロジェクトの名前
         // return view('/thank_you_for_support');
         $name = $request->name;
