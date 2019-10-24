@@ -128,8 +128,8 @@ class Npo_registerController extends Controller {
 		$npo_register = new Npo_register();
 
 	    $rules = [
-            'title'         => 'required | min:1 | max:55',
-	        'support_limit' => 'digits_between:1,9',
+            'subtitle'      => 'required | min:1 | max:55',
+//	        'support_limit' => 'digits_between:1,9',
 	    ];
 
         $this -> validate($request, $rules);
@@ -579,8 +579,8 @@ class Npo_registerController extends Controller {
     		    // 未公開の時
         		$rules = [
                     'title'                   => 'required | min:1 | max:55',
-        		    'support_contents_detail' => 'date | after:tomorrow',
-                    'support_limit'           => 'digits_between:1,9',
+//        		    'support_contents_detail' => 'date | after:tomorrow',
+                    'support_limit'           => 'digits_between:1,9 | integer',
                     'support_amount'          => 'required | digits_between:1,6', // 個人寄付の金額
                     'support_price_gold'      => 'required | digits_between:5,7', // 企業寄付の金額
                     'support_amount_gold'     => 'required | digits_between:1,2', // 企業寄付の定員数
@@ -592,8 +592,8 @@ class Npo_registerController extends Controller {
     		}else{
     		    $rules = [
                     'title'                   => 'required | min:1 | max:55',
-        		    'support_amount'          => 'digits_between:1,10',
-                    'support_limit'           => 'digits_between:1,9',
+        		    'support_amount'          => 'digits_between:1,10 | integer',
+                    'support_limit'           => 'digits_between:1,9 | integer',
         	        'support_price_gold'      => 'required | digits_between:5,7', // 企業寄付の金額
                     'support_amount_gold'     => 'required | digits_between:1,2', // 企業寄付の定員数
                     'support_price_pratinum'  => 'required | digits_between:6,8', // 企業（プラチナ）寄付の金額

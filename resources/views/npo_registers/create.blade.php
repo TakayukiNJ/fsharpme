@@ -41,7 +41,7 @@
                                     <div class="form-group @if($errors->has('title')) has-error @endif">
                                         <label for="title-field">団体名 ※あとで変更不可</label>
                                         @if($errors->has("title"))
-                                            <span class="help-block">{{ $errors->first("title") }}</span>
+                                            <br><span class="help-block">{{ $errors->first("title") }}</span>
                                         @endif
                                         <input type="text" id="title-field" name="title" class="form-control text-center" value="{{ old("title") }}"/>
                                     </div>
@@ -49,27 +49,27 @@
                                     <div class="form-group @if($errors->has('subtitle')) has-error @endif">
                                         <label for="subtitle-field">プロジェクト名</label>
                                         @if($errors->has("subtitle"))
-                                            <span class="help-block">{{ $errors->first("subtitle") }}</span>
+                                            <br><span class="help-block">{{ $errors->first("subtitle") }}</span>
                                         @endif
-                                        <input type="text" id="subtitle-field" name="subtitle" class="form-control text-center" value="{{ old("subtitle") }}"/>
+                                        <input type="text" id="subtitle-field" name="subtitle" class="form-control text-center" value="{{ old("subtitle") }}" required/>
                                     </div>
                                     <input type="hidden" id="title-field" name="title" class="form-control text-center" value="{{ Auth::user()->npo }}"/>
                                     {{-- 一口の値段 --}}
-                                    <div class="form-group @if($errors->has('support_amount')) has-error @endif">
-                                        <label for="support_amount-field">一口の値段（6桁まで）</label>
-                                        @if($errors->has("support_amount"))
-                                            <br><span class="help-block">{{ $errors->first("support_amount") }}</span>
-                                        @endif
-                                        <input type="text" id="support_amount-field" name="support_amount" class="form-control text-center" value="{{ old("support_amount") }}"/>
-                                    </div>
+                                    {{--<div class="form-group @if($errors->has('support_amount')) has-error @endif">--}}
+                                        {{--<label for="support_amount-field">一口の値段（6桁まで）</label>--}}
+                                        {{--@if($errors->has("support_amount"))--}}
+                                            {{--<br><span class="help-block">{{ $errors->first("support_amount") }}</span>--}}
+                                        {{--@endif--}}
+                                        {{--<input type="text" id="support_amount-field" name="support_amount" class="form-control text-center" value="{{ old("support_amount") }}"/>--}}
+                                    {{--</div>--}}
                                     {{-- 募集支援数 --}}
-                                    <div class="form-group @if($errors->has('support_limit')) has-error @endif">
-                                        <label for="support_limit-field">最大支援数（9桁まで）</label>
-                                        @if($errors->has("support_limit"))
-                                            <br><span class="help-block">{{ $errors->first("support_limit") }}</span>
-                                        @endif
-                                        <input type="text" id="support_limit-field" name="support_limit" class="form-control text-center" value="{{ old("support_limit") }}"/>
-                                    </div>
+                                    {{--<div class="form-group @if($errors->has('support_limit')) has-error @endif">--}}
+                                        {{--<label for="support_limit-field">最大支援数（9桁まで）</label>--}}
+                                        {{--@if($errors->has("support_limit"))--}}
+                                            {{--<br><span class="help-block">{{ $errors->first("support_limit") }}</span>--}}
+                                        {{--@endif--}}
+                                        {{--<input type="text" id="support_limit-field" name="support_limit" class="form-control text-center" value="{{ old("support_limit") }}"/>--}}
+                                    {{--</div>--}}
                                     @endif
                                 <div class="well well-sm">
                                     <button type="submit" class="btn btn-outline-neutral btn-fill">作成</button>
