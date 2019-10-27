@@ -200,13 +200,15 @@
             				</div>
         				</div>
                     @endforeach
-                    {!! $npo_registers->render() !!}
                 @else
                 <!--<h3 class="text-center alert alert-info">Empty!</h3>-->
                 <br>
                 <br>
                 @endif
 			</div>
+            <div class="text-center">
+                {!! $npo_registers->render() !!}
+            </div>
         </div>
     </div>
 </div>
