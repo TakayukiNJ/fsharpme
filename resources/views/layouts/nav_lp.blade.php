@@ -18,9 +18,9 @@
                     <span class="navbar-toggler-bar"></span>
                 </button>
             </div>
-        
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                
+
                 <ul class="navbar-nav ml-auto">
                     {{--
                     <form class="form-inline" action="{{ url('/npo_registers') }}">
@@ -28,7 +28,7 @@
                         <button type="submit" class="btn btn-primary btn-just-icon btn-round"><i class="nc-icon nc-zoom-split"></i></button>
                     </form>
                     --}}
-                    
+
                     @if (Auth::guest())
                         <li class="nav-item">
                             <a class="nav-link" data-scroll="true" href="{{ url('/login') }}">
@@ -37,7 +37,7 @@
                         </li>
                         <li class="nav-item">
                             <button type="button" class="btn btn-round btn-danger" data-toggle="modal" data-target="#loginModal">
-                                登録
+                                @lang('app.register')
                             </button>
                             <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="false">
                                 <div class="modal-dialog modal-register">
@@ -120,7 +120,7 @@
                             <a class="nav-link" href="https://goo.gl/YZLao1" target="_blank">出金可能金額：{{Auth::user()->total_deposit}}円</a>
                         </li>
                         @endif
-                        
+
                         {{--
                         <!-- message 用編集 -->
                         <!--GRAY-->
@@ -146,28 +146,28 @@
                                                 <span class="message"><b>Patrick</b> mentioned you in a comment.</span>
                                                 <br />
                                                 <span class="time">20min ago</span>
-    
+
                                                 <button class="btn btn-just-icon read-notification btn-round">
                                                     <i class="nc-icon nc-check-2"></i>
                                                 </button>
                                             </div>
                                         </a>
-    
-    
+
+
                                         <a href="#paper-kit" class="notification-item">
                                            <div class="notification-text">
                                                 <span class="label label-icon label-info"><i class="nc-icon nc-alert-circle-i"></i></span>
-    
+
                                                 <span class="message">Our privacy policy changed!</span>
                                                 <br />
                                                 <span class="time">1day ago</span>
                                             </div>
                                         </a>
-    
+
                                         <a href="#paper-kit" class="notification-item">
                                             <div class="notification-text">
                                                 <span class="label label-icon label-warning"><i class="nc-icon nc-ambulance"></i></span>
-    
+
                                                 <span class="message">Please confirm your email address.</span>
                                                 <br />
                                                 <span class="time">2days ago</span>
@@ -192,7 +192,7 @@
                                     </ul>
                                 </li>
                             </ul>
-                            
+
                             <!--<span class="label label-danger notification-bubble">2</span>-->
                         </li>
                         --}}
@@ -211,10 +211,10 @@
                             @else
                                 <a class="nav-link dropdown-toggle"  data-toggle="dropdown" href="javascript:void(0)">{{ Auth::user()->name }}</a>
                             @endif
-                            
+
                             <ul class="dropdown-menu dropdown-menu-right dropdown-danger">
                                 <a class="dropdown-item" href="{{ url('/') }}/{{ Auth::user()->npo }}"><i class="nc-icon nc-money-coins"></i>&nbsp; {{ Auth::user()->npo }}</a>
-                        @endif        		
+                        @endif
                                 <a class="dropdown-item" href="{{ url('home') }}/{{ Auth::user()->name }}"><i class="nc-icon nc-badge"></i>&nbsp; @lang('app.mypage')</a>
                                 <a class="dropdown-item" href="{{ url('home/home_register') }}"><i class="nc-icon nc-badge"></i>&nbsp; マイページ設定</a>
                                 <a class="dropdown-item" href="{{ url('/logout') }}" onclick="event.preventDefault();

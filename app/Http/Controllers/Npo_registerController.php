@@ -38,7 +38,7 @@ class Npo_registerController extends Controller {
 	        return view('npo_registers/create', $data);
 	    }
         $data['npo_owner_info'] = \DB::table('users')->where('npo', $npo_auth)->first();
-        $npo_registers = Npo_register::orderBy('proval', 'desc')->where('manager', $name_auth)->paginate(10);
+        $npo_registers = Npo_register::orderBy('proval', 'desc')->where('manager', $name_auth)->paginate(9);
 		// 金額を計算
 		$data['project_total_price'] = 0;
 		for($array_count=0; $array_count<count($npo_registers); $array_count++){
@@ -79,7 +79,7 @@ class Npo_registerController extends Controller {
 	    }
 
         $data['npo_owner_info'] = \DB::table('users')->where('npo', $npo_auth)->first();
-        $npo_registers = Npo_register::orderBy('proval', 'desc')->where('manager', $name_auth)->paginate(10);
+        $npo_registers = Npo_register::orderBy('proval', 'desc')->where('manager', $name_auth)->paginate(9);
     	// 金額を計算
 		$data['project_total_price'] = 0;
 		for($array_count=0; $array_count<count($npo_registers); $array_count++){
@@ -747,7 +747,7 @@ class Npo_registerController extends Controller {
     // 公開をしている時（下のも同時に編集する必要あり）
     public function editing(string $npo_name)
     {
-		$id_auth   = Auth::user()->id;
+        $id_auth   = Auth::user()->id;
         $name_auth = Auth::user()->name;
         $user_auth = Auth::user()->email;
         $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user_auth)->first();
