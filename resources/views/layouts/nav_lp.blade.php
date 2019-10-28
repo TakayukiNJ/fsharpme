@@ -46,16 +46,16 @@
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                               <span aria-hidden="true">&times;</span>
                                             </button>
-                                            <h3 class="modal-title text-center">ようこそ！</h3>
-                                            <p>まずはご登録をお願いします。</p>
+                                            <h3 class="modal-title text-center">&nbsp;@lang('welcome')</h3>
+                                            <p>@lang('Please regiseter first')</p>
                                         </div>
                                         <div class="modal-body">
                                             <form class="register-form" role="form" method="POST" action="{{ url('/register') }}">
                                                 {{ csrf_field() }}
                                                 {{-- ニックネーム(半角英数) --}}
                                                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                                    <label for="name">ニックネーム(半角英数)</label>
-                                                    <input id="name" type="text" class="form-control" name="name" placeholder="ニックネーム(半角英数)" value="{{ old('name') }}" required autofocus>
+                                                    <label for="name">@lang('name ID')</label>
+                                                    <input id="name" type="text" class="form-control" name="name" placeholder="@lang('fsharpTaro')" value="{{ old('name') }}" required autofocus>
                                                     @if ($errors->has('name'))
                                                         <span class="help-block division">
                                                         <strong>{{ $errors->first('name') }}</strong>
@@ -64,8 +64,8 @@
                                                 </div>
                                                 {{-- メールアドレス --}}
                                                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                                    <label for="email">E-Mailアドレス</label>
-                                                    <input id="email" type="email" class="form-control" name="email" placeholder="メールアドレス" value="{{ old('email') }}" required>
+                                                    <label for="email">@lang('E-mail address')</label>
+                                                    <input id="email" type="email" class="form-control" name="email" placeholder="@lang('******@gmail.com')" value="{{ old('email') }}" required>
                                                     @if ($errors->has('email'))
                                                         <span class="help-block division">
                                                         <strong>{{ $errors->first('email') }}</strong>
@@ -74,8 +74,8 @@
                                                 </div>
                                                 {{-- パスワード --}}
                                                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                                    <label for="password">パスワード(8文字以上)</label>
-                                                    <input id="password" type="password" class="form-control" placeholder="パスワード" name="password" required>
+                                                    <label for="password">@lang('password (more than 8 characters)')</label>
+                                                    <input id="password" type="password" class="form-control" placeholder="@lang('password example')" name="password" required>
                                                     @if ($errors->has('password'))
                                                         <span class="help-block division">
                                                         <strong>{{ $errors->first('password') }}</strong>
@@ -84,22 +84,22 @@
                                                 </div>
                                                 {{-- パスワード確認 --}}
                                                 <div class="form-group division">
-                                                    <label for="password">パスワード確認</label>
-                                                    <input id="password-confirm" type="password" class="form-control" placeholder="パスワード確認" name="password_confirmation" required>
+                                                    <label for="password">@lang('password (check)')</label>
+                                                    <input id="password-confirm" type="password" class="form-control" placeholder="@lang('password example')" name="password_confirmation" required>
                                                 </div>
                                                 {{-- 利用規約とプライバシーポリシー --}}
                                                 <div class="form-check">
                                                     <label class="form-check-label">
                                                         <input class="form-check-input" type="checkbox" required>
                                                         <span class="form-check-sign">
-                                                            本サイトの<strong><a href="{{ url('/terms') }}" target="_blank"> 利用規約 </a>および</strong><strong><a href="{{ url('/privacy_policy') }}" target="_blank"> プライバシーポリシー </a></strong>に同意する（チェックを入れる）
+                                                            @lang('Please confirm our')<strong><a href="{{ url('/terms') }}" target="_blank"> @lang('terms') </a>@lang('and')</strong><strong><a href="{{ url('/privacy_policy') }}" target="_blank"> @lang('specified commercial transactions law') </a></strong>@lang(', and check the box.')
                                                         </span>
                                                     </label>
                                                 </div>
-                                                <button type="submit" class="btn btn-block btn-primary btn-round">登録</button>
+                                                <button type="submit" class="btn btn-block btn-primary btn-round">@lang('register')</button>
                                             </form>
                                             <div class="modal-footer no-border-footer">
-                                                <p>すでにご登録済みの方は <a href="{{ url('/login') }}">こちら</a></p>
+                                                <p>@lang('Already registered? Please go') <a href="{{ url('/login') }}">@lang('here')</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -111,7 +111,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle"  data-toggle="dropdown" href="javascript:void(0)">{{ Auth::user()->name }}</a>
                             <ul class="dropdown-menu dropdown-menu-right dropdown-danger">
-                                <a class="dropdown-item" href="{{ url('/npo_registers/create') }}"><i class="nc-icon nc-money-coins"></i>&nbsp; 団体登録</a>
+                                <a class="dropdown-item" href="{{ url('/npo_registers/create') }}"><i class="nc-icon nc-money-coins"></i>&nbsp;@lang('app.registerOrg')</a>
                                 {{--<a target="_blank" class="dropdown-item" href="https://form.run/@fsharp"><i class="nc-icon nc-money-coins"></i>&nbsp; 団体登録</a>--}}
                         @else
                         {{-- ここ自動化しないとな。 --}}
@@ -216,7 +216,7 @@
                                 <a class="dropdown-item" href="{{ url('/') }}/{{ Auth::user()->npo }}"><i class="nc-icon nc-money-coins"></i>&nbsp; {{ Auth::user()->npo }}</a>
                         @endif
                                 <a class="dropdown-item" href="{{ url('home') }}/{{ Auth::user()->name }}"><i class="nc-icon nc-badge"></i>&nbsp; @lang('app.mypage')</a>
-                                <a class="dropdown-item" href="{{ url('home/home_register') }}"><i class="nc-icon nc-badge"></i>&nbsp; マイページ設定</a>
+                                <a class="dropdown-item" href="{{ url('home/home_register') }}"><i class="nc-icon nc-badge"></i>&nbsp; @lang('setting mypage')</a>
                                 <a class="dropdown-item" href="{{ url('/logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();"><i class="nc-icon nc-spaceship"></i>&nbsp; @lang('app.logout')</a>
                                 <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
