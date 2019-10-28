@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+{{--<html lang="{{ app()->getLocale() }}">--}}
+<html lang="ja">
 <head>
 @yield('welcome_head')
 </head>
