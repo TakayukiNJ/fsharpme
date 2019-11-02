@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="20516ec6-be6d-40be-b8fa-a4ada8341456" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/nav_lp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/nav_lp.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +19,11 @@
       <file leaf-file-name="nav_lp.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/nav_lp.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="217" column="140" selection-start-line="217" selection-start-column="140" selection-end-line="217" selection-end-column="140" />
+            <state relative-caret-position="197">
+              <caret line="126" column="98" lean-forward="true" selection-start-line="126" selection-start-column="98" selection-end-line="126" selection-end-column="98" />
+              <folding>
+                <marker date="1572703493549" expanded="true" signature="9293:9531" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -289,12 +290,12 @@
       <workItem from="1572067432618" duration="499000" />
       <workItem from="1572185967251" duration="4558000" />
       <workItem from="1572257971789" duration="1632000" />
-      <workItem from="1572347683945" duration="5381000" />
+      <workItem from="1572347683945" duration="5707000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27139000" />
+    <option name="totallyTimeSpent" value="27465000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -306,8 +307,8 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.13532764" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2657512" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3846154" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2657512" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -558,8 +559,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/nav_lp.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="217" column="140" selection-start-line="217" selection-start-column="140" selection-end-line="217" selection-end-column="140" />
+        <state relative-caret-position="197">
+          <caret line="126" column="98" lean-forward="true" selection-start-line="126" selection-start-column="98" selection-end-line="126" selection-end-column="98" />
+          <folding>
+            <marker date="1572703493549" expanded="true" signature="9293:9531" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

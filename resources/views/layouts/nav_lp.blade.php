@@ -117,85 +117,86 @@
                         {{-- ここ自動化しないとな。 --}}
                         @if(Auth::user()->total_deposit)
                         <li class="nav-item">
-                            <a class="nav-link" href="https://goo.gl/YZLao1" target="_blank">出金可能金額：{{Auth::user()->total_deposit}}円</a>
+                            <a class="nav-link" href="https://goo.gl/YZLao1" target="_blank">出金金額（月末）：{{Auth::user()->total_deposit}}円</a>
                         </li>
                         @endif
 
-                        {{--
                         <!-- message 用編集 -->
                         <!--GRAY-->
-                        <!--<li class="nav-item">-->
-                        <!--    <a href="#paper-kit" class="btn btn-just-icon" data-toggle="dropdown">-->
-                        <!--        <i class="nc-icon nc-email-85"></i>-->
-                        <!--    </a>-->
-                        <!--</li>-->
-                        <!--RED-->
-                        <li class="nav-item dropdown">
-                            <a class="btn btn-just-icon btn-danger  " data-toggle="dropdown">
+                        <li class="nav-item">
+                            <a href="#paper-kit" class="btn btn-just-icon" data-toggle="dropdown">
                                 <i class="nc-icon nc-email-85"></i>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-right dropdown-wide dropdown-notification">
-                                <li class="dropdown-header">
-                                    You have 7 unread notifications
-                                </li>
-                                <li>
-                                    <ul class="dropdown-notification-list scroll-area">
-                                        <a href="#paper-kit" class="notification-item">
-                                            <div class="notification-text">
-                                                <span class="label label-icon label-success"><i class="nc-icon nc-chat-33"></i></span>
-                                                <span class="message"><b>Patrick</b> mentioned you in a comment.</span>
-                                                <br />
-                                                <span class="time">20min ago</span>
-
-                                                <button class="btn btn-just-icon read-notification btn-round">
-                                                    <i class="nc-icon nc-check-2"></i>
-                                                </button>
-                                            </div>
-                                        </a>
-
-
-                                        <a href="#paper-kit" class="notification-item">
-                                           <div class="notification-text">
-                                                <span class="label label-icon label-info"><i class="nc-icon nc-alert-circle-i"></i></span>
-
-                                                <span class="message">Our privacy policy changed!</span>
-                                                <br />
-                                                <span class="time">1day ago</span>
-                                            </div>
-                                        </a>
-
-                                        <a href="#paper-kit" class="notification-item">
-                                            <div class="notification-text">
-                                                <span class="label label-icon label-warning"><i class="nc-icon nc-ambulance"></i></span>
-
-                                                <span class="message">Please confirm your email address.</span>
-                                                <br />
-                                                <span class="time">2days ago</span>
-                                            </div>
-                                        </a>
-                                        <a href="#paper-kit" class="notification-item">
-                                            <div class="notification-text">
-                                                <span class="label label-icon label-primary"><i class="nc-icon nc-paper"></i></span>
-                                                <span class="message">Have you thought about marketing?</span>
-                                                <br />
-                                                <span class="time">3days ago</span>
-                                            </div>
-                                        </a>
-                                    </ul>
-                                </li>
-                                <!-- end scroll area -->
-                                <li class="dropdown-footer">
-                                    <ul class="dropdown-footer-menu">
-                                        <li>
-                                            <a href="#paper-kit">Mark all as read</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-
-                            <!--<span class="label label-danger notification-bubble">2</span>-->
                         </li>
-                        --}}
+                        <!--RED-->
+                        {{--
+
+                            <li class="nav-item dropdown">
+                                <a class="btn btn-just-icon btn-danger  " data-toggle="dropdown">
+                                    <i class="nc-icon nc-email-85"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right dropdown-wide dropdown-notification">
+                                    <li class="dropdown-header">
+                                        You have 7 unread notifications
+                                    </li>
+                                    <li>
+                                        <ul class="dropdown-notification-list scroll-area">
+                                            <a href="#paper-kit" class="notification-item">
+                                                <div class="notification-text">
+                                                    <span class="label label-icon label-success"><i class="nc-icon nc-chat-33"></i></span>
+                                                    <span class="message"><b>Patrick</b> mentioned you in a comment.</span>
+                                                    <br />
+                                                    <span class="time">20min ago</span>
+
+                                                    <button class="btn btn-just-icon read-notification btn-round">
+                                                        <i class="nc-icon nc-check-2"></i>
+                                                    </button>
+                                                </div>
+                                            </a>
+
+
+                                            <a href="#paper-kit" class="notification-item">
+                                               <div class="notification-text">
+                                                    <span class="label label-icon label-info"><i class="nc-icon nc-alert-circle-i"></i></span>
+
+                                                    <span class="message">Our privacy policy changed!</span>
+                                                    <br />
+                                                    <span class="time">1day ago</span>
+                                                </div>
+                                            </a>
+
+                                            <a href="#paper-kit" class="notification-item">
+                                                <div class="notification-text">
+                                                    <span class="label label-icon label-warning"><i class="nc-icon nc-ambulance"></i></span>
+
+                                                    <span class="message">Please confirm your email address.</span>
+                                                    <br />
+                                                    <span class="time">2days ago</span>
+                                                </div>
+                                            </a>
+                                            <a href="#paper-kit" class="notification-item">
+                                                <div class="notification-text">
+                                                    <span class="label label-icon label-primary"><i class="nc-icon nc-paper"></i></span>
+                                                    <span class="message">Have you thought about marketing?</span>
+                                                    <br />
+                                                    <span class="time">3days ago</span>
+                                                </div>
+                                            </a>
+                                        </ul>
+                                    </li>
+                                    <!-- end scroll area -->
+                                    <li class="dropdown-footer">
+                                        <ul class="dropdown-footer-menu">
+                                            <li>
+                                                <a href="#paper-kit">Mark all as read</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                                <!--<span class="label label-danger notification-bubble">2</span>-->
+                            </li>
+                            --}}
 
                         <li class="nav-item dropdown">
                             @if($personal_info)
