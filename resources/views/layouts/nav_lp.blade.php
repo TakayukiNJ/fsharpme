@@ -213,12 +213,12 @@
                             @endif
 
                             <ul class="dropdown-menu dropdown-menu-right dropdown-danger">
-                                <a class="dropdown-item" href="{{ url('/') }}/{{ Auth::user()->npo }}"><i class="nc-icon nc-money-coins"></i>&nbsp; {{ Auth::user()->npo }}</a>
+                                <a class="dropdown-item" href="{{ url('/') }}/{{ Auth::user()->npo }}"><i class="nc-icon nc-money-coins"></i>{{ Auth::user()->npo }}</a>
                         @endif
-                                <a class="dropdown-item" href="{{ url('home') }}/{{ Auth::user()->name }}"><i class="nc-icon nc-badge"></i>&nbsp; @lang('app.mypage')</a>
-                                <a class="dropdown-item" href="{{ url('home/home_register') }}"><i class="nc-icon nc-badge"></i>&nbsp; @lang('setting mypage')</a>
+                                <a class="dropdown-item" href="{{ url('home') }}/{{ Auth::user()->name }}"><i class="nc-icon nc-badge"></i> @lang('app.mypage')</a>
+                                <a class="dropdown-item" href="{{ url('home/home_register') }}"><i class="nc-icon nc-badge"></i> @lang('setting mypage')</a>
                                 <a class="dropdown-item" href="{{ url('/logout') }}" onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();"><i class="nc-icon nc-spaceship"></i>&nbsp; @lang('app.logout')</a>
+                                                 document.getElementById('logout-form').submit();"><i class="nc-icon nc-spaceship"></i> @lang('app.logout')</a>
                                 <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                     {{ csrf_field() }}
                                 </form>
