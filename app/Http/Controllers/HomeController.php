@@ -580,6 +580,12 @@ class HomeController extends Controller
             $auth_npo = $this_user->npo;
             $data["this_auth"] = $this_user;
         }else{
+
+            // ログインしていない場合、タイトルURLに飛ばす
+            if(!Auth::user()){
+                //dd(1);
+                return redirect('login');
+            }
             // ログインしている個人
             $id       = Auth::user()->id;
             $name     = Auth::user()->name;
