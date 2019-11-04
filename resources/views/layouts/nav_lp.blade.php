@@ -6,7 +6,7 @@
                     @if (Auth::guest())
                     <a class="navbar-brand" href="{{ url('/') }}">F♯</a>
                     @elseif (Auth::user()->npo)
-                    <a class="navbar-brand" href="{{ url('/home') }}/{{ Auth::user()->name }}">F♯</a>
+                    <a class="navbar-brand" href="/{{ Auth::user()->npo }}">{{ Auth::user()->npo }}</a>
                     @else
                     <a class="navbar-brand" href="{{ url('/') }}">F♯</a>
                     {{--<a class="navbar-brand" href="{{ url('/') }}/{{ Auth::user()->npo }}">F♯</a>--}}
@@ -217,7 +217,7 @@
                                 <a class="dropdown-item" href="{{ url('/') }}/{{ Auth::user()->npo }}"><i class="nc-icon nc-money-coins"></i>{{ Auth::user()->npo }}</a>
                         @endif
                                 <a class="dropdown-item" href="{{ url('home') }}/{{ Auth::user()->name }}"><i class="nc-icon nc-badge"></i> @lang('app.mypage')</a>
-                                <a class="dropdown-item" href="{{ url('home/home_register') }}"><i class="nc-icon nc-badge"></i> @lang('setting mypage')</a>
+                                <a class="dropdown-item" href="{{ url('home/home_register') }}"><i class="nc-icon nc-settings"></i> @lang('setting')</a>
                                 <a class="dropdown-item" href="{{ url('/logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();"><i class="nc-icon nc-spaceship"></i> @lang('app.logout')</a>
                                 <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
