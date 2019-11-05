@@ -212,19 +212,20 @@ class HomeController extends Controller
     // 自己紹介登録をリニューアル(2019年1月25日)
     public function home_register_update(Request $request)
     {
-        $rules = [
-            'image_id' => 'image',
-            'post_up' => 'numeric',
-            'home_tel' => 'numeric',
-            'bank_account_number' => 'numeric',
-        ];
-        $this -> validate($request, $rules);
+        //$this->middleware('auth');
+//        $rules = [
+//            'image_id' => 'image',
+//            'post_up' => 'numeric',
+//            'home_tel' => 'numeric',
+//            'bank_account_number' => 'numeric',
+//        ];
+//        $this -> validate($request, $rules);
+;
 
         $id_auth   = Auth::user()->id;
         $name_auth = Auth::user()->name;
         $user_auth = Auth::user()->email;
         $npo_auth  = Auth::user()->npo;
-        $this->middleware('auth');
 
         $data['npo_info_personal'] = [];
         $data['npo_info_enterprise'] = [];
@@ -259,12 +260,20 @@ class HomeController extends Controller
         $image_id = "";
         // 画像が空かチェック
         if(!empty($image_file)){
+
             // 画像の名前を取得
-            $image_id = time()."_".$image_file->getClientOriginalName();
+            $image_id = "test_".time()."_".$image_file->getClientOriginalName();
             // 画像をpublicの中に保存
-            // dd($resize_file);
-            Image::make($image_file)->resize(300, 300)->save( './img/personal_info/' . $image_id );
+//            dd($image_id);
+//            $image_file->store('public/img');
+//            $image_file->storeAs('public/img', $image_id);
+            $image_file->storeAs('public/img/personal_info', $image_id);
+//            dd($image_file);
+//            Image::make($image_file)->resize(300, 300)->save( './img/personal_info/' . $image_id );
+//            $a = Image::make($image_file)->resize(300, 300);
+//                dd(3);
             // 画像が入ってた時だけ最初に処理をしてしまう。
+//            dd("a");
             if(!empty($data['personal_info'])){
                 \DB::table('personal_info')->where('user_id', $user_auth)->update(['image_id' => $image_id]);
             }else{
