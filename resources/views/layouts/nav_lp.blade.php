@@ -203,7 +203,7 @@
                                 @if($personal_info->image_id)
                                     <a href="#paper-kit" class="nav-link navbar-brand" data-toggle="dropdown" width="30" height="30" style="margin-left:17px">
                                         <div class="profile-photo-small">
-                                            <img src='/img/personal_info/{{ $personal_info->image_id }}' alt="{{ Auth::user()->name }}" class="img-circle img-responsive img-no-padding">
+                                            <img src="{{ asset('/storage/img/personal_info/'.$image_id) }}" alt="{{ Auth::user()->name }}" class="img-circle img-responsive img-no-padding">
                                         </div>
                                     </a>
                                 @else
