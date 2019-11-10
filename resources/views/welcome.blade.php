@@ -9,7 +9,7 @@
     	<div class="content-center">
     		<div class="container">
     			<div class="title-brand">
-    				<h1 class="presentation-title"></h1>
+    				<h1 class="presentation-title">test from china</h1>
     				<!--<div class="type">F♯</div>-->
     			</div>
     			<h2 class="presentation-subtitle text-center">社会活動のための資金と人材を獲得できるWebサービス「F♯」</h2>
@@ -81,7 +81,7 @@
     		</div>
     	</div>
     </div>
-    
+
     <div id="features" class="team-5 section-image" style="background-image: url('/img/sections/martin-knize.jpg')">
         <div class="projects-1">
             <div class="container">

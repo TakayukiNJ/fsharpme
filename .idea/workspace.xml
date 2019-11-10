@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="20516ec6-be6d-40be-b8fa-a4ada8341456" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/nav_lp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/nav_lp.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,14 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="nav_lp.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/nav_lp.blade.php">
+      <file leaf-file-name="welcome.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="205" column="108" selection-start-line="205" selection-start-column="108" selection-end-line="205" selection-end-column="108" />
-              <folding>
-                <marker date="1573043652398" expanded="true" signature="9295:9533" ph="..." />
-              </folding>
+            <state relative-caret-position="209">
+              <caret line="11" column="66" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -89,6 +87,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/resources/views/home/home_register.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/nav_lp.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
       </list>
     </option>
   </component>
@@ -222,6 +221,17 @@
               <item name="fsharpv3" type="b2602c69:ProjectViewProjectNode" />
               <item name="fsharpv3" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="fsharpv3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fsharpv3" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fsharpv3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fsharpv3" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -272,12 +282,13 @@
       <workItem from="1572067432618" duration="499000" />
       <workItem from="1572185967251" duration="4558000" />
       <workItem from="1572257971789" duration="1632000" />
-      <workItem from="1572347683945" duration="16325000" />
+      <workItem from="1572347683945" duration="16589000" />
+      <workItem from="1573082700450" duration="361000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38083000" />
+    <option name="totallyTimeSpent" value="38708000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -289,11 +300,10 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3846154" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2657512" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3846154" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26979" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -303,6 +313,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,27 +323,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/npo_registers/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3838">
-          <caret line="202" column="21" lean-forward="true" selection-start-line="202" selection-start-column="21" selection-end-line="202" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/npo_registers/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3952">
-          <caret line="208" column="24" selection-start-line="208" selection-start-column="24" selection-end-line="208" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="760">
@@ -522,12 +512,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/img/JrfloPYadvlfTlSPLNvNFmixaAZMlMZgkfmqpPxY.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/c714b005425b634b93015ea97422fa96.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/app/public/img/JrfloPYadvlfTlSPLNvNFmixaAZMlMZgkfmqpPxY.jpeg" />
+    <entry file="file://$PROJECT_DIR$/public/storage/c714b005425b634b93015ea97422fa96.png" />
     <entry file="file://$PROJECT_DIR$/public/storage/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -538,25 +524,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/img/1572883632_04-44.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/img/1572883593_04-44.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/img/aaaaaaaaaaa1572883667_04-44.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/storage/img/JrfloPYadvlfTlSPLNvNFmixaAZMlMZgkfmqpPxY.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/storage/img/1572883632_04-44.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/storage/img/1572883593_04-44.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/storage/img/aaaaaaaaaaa1572883667_04-44.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/storage/img/JrfloPYadvlfTlSPLNvNFmixaAZMlMZgkfmqpPxY.jpeg" />
     <entry file="file://$PROJECT_DIR$/tests/Feature/ExampleTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-28">
           <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding>
-            <element signature="e#33#83#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -578,19 +553,39 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="607" lean-forward="true" selection-start-line="607" selection-end-line="607" />
-          <folding>
-            <element signature="e#40#62#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/nav_lp.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
+        <state relative-caret-position="282">
           <caret line="205" column="108" selection-start-line="205" selection-start-column="108" selection-end-line="205" selection-end-column="108" />
           <folding>
+            <element signature="e#2836#2843#1#HTML" expanded="true" />
+            <element signature="e#2985#2991#0#HTML" expanded="true" />
+            <element signature="e#8595#8601#1#HTML" expanded="true" />
             <marker date="1573043652398" expanded="true" signature="9295:9533" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="152">
+            <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="66" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
         </state>
       </provider>
     </entry>
