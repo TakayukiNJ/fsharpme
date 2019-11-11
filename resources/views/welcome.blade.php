@@ -9,7 +9,7 @@
     	<div class="content-center">
     		<div class="container">
     			<div class="title-brand">
-    				<h1 class="presentation-title">test from china</h1>
+    				<h1 class="presentation-title"></h1>
     				<!--<div class="type">F♯</div>-->
     			</div>
     			<h2 class="presentation-subtitle text-center">社会活動のための資金と人材を獲得できるWebサービス「F♯」</h2>
