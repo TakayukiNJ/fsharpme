@@ -79,7 +79,9 @@ Route::post('/menu', 'BooksController@index');
 // D-0 コミュニティ機能
 // PostsController.php
 /*********************/
-Route::get('/chat', 'PostsController@index');
+Route::get('/chat', 'PostsController@list');
+//Route::get('/chat', 'PostsController@list')->middleware('auth');
+
 //いいね処理
 Route::post('posts/good', 'PostsController@good');
 //シェア処理
@@ -205,7 +207,9 @@ Route::post('/home/{name}', 'HomeController@home_own_timeline');
 Route::get('/home/{name}', 'HomeController@home_own_timeline');
 
 // 2019年11/14追加
-Route::get('/home/chat', 'ChatController@chat_list');
+//Route::get('/home/chat', 'ChatController@chat_list')->middleware('auth');
+
+Route::post('/home/chat', 'ChatController@list');
 //Route::get('/home/{name}/chat', 'ChatController@chat_list');
 
 //ホーム画面投資家や選手のタイムライン
