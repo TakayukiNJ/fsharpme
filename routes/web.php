@@ -204,6 +204,10 @@ Route::get('/home/home_own_timeline', 'HomeController@home_own_timeline');
 Route::post('/home/{name}', 'HomeController@home_own_timeline');
 Route::get('/home/{name}', 'HomeController@home_own_timeline');
 
+// 2019年11/14追加
+Route::get('/home/chat', 'ChatController@chat_list');
+//Route::get('/home/{name}/chat', 'ChatController@chat_list');
+
 //ホーム画面投資家や選手のタイムライン
 Route::post('/home/home_outer_timeline/{folder_name}', 'HomeController@home_outer_timeline');
 //検索画面
