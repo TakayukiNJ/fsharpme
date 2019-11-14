@@ -14,7 +14,13 @@ class PostsController extends Controller
     }
     public function index()
     {
-        return view('chat/chat');
+//        dd(2);
+        return view('chat/list');
+    }
+
+    public function list()
+    {
+        return view('chat/list');
     }
     // いいね処理
     public function good(Request $request)

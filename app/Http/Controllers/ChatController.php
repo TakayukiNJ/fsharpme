@@ -14,18 +14,27 @@ class ChatController extends Controller
     {
       $this->middleware('auth');
     }
+    public function index()
+    {
+        return view('chat/list');
+    }
 
-    public function chat_list() {
+    public function list()
+    {
+        return view('chat/list');
+    }
 
+    public function chat_list(Request $request){
+        dd("a");
         return view('chat/list'); // フォームページのビュー
 
     }
 
-    public function index() {
-
-        return view('chat/chat'); // フォームページのビュー
-
-    }
+//    public function index() {
+//
+//        return view('chat/chat'); // フォームページのビュー
+//
+//    }
 
     /**
      * Fetch all messages
