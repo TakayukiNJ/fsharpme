@@ -10,18 +10,25 @@ use Carbon\Carbon;
 
 class ChatController extends Controller
 {
-    public function __construct()
-    {
-      $this->middleware('auth');
-    }
+//    public function __construct()
+//    {
+//      $this->middleware('auth');
+//    }
+
     public function index()
     {
+        dd(3);
         return view('chat/list');
     }
 
     public function list()
     {
-        return view('chat/list');
+        $name = Auth::user()->name;
+        $user = Auth::user()->email;
+        $npo = Auth::user()->npo;
+
+        $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user)->first();
+        return view('chat/list', $data);
     }
 
     public function chat_list(Request $request){

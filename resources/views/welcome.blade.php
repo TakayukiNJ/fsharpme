@@ -2,7 +2,6 @@
 @include('layouts.welcome_head')
 @include('layouts.welcome_script')
 @include('layouts.nav_lp')
-@include('layouts.welcome_script')
 @section('welcome_content')
 <body class="presentation-page loading">
     <div class="page-header section-dark" style="background-image: url('/img/farid-askerov.jpg')">

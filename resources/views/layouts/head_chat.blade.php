@@ -1,4 +1,4 @@
-@section('head_npo_lp')
+@section('head_chat')
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <!-- CSRF Token -->
