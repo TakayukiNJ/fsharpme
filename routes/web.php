@@ -38,6 +38,8 @@ use App\Http\Requests;
 //scaffold
 //Route::resource("tasks","TaskController"); // Add this line in routes.php
 
+Route::get('/home/chat', 'ChatController@list');
+Route::post('/home/chat', 'ChatController@list');
 /*********************/
 // A-0 ログイン機能
 // Auth/LoginController.php
@@ -209,6 +211,7 @@ Route::get('/home/{name}', 'HomeController@home_own_timeline');
 // 2019年11/14追加
 //Route::get('/home/chat', 'ChatController@chat_list')->middleware('auth');
 
+Route::get('/home/chat', 'ChatController@list');
 Route::post('/home/chat', 'ChatController@list');
 //Route::get('/home/{name}/chat', 'ChatController@chat_list');
 
