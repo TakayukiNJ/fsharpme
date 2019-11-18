@@ -487,11 +487,8 @@
                                         <div class="card-img-top">
                                             <a href="{{ url('/home') }}/{{$npo_info->$member}}">
                                                 @if($personal_info_image_id[$i])
-                                                    <img class="img" src="{{ !$personal_info_image_id[$i] ? 'img/placeholder.jpg' : "asset('storage/img/personal_info/".$personal_info_image_id[$i]."')"}}/>
+                                                    <img class="img" src="{{ !$personal_info_image_id[$i] ? 'img/placeholder.jpg' : asset('storage/img/personal_info/'.$personal_info_image_id[$i]) }}"/>
                                                 @else
-
-                                                    <img src="{{ asset('storage/img/personal_info/'.$this_personal_info->image_id) }}" alt="{{ $this_auth->name }}">
-
                                                     <img class="img" src="{{ url('/') }}/../img/placeholder.jpg"/>
                                                 @endif
                                             </a>
