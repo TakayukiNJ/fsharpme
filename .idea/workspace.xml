@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="20516ec6-be6d-40be-b8fa-a4ada8341456" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/home_own_timeline.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/home_own_timeline.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/npo_registers/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/npo_registers/create.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,8 +22,8 @@
       <file leaf-file-name="npo_landing_page.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="489" column="200" lean-forward="true" selection-start-line="489" selection-start-column="200" selection-end-line="489" selection-end-column="200" />
+            <state relative-caret-position="298">
+              <caret line="489" column="199" selection-start-line="489" selection-start-column="199" selection-end-line="489" selection-end-column="199" />
             </state>
           </provider>
         </entry>
@@ -342,12 +339,12 @@
       <workItem from="1572185967251" duration="4558000" />
       <workItem from="1572257971789" duration="1632000" />
       <workItem from="1572347683945" duration="16589000" />
-      <workItem from="1573082700450" duration="9718000" />
+      <workItem from="1573082700450" duration="10437000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48065000" />
+    <option name="totallyTimeSpent" value="48784000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -359,8 +356,8 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.2863248" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8562874" visible="true" weight="0.26979" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.2863248" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8562874" visible="true" weight="0.26979" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
@@ -667,8 +664,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="489" column="200" lean-forward="true" selection-start-line="489" selection-start-column="200" selection-end-line="489" selection-end-column="200" />
+        <state relative-caret-position="298">
+          <caret line="489" column="199" selection-start-line="489" selection-start-column="199" selection-end-line="489" selection-end-column="199" />
         </state>
       </provider>
     </entry>
