@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="20516ec6-be6d-40be-b8fa-a4ada8341456" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ChatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ChatController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/head_chat.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/head_chat.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/home_own_timeline.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/home_own_timeline.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/npo_registers/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/npo_registers/create.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="head_chat.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/head_chat.blade.php">
+      <file leaf-file-name="npo_landing_page.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="19" selection-start-column="19" selection-end-column="19" />
+            <state relative-caret-position="297">
+              <caret line="489" column="200" lean-forward="true" selection-start-line="489" selection-start-column="200" selection-end-line="489" selection-end-column="200" />
             </state>
           </provider>
         </entry>
@@ -36,8 +35,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>\Http\Controllers\HomeController::home_own_timeline</find>
-      <find>npo</find>
       <find>Auth::routes();</find>
       <find>HomeController@index'</find>
       <find>$errors</find>
@@ -66,6 +63,8 @@
       <find>home/chat</find>
       <find>carbon</find>
       <find>/home/chat</find>
+      <find>団体名 ※あとで変更不可</find>
+      <find>register org</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -79,10 +78,8 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/TrustProxies.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
-        <option value="$PROJECT_DIR$/resources/views/npo_registers/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Npo_registerController.php" />
         <option value="$PROJECT_DIR$/resources/views/npo_registers/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/lang/en/app.php" />
         <option value="$PROJECT_DIR$/resources/lang/ja/app.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/head.blade.php" />
@@ -103,6 +100,10 @@
         <option value="$PROJECT_DIR$/resources/views/chat/list.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/common_chat.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/head_chat.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/npo_registers/create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/lang/en/app.php" />
+        <option value="$PROJECT_DIR$/resources/views/home/home_own_timeline.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php" />
       </list>
     </option>
   </component>
@@ -270,7 +271,14 @@
               <item name="fsharpv3" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fsharpv3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fsharpv3" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="npo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="fsharpv3" type="b2602c69:ProjectViewProjectNode" />
@@ -334,12 +342,12 @@
       <workItem from="1572185967251" duration="4558000" />
       <workItem from="1572257971789" duration="1632000" />
       <workItem from="1572347683945" duration="16589000" />
-      <workItem from="1573082700450" duration="8268000" />
+      <workItem from="1573082700450" duration="9718000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46615000" />
+    <option name="totallyTimeSpent" value="48065000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -355,6 +363,7 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8562874" visible="true" weight="0.26979" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" sideWeight="0.14371258" side_tool="true" visible="true" weight="0.26979" />
@@ -364,7 +373,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,16 +382,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/TrustProxies.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/auth.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1870" />
@@ -406,24 +404,10 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MikujiController.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/npo_registers/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="71" column="42" selection-start-line="57" selection-start-column="42" selection-end-line="71" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/npo_registers/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="202" column="21" selection-start-line="202" selection-start-column="21" selection-end-line="202" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/en/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -609,16 +593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/nav_lp.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3895">
-          <caret line="205" column="44" selection-start-line="205" selection-start-column="44" selection-end-line="205" selection-end-column="44" />
-          <folding>
-            <marker date="1574004229617" expanded="true" signature="9295:9533" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/welcome_common.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -633,9 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/head.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/chat/list.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -643,8 +614,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/common.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/head_chat.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="27" column="69" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/common_chat.blade.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -653,10 +628,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/head_chat.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/common.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/head.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/nav_lp.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" selection-start-column="19" selection-end-column="19" />
+        <state relative-caret-position="144">
+          <caret line="198" column="32" lean-forward="true" selection-start-line="198" selection-start-column="32" selection-end-line="198" selection-end-column="32" />
+          <folding>
+            <marker date="1574004229617" expanded="true" signature="9295:9533" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/npo_registers/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="41" column="75" selection-start-line="41" selection-start-column="75" selection-end-line="41" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/en/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home/home_own_timeline.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="18" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="489" column="200" lean-forward="true" selection-start-line="489" selection-start-column="200" selection-end-line="489" selection-end-column="200" />
         </state>
       </provider>
     </entry>

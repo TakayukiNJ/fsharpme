@@ -255,7 +255,7 @@
                                                      </form>
                                                     {{-- data-description="寄付後にユーザー名と画像が自動記載"--}}
                                                 @endif
-                                                
+
                                                 <style type="text/css">
                                                 button.stripe-button-el,
                                                 button.stripe-button-el>span {
@@ -263,7 +263,7 @@
                                                   background-image: none;
                                                 }
                                                 </style>
-                                                
+
                                             </div>
                                         </div>
                                     </div>
@@ -394,7 +394,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -487,9 +487,12 @@
                                         <div class="card-img-top">
                                             <a href="{{ url('/home') }}/{{$npo_info->$member}}">
                                                 @if($personal_info_image_id[$i])
-                                                    <img class="img" src="{{ !$personal_info_image_id[$i] ? 'img/placeholder.jpg' : '/img/personal_info/'.$personal_info_image_id[$i]}}"/>
+                                                    <img class="img" src="{{ !$personal_info_image_id[$i] ? 'img/placeholder.jpg' : "asset('storage/img/personal_info/".$personal_info_image_id[$i]."')"}}/>
                                                 @else
-                                                <img class="img" src="{{ url('/') }}/../img/placeholder.jpg"/>
+
+                                                    <img src="{{ asset('storage/img/personal_info/'.$this_personal_info->image_id) }}" alt="{{ $this_auth->name }}">
+
+                                                    <img class="img" src="{{ url('/') }}/../img/placeholder.jpg"/>
                                                 @endif
                                             </a>
                                         </div>
@@ -516,7 +519,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="cd-section section-white" id="chats">
             <div class="container">
                 <div class="space-top"></div>
@@ -539,11 +542,11 @@
                         </form>
 	                    @endif
 	                </div>
-	                
+
                     <div class="col-md-8 ml-auto mr-auto">
                     <div class="media">
                     </div>
-                    
+
                     @for ($i = 1; $i < count($message); $i++)
                     <div class="media">
                         <a class="pull-left" href="#paper-kit">
@@ -565,13 +568,13 @@
                         </div>
                         <p> {{ $created[$i] }}</p>
                     </div>
-                    
+
                     @endfor
                     </div>
                 </div>
             </div>
         </div>
-        
+
     </div>
     {{--
     @if($mail_message == "")

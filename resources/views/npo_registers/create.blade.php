@@ -39,7 +39,7 @@
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     @if ((Auth::user()->npo) == "")
                                     <div class="form-group @if($errors->has('title')) has-error @endif">
-                                        <label for="title-field">団体名 ※あとで変更不可</label>
+                                        <label for="title-field">団体名(半角英数) ※あとで変更不可</label>
                                         @if($errors->has("title"))
                                             <br><span class="help-block">{{ $errors->first("title") }}</span>
                                         @endif

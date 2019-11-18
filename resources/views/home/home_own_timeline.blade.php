@@ -15,7 +15,7 @@
                         <div class="fileinput-new img-no-padding text-center">
                             @if($this_personal_info)
                                 @if($this_personal_info->image_id)
-                                    <img src='/img/personal_info/{{ $this_personal_info->image_id }}' alt="{{ $this_auth->name }}">
+                                    <img src="{{ asset('storage/img/personal_info/'.$this_personal_info->image_id) }}" alt="{{ $this_auth->name }}">
                                 @else
                                     <img src="{{ url('/') }}/../img/placeholder.jpg" alt="default">
                                 @endif
@@ -501,7 +501,7 @@
                                                 @if($this_user_npo_info_proval[$i]->support_contents_detail)
                                                     <br>期限：{{ Carbon\Carbon::parse($this_user_npo_info_proval[$i]->support_contents_detail)->format('Y年m月d日H:i') }}
                                                 @endif
-                                                    
+
         									</small></h6>
                                         </div>
                                         <div class="col-md-3 col-2">
@@ -566,7 +566,7 @@ function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
 }
- 
+
 function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("myOverlay").style.display = "none";
