@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="20516ec6-be6d-40be-b8fa-a4ada8341456" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/resources/views/chat/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/chat/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/common_chat.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/common_chat.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,8 +22,8 @@
       <file leaf-file-name="list.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/chat/list.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="63" column="41" lean-forward="true" selection-start-line="63" selection-start-column="41" selection-end-line="65" selection-end-column="38" />
+            <state relative-caret-position="307">
+              <caret line="44" column="91" selection-start-line="44" selection-start-column="91" selection-end-line="44" selection-end-column="91" />
             </state>
           </provider>
         </entry>
@@ -347,12 +346,12 @@
       <workItem from="1572185967251" duration="4558000" />
       <workItem from="1572257971789" duration="1632000" />
       <workItem from="1572347683945" duration="16589000" />
-      <workItem from="1573082700450" duration="11496000" />
+      <workItem from="1573082700450" duration="12121000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49843000" />
+    <option name="totallyTimeSpent" value="50468000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -364,8 +363,8 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.2863248" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8562874" visible="true" weight="0.26979" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.2863248" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8562874" visible="true" weight="0.26979" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
@@ -676,8 +675,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/chat/list.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="63" column="41" lean-forward="true" selection-start-line="63" selection-start-column="41" selection-end-line="65" selection-end-column="38" />
+        <state relative-caret-position="307">
+          <caret line="44" column="91" selection-start-line="44" selection-start-column="91" selection-end-line="44" selection-end-column="91" />
         </state>
       </provider>
     </entry>

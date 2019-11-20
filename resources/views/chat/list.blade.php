@@ -40,8 +40,10 @@
                                                 <small>Musical Artist with <b>3</b> songs.</small>
                                             </h5>
                                         </div>
-                                        <div class="col-md-2 col-2">
-                                            <button class="btn btn-just-icon btn-round btn-outline-danger btn-tooltip" rel="tooltip" title="follow"><i class="fa fa-plus"></i></button>
+                                        <div class="col-md-2 col-2 nav-item">
+                                            {{--<span class="label label-danger notification-bubble">2</span>--}}
+                                            {{--<button type="button" class="btn btn-danger btn-just-icon btn-lg"><i class="nc-icon nc-chat-33"></i></button>--}}
+                                            <button type="button" class="btn btn-default btn-just-icon btn-lg"><i class="nc-icon nc-chat-33"></i></button>
                                         </div>
                                     </div>
                                 </li>
