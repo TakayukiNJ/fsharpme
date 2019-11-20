@@ -6,7 +6,7 @@
   @yield('script')
 </head>
 
-<body class="presentation-page loading">
+<body class="search">
   @yield('nav_lp')
   @yield('headers')
   @yield('content')
