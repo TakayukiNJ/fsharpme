@@ -124,7 +124,7 @@
                         <!-- message 用編集 -->
                         <!--GRAY-->
                         <li class="nav-item">
-                            <a href="#paper-kit" class="btn btn-just-icon" data-toggle="dropdown">
+                            <a href="{{ url('/') }}/chat" class="btn btn-just-icon">
                                 <i class="nc-icon nc-email-85"></i>
                             </a>
                         </li>
@@ -199,7 +199,7 @@
                             --}}
 
                         <li class="nav-item dropdown">
-                            @if($personal_info)
+                            @if($personal_info ?? '')
                                 @if($personal_info->image_id)
                                     <a href="#paper-kit" class="nav-link navbar-brand" data-toggle="dropdown" width="30" height="30" style="margin-left:17px">
                                         <div class="profile-photo-small">
