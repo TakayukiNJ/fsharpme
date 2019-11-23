@@ -124,7 +124,7 @@
                         <!-- message 用編集 -->
                         <!--GRAY-->
                         <li class="nav-item">
-                            <a href="{{ url('/') }}/chat" class="btn btn-just-icon">
+                            <a href="{{ url('/') }}/home/chat/list" class="btn btn-just-icon">
                                 <i class="nc-icon nc-email-85"></i>
                             </a>
                         </li>
