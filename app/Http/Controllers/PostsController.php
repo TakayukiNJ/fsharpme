@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Auth;
 
 class PostsController extends Controller
 {
@@ -20,7 +21,13 @@ class PostsController extends Controller
 
     public function list()
     {
-        return view('chat/list');
+        $name = Auth::user()->name;
+        $user = Auth::user()->email;
+        $npo = Auth::user()->npo;
+
+        $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user)->first();
+//        dd($data);
+        return view('chat/list', $data);
     }
     // いいね処理
     public function good(Request $request)

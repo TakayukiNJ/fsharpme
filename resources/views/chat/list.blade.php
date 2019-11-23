@@ -27,7 +27,7 @@
                                         <div class="col-md-2 col-3">
                                             @if($personal_info ?? '')
                                                 @if($personal_info->image_id)
-                                                    <img src="{{ asset('storage/img/personal_info/'.$personal_info->image_id) }}" alt="{{ $auth->name }}" class="img-circle img-no-padding img-responsive">
+                                                    <img src="{{ asset('storage/img/personal_info/'.$personal_info->image_id) }}" alt="image" class="img-circle img-no-padding img-responsive">
                                                 @else
                                                     <img src="{{ url('/') }}/../img/placeholder.jpg" alt="default" class="img-circle img-no-padding img-responsive">
                                                 @endif

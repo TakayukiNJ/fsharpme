@@ -210,9 +210,8 @@ Route::get('/home/{name}', 'HomeController@home_own_timeline');
 
 // 2019年11/14追加
 //Route::get('/home/chat', 'ChatController@chat_list')->middleware('auth');
-
-Route::get('/home/chat', 'ChatController@list');
-Route::post('/home/chat', 'ChatController@list');
+Route::get('/home/chat/list', 'PostsController@list')->middleware('auth');;
+Route::post('/home/chat/list', 'PostsController@list')->middleware('auth');;
 //Route::get('/home/{name}/chat', 'ChatController@chat_list');
 
 //ホーム画面投資家や選手のタイムライン
