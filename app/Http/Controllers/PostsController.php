@@ -26,6 +26,8 @@ class PostsController extends Controller
         $npo = Auth::user()->npo;
 
         $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user)->first();
+        $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user)->first();
+
 //        dd($data);
         return view('chat/list', $data);
     }
