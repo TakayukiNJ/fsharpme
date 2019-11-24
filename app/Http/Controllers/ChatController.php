@@ -29,6 +29,51 @@ class ChatController extends Controller
         $npo = Auth::user()->npo;
 
         $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user)->first();
+        $all_messages          = \DB::table('messages')->where('from', $name)->get();
+        // 2通以上送っているかどうかチェック
+        $check = [];
+        for($i=0; $i<count($all_messages); $i++){
+            $check_1 = $all_messages[$i]->to;
+//            $ = $org->subtitle;
+            $key = in_array($check_1, $check);
+            if($key){
+//                dd(2);
+            }else{
+//                dd(1);
+                array_push($check, $all_messages[$i]->to);
+            }
+        }
+
+        dd($check);
+
+
+            dd($all_messages);
+        $all_messages_to_check = \DB::table('messages')->where('from', $name)->get();
+        $data['message_to'] = [];
+//        dd(count($all_messages));
+        for($i=0; $i<count($all_messages); $i++){
+            // もしまだ読んでいなければ+1
+            $new_message = 0;
+            if(0 == $all_messages[$i]->read_flg){
+                $new_message = 1;
+            }
+            $org = \DB::table('npo_registers')->where('npo_name', $all_messages[$i]->to)->first();
+            $project_search = $org->subtitle;
+            $project_key = array_key_exists($project_search, $data['message_to']);
+            if($project_key){
+                dd(2);
+            }
+            array_push($data['message_to'], [$org->title => [$org->subtitle => ['new_messages' => 0]]]);
+//            array($data['project_name2'][0], $org->npo_name));
+//            array_push($data['project_name'][1], $org->npo_name);
+//            array_push($data['project_name2'], $org->npo_name);
+//            dd($data['project_name2'][1]);
+//          $data['project_name'] += $all_messages[$i]->to;
+//          $data['project_total_price'] += $project_total_price;
+        }
+//        dd($data);
+        dd($data);
+        dd($all_messages);
         return view('chat/list', $data);
     }
 

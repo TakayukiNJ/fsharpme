@@ -302,7 +302,7 @@ class Npo_registerController extends Controller {
             $parcentage = round($par,2); // 切捨て整数化
         }
         $data['mail_message'] = $mail_message;
-        $data['parcentage']             = $parcentage;
+        $data['parcentage']   = $parcentage;
         // if($currentNpoInfo->support_price){
         //     $par = ($currency_amount / $currentNpoInfo->support_price) * 100; //指定値「現在いくらか」を最大値(目標値)で割った後、100を掛ける
         //     $parcentage = round($par,2); // 切捨て整数化
