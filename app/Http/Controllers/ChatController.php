@@ -26,7 +26,6 @@ class ChatController extends Controller
     {
         $name = Auth::user()->name;
         $user = Auth::user()->email;
-        $npo = Auth::user()->npo;
 
         $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user)->first();
         $all_messages          = \DB::table('messages')->where('from', $name)->get();
@@ -40,33 +39,15 @@ class ChatController extends Controller
             }
         }
 
-        $all_messages_to_check = \DB::table('messages')->where('from', $name)->count();
+//        $all_messages_to_check = \DB::table('messages')->where('from', $name)->count();
         $data['message_to'] = [];
-//        dd(count($all_messages));
         for($i=0; $i<count($check_message_to); $i++){
-            $unread_count = 0;
+            // 新規メッセージ数カウント
             $unread_count = \DB::table('messages')->where('from', $name)->where('to', $check_message_to[$i])->where('read_flg', 0)->count();
-//            $new_message = 0;
-//            if(0 != $unread_count){
-//                $new_message = $unread_count;
-//            }
-            $org = \DB::table('npo_registers')->where('npo_name', $all_messages[$i]->to)->first();
-            $project_search = $org->subtitle;
-            $project_key = array_key_exists($project_search, $data['message_to']);
-            if($project_key){
-//                dd(2);
-            }
-            array_push($data['message_to'], [$org->title => [$org->subtitle => ['new_messages' => $unread_count]]]);
-//            array($data['project_name2'][0], $org->npo_name));
-//            array_push($data['project_name'][1], $org->npo_name);
-//            array_push($data['project_name2'], $org->npo_name);
-//            dd($data['project_name2'][1]);
-//          $data['project_name'] += $all_messages[$i]->to;
-//          $data['project_total_price'] += $project_total_price;
+            // $data['message_to']に全データを格納
+            $org = \DB::table('npo_registers')->where('npo_name', $check_message_to[$i])->first();
+            array_push($data['message_to'], [$org->title => [$org->npo_name => ['new_messages' => $unread_count]]]);
         }
-//        dd($i);
-        dd($data);
-        dd($all_messages);
         return view('chat/list', $data);
     }
 
