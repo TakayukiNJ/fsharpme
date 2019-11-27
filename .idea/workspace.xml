@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="20516ec6-be6d-40be-b8fa-a4ada8341456" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/fsharpv3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fsharpv3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ChatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ChatController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,8 +26,8 @@
       <file leaf-file-name="ChatController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ChatController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="47" column="106" selection-start-line="47" selection-start-column="106" selection-end-line="47" selection-end-column="106" />
+            <state relative-caret-position="347">
+              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
@@ -216,6 +220,7 @@
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
       <path value="$PROJECT_DIR$/vendor/stripe/stripe-php" />
       <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
@@ -350,12 +355,12 @@
       <workItem from="1572257971789" duration="1632000" />
       <workItem from="1572347683945" duration="16589000" />
       <workItem from="1573082700450" duration="12366000" />
-      <workItem from="1574325166582" duration="7948000" />
+      <workItem from="1574325166582" duration="9602000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58661000" />
+    <option name="totallyTimeSpent" value="60315000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -669,8 +674,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Npo_registerController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="255" column="34" lean-forward="true" selection-start-line="255" selection-start-column="34" selection-end-line="256" selection-end-column="82" />
+        <state relative-caret-position="270">
+          <caret line="346" column="14" selection-start-line="346" selection-start-column="14" selection-end-line="346" selection-end-column="14" />
           <folding>
             <element signature="e#39#61#0#PHP" expanded="true" />
           </folding>
@@ -679,8 +684,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ChatController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="47" column="106" selection-start-line="47" selection-start-column="106" selection-end-line="47" selection-end-column="106" />
+        <state relative-caret-position="347">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
