@@ -22,31 +22,44 @@
 
                             <h6 class="text-muted">Contact List</h6>
                             <ul class="list-unstyled follows">
-                                <li>
-                                    <div class="row">
-                                        <div class="col-md-2 col-3">
-                                            @if($personal_info ?? '')
-                                                @if($personal_info->image_id)
-                                                    <img src="{{ asset('storage/img/personal_info/'.$personal_info->image_id) }}" alt="image" class="img-circle img-no-padding img-responsive">
+
+                                @for ($i = 0; $i < count($message_to); $i++)
+                                    @foreach ($message_to[$i] as $title_key => $value1)
+                                    @foreach ($value1 as $npo_name_key => $value2)
+                                    @foreach ($value2 as $unread_count => $value3)
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-2 col-3">
+                                                @if($personal_info ?? '')
+                                                    @if($personal_info->image_id)
+                                                        <img src="{{ asset('storage/img/personal_info/'.$personal_info->image_id) }}" alt="image" class="img-circle img-no-padding img-responsive">
+                                                    @else
+                                                        <img src="{{ url('/') }}/../img/placeholder.jpg" alt="default" class="img-circle img-no-padding img-responsive">
+                                                    @endif
                                                 @else
                                                     <img src="{{ url('/') }}/../img/placeholder.jpg" alt="default" class="img-circle img-no-padding img-responsive">
                                                 @endif
-                                            @else
-                                                <img src="{{ url('/') }}/../img/placeholder.jpg" alt="default" class="img-circle img-no-padding img-responsive">
-                                            @endif
+                                            </div>
+                                            <div class="col-md-6 col-4 description">
+                                                <h5>{{ $title_key }}
+                                                    <br>
+                                                    <small>{{ $npo_name_key }}</small>
+                                                    @if(0 != $value3)
+                                                    <small>未読 <b>{{ $value3 }}</b>件</small>
+                                                    @endif
+                                                </h5>
+                                            </div>
+                                            <div class="col-md-2 col-2 nav-item">
+                                                {{--<span class="label label-danger notification-bubble">2</span>--}}
+                                                {{--<button type="button" class="btn btn-danger btn-just-icon btn-lg"><i class="nc-icon nc-chat-33"></i></button>--}}
+                                                <button type="button" class="btn btn-default btn-just-icon btn-lg"><i class="nc-icon nc-chat-33"></i></button>
+                                            </div>
                                         </div>
-                                        <div class="col-md-6 col-4 description">
-                                            <h5>Erik Faker<br>
-                                                <small>Musical Artist with <b>3</b> songs.</small>
-                                            </h5>
-                                        </div>
-                                        <div class="col-md-2 col-2 nav-item">
-                                            {{--<span class="label label-danger notification-bubble">2</span>--}}
-                                            {{--<button type="button" class="btn btn-danger btn-just-icon btn-lg"><i class="nc-icon nc-chat-33"></i></button>--}}
-                                            <button type="button" class="btn btn-default btn-just-icon btn-lg"><i class="nc-icon nc-chat-33"></i></button>
-                                        </div>
-                                    </div>
-                                </li>
+                                    </li>
+                                    @endforeach
+                                    @endforeach
+                                    @endforeach
+                                @endfor
                                 {{--<li>--}}
                                     {{--<div class="row">--}}
                                         {{--<div class="col-md-2 col-3">--}}

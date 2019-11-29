@@ -39,7 +39,6 @@ class ChatController extends Controller
             }
         }
 
-//        $all_messages_to_check = \DB::table('messages')->where('from', $name)->count();
         $data['message_to'] = [];
         for($i=0; $i<count($check_message_to); $i++){
             // 新規メッセージ数カウント
@@ -48,11 +47,11 @@ class ChatController extends Controller
             $org = \DB::table('npo_registers')->where('npo_name', $check_message_to[$i])->first();
             array_push($data['message_to'], [$org->title => [$org->npo_name => ['new_messages' => $unread_count]]]);
         }
+//        dd($data['message_to'][0]);
         return view('chat/list', $data);
     }
 
     public function chat_list(Request $request){
-        dd("a");
         return view('chat/list'); // フォームページのビュー
 
     }
