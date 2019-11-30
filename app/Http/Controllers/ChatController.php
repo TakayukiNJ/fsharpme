@@ -28,7 +28,7 @@ class ChatController extends Controller
         $user = Auth::user()->email;
 
         $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user)->first();
-        $all_messages          = \DB::table('messages')->where('from', $name)->get();
+        $all_messages          = \DB::table('messages')->where('from', $name)->orderBy('id', 'DESC')->get();
         // 2通以上送っているかどうかチェック
         $check_message_to = [];
         for($i=0; $i<count($all_messages); $i++){
@@ -45,7 +45,7 @@ class ChatController extends Controller
             $unread_count = \DB::table('messages')->where('from', $name)->where('to', $check_message_to[$i])->where('read_flg', 0)->count();
             // $data['message_to']に全データを格納
             $org = \DB::table('npo_registers')->where('npo_name', $check_message_to[$i])->first();
-            array_push($data['message_to'], [$org->title => [$org->npo_name => ['new_messages' => $unread_count]]]);
+            array_push($data['message_to'], [$org->title => [$org->subtitle => ['new_messages' => $unread_count]]]);
         }
 //        dd($data['message_to'][0]);
         return view('chat/list', $data);
