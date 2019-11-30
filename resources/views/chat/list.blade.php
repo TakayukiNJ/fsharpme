@@ -25,7 +25,7 @@
 
                                 @for ($i = 0; $i < count($message_to); $i++)
                                     @foreach ($message_to[$i] as $title_key => $value1)
-                                    @foreach ($value1 as $npo_name_key => $value2)
+                                    @foreach ($value1 as $subtitle_key => $value2)
                                     @foreach ($value2 as $unread_count => $value3)
                                     <li>
                                         <div class="row">
@@ -41,9 +41,9 @@
                                                 @endif
                                             </div>
                                             <div class="col-md-6 col-4 description">
-                                                <h5>{{ $title_key }}
+                                                <h5>{{ $subtitle_key }}
                                                     <br>
-                                                    <small>{{ $npo_name_key }}</small>
+                                                    <small>{{ $title_key }}</small>
                                                     @if(0 != $value3)
                                                     <small>未読 <b>{{ $value3 }}</b>件</small>
                                                     @endif
