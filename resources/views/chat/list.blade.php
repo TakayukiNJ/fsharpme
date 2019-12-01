@@ -29,30 +29,34 @@
                                     @foreach ($value2 as $unread_count => $value3)
                                     <li>
                                         <div class="row">
-                                            <div class="col-md-2 col-3">
-                                                @if($personal_info ?? '')
-                                                    @if($personal_info->image_id)
-                                                        <img src="{{ asset('storage/img/personal_info/'.$personal_info->image_id) }}" alt="image" class="img-circle img-no-padding img-responsive">
-                                                    @else
-                                                        <img src="{{ url('/') }}/../img/placeholder.jpg" alt="default" class="img-circle img-no-padding img-responsive">
+                                            {{--<div class="col-md-2 col-3">--}}
+                                                {{--@if($personal_info ?? '')--}}
+                                                    {{--@if($personal_info->image_id)--}}
+                                                        {{--<img src="{{ asset('storage/img/personal_info/'.$personal_info->image_id) }}" alt="image" class="img-circle img-no-padding img-responsive">--}}
+                                                    {{--@else--}}
+                                                        {{--<img src="{{ url('/') }}/../img/placeholder.jpg" alt="default" class="img-circle img-no-padding img-responsive">--}}
+                                                    {{--@endif--}}
+                                                {{--@else--}}
+                                                    {{--<img src="{{ url('/') }}/../img/placeholder.jpg" alt="default" class="img-circle img-no-padding img-responsive">--}}
+                                                {{--@endif--}}
+                                            {{--</div>--}}
+                                            <div class="col-md-10 col-9 description">
+                                                <h5>
+                                                    {{ $subtitle_key }}
+                                                    @if(0 < $value3)
+                                                        <small class="text-danger">未読 <b >{{ $value3 }}</b>件</small>
                                                     @endif
-                                                @else
-                                                    <img src="{{ url('/') }}/../img/placeholder.jpg" alt="default" class="img-circle img-no-padding img-responsive">
-                                                @endif
-                                            </div>
-                                            <div class="col-md-6 col-4 description">
-                                                <h5>{{ $subtitle_key }}
                                                     <br>
-                                                    <small>{{ $title_key }}</small>
-                                                    @if(0 != $value3)
-                                                    <small>未読 <b>{{ $value3 }}</b>件</small>
-                                                    @endif
+                                                    <small><a href="{{ url("/") }}/{{ $title_key }}">{{ $title_key }}</a></small>
                                                 </h5>
                                             </div>
-                                            <div class="col-md-2 col-2 nav-item">
+                                            <div class="col-md-2 col-3 nav-item">
                                                 {{--<span class="label label-danger notification-bubble">2</span>--}}
-                                                {{--<button type="button" class="btn btn-danger btn-just-icon btn-lg"><i class="nc-icon nc-chat-33"></i></button>--}}
-                                                <button type="button" class="btn btn-default btn-just-icon btn-lg"><i class="nc-icon nc-chat-33"></i></button>
+                                                @if(0 < $value3)
+                                                    <button type="button" class="btn btn-danger btn-just-icon btn-lg"><i class="nc-icon nc-chat-33"></i></button>
+                                                @else
+                                                    <button type="button" class="btn btn-default btn-just-icon btn-lg"><i class="nc-icon nc-chat-33"></i></button>
+                                                @endif
                                             </div>
                                         </div>
                                     </li>

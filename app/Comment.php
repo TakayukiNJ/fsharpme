@@ -8,9 +8,9 @@ class Comment extends Model
 {
 
     protected $fillable = ['body'];
-    
+
     // $comment->book
     public function book() {
-        return $this->belongsTo(App\Book)
+        return $this->belongsTo(App\Book);
     }
 }
