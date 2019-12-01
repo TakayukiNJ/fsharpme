@@ -23,8 +23,8 @@
                             <h6 class="text-muted">Contact List</h6>
                             <ul class="list-unstyled follows">
 
-                                @for ($i = 0; $i < count($message_to); $i++)
-                                    @foreach ($message_to[$i] as $title_key => $value1)
+                                @for ($i = 0; $i < count($messages); $i++)
+                                    @foreach ($messages[$i] as $title_key => $value1)
                                     @foreach ($value1 as $subtitle_key => $value2)
                                     @foreach ($value2 as $unread_count => $value3)
                                     <li>
