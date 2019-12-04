@@ -212,8 +212,8 @@ Route::get('/home/{name}', 'HomeController@home_own_timeline');
 //Route::get('/home/chat', 'ChatController@chat_list')->middleware('auth');
 Route::get('/home/chat/list', 'ChatController@list')->middleware('auth');;
 Route::post('/home/chat/list', 'ChatController@list')->middleware('auth');;
-//Route::get('/home/chat/list', 'PostsController@list')->middleware('auth');;
-//Route::post('/home/chat/list', 'PostsController@list')->middleware('auth');;
+Route::get('/home/chat/to/{title_key}/{subtitle_key}', 'ChatController@chat_to_project_redirect')->middleware('auth');
+Route::get('/chat/to/{project_id}', 'ChatController@chat_to_project')->middleware('auth');
 //Route::get('/home/{name}/chat', 'ChatController@chat_list');
 
 //ホーム画面投資家や選手のタイムライン

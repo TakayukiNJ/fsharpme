@@ -58,9 +58,18 @@ class ChatController extends Controller
 //        dd($data['message_to'][0]);
         return view('chat/list', $data);
     }
+    public function chat_to_project_redirect($title_key, $subtitle_key){
+//        dd($title_key);
+        $project = \DB::table('npo_registers')->where('title', $title_key)->where('subtitle', $subtitle_key)->where('proval', 1)->first();
+        if(!$project){
+            return redirect(url('/'.$title_key));
+        }
+        $url = 'chat/to/'.$project->id;
+        return redirect($url);
+    }
 
-    public function chat_list(Request $request){
-        return view('chat/list'); // フォームページのビュー
+    public function chat_to_project($project_id){
+        return view('chat/toorg'); // フォームページのビュー
 
     }
 
