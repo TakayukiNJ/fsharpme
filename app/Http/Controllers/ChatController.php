@@ -55,11 +55,9 @@ class ChatController extends Controller
             $org = \DB::table('npo_registers')->where('npo_name', $check_messages[$i])->first();
             array_push($data['messages'], [$org->title => [$org->subtitle => ['new_messages' => $unread_count]]]);
         }
-//        dd($data['message_to'][0]);
         return view('chat/list', $data);
     }
     public function chat_to_project_redirect($title_key, $subtitle_key){
-//        dd($title_key);
         $project = \DB::table('npo_registers')->where('title', $title_key)->where('subtitle', $subtitle_key)->where('proval', 1)->first();
         if(!$project){
             return redirect(url('/'.$title_key));
@@ -69,8 +67,16 @@ class ChatController extends Controller
     }
 
     public function chat_to_project($project_id){
-        return view('chat/toorg'); // フォームページのビュー
+        $name = Auth::user()->name;
+        $user = Auth::user()->email;
 
+        $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user)->first();
+        $data['project_info'] = \DB::table('npo_registers')->where('id', $project_id)->first();
+
+        // ここにメッセージを書いていく。to と from 両方からデータ取ってきて sort すればいいのかな。もっと良いやり方考え中。
+
+        dd($data);
+        return view('chat/toorg', $data); // フォームページのビュー
     }
 
 //    public function index() {
