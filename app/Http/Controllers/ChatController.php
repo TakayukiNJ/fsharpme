@@ -79,12 +79,11 @@ class ChatController extends Controller
 
         $npo_name = $data['project_info']->npo_name;
         // ここにメッセージを書いていく。to と from 両方からデータ取ってきて sort すればいいのかな。もっと良いやり方考え中。
-        $messages_from = \DB::table('messages')->where('from', $name)->where('to', $npo_name)->orderBy('id', 'DESC')->get();
-        $messages_to = \DB::table('messages')->where('from', $npo_name)->where('to', $name)->orderBy('id', 'DESC')->get();
+        $messages_from = \DB::table('messages')->whereIn('from', [$name, $npo_name])->whereIn('to', [$name, $npo_name])->orderBy('id', 'DESC')->get();
+//        $messages_to = \DB::table('messages')->where('from', $npo_name)->where('to', $name)->orderBy('id', 'DESC')->get();
 //
-        $messages_to = \DB::table('messages')->select('name', 'email as user_email')->orderBy('id', 'DESC')->get()
-          $messages_from += $messages_to;
-        echo "---------------------------------<br>";
+//        $messages_from = \DB::table('messages')->select('from as '.$name, 'email as '.$npo_name)->orderBy('id', 'DESC')->get();
+//          $messages_from += $messages_to;
         dd($messages_from);
         return view('chat/toorg', $data); // フォームページのビュー
     }
