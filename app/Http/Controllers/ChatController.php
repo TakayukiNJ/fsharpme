@@ -66,6 +66,10 @@ class ChatController extends Controller
         return redirect($url);
     }
 
+    /**
+     * @param $project_id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function chat_to_project($project_id){
         $name = Auth::user()->name;
         $user = Auth::user()->email;
@@ -73,9 +77,15 @@ class ChatController extends Controller
         $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user)->first();
         $data['project_info'] = \DB::table('npo_registers')->where('id', $project_id)->first();
 
+        $npo_name = $data['project_info']->npo_name;
         // ここにメッセージを書いていく。to と from 両方からデータ取ってきて sort すればいいのかな。もっと良いやり方考え中。
-
-        dd($data);
+        $messages_from = \DB::table('messages')->where('from', $name)->where('to', $npo_name)->orderBy('id', 'DESC')->get();
+        $messages_to = \DB::table('messages')->where('from', $npo_name)->where('to', $name)->orderBy('id', 'DESC')->get();
+//
+        $messages_to = \DB::table('messages')->select('name', 'email as user_email')->orderBy('id', 'DESC')->get()
+          $messages_from += $messages_to;
+        echo "---------------------------------<br>";
+        dd($messages_from);
         return view('chat/toorg', $data); // フォームページのビュー
     }
 
