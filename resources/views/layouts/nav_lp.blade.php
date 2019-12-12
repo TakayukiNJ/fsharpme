@@ -107,6 +107,11 @@
                             </div>
                         </li>
                     @else
+                        <li class="nav-item">
+                            <a href="{{ url('/') }}/home/chat/list" class="btn btn-just-icon">
+                                <i class="nc-icon nc-email-85"></i>
+                            </a>
+                        </li>
                         @if ((Auth::user()->npo) == "")
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle"  data-toggle="dropdown" href="javascript:void(0)">{{ Auth::user()->name }}</a>
