@@ -22,6 +22,9 @@ class ChatController extends Controller
         return view('chat/list');
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function list()
     {
         $name = Auth::user()->name;
@@ -57,6 +60,12 @@ class ChatController extends Controller
         }
         return view('chat/list', $data);
     }
+
+    /**
+     * @param $title_key
+     * @param $subtitle_key
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function chat_to_project_redirect($title_key, $subtitle_key){
         $project = \DB::table('npo_registers')->where('title', $title_key)->where('subtitle', $subtitle_key)->where('proval', 1)->first();
         if(!$project){
@@ -88,11 +97,44 @@ class ChatController extends Controller
         return view('chat/toorg', $data); // フォームページのビュー
     }
 
-//    public function index() {
-//
-//        return view('chat/chat'); // フォームページのビュー
-//
-//    }
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function list_for_npo()
+    {
+        $name = Auth::user()->npo;
+        $user = Auth::user()->email;
+
+        $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user)->first();
+        $all_messages_from     = \DB::table('messages')->where('from', $name)->orderBy('id', 'DESC')->get();
+        $all_messages_to       = \DB::table('messages')->where('from', $name)->orderBy('id', 'DESC')->get();
+        // 2通以上送っているかどうかチェック
+        $check_messages = [];
+        for($i=0; $i<count($all_messages_from); $i++){
+            $check_1 = $all_messages_from[$i]->to;
+            $key = in_array($check_1, $check_messages);
+            if(!$key){
+                array_push($check_messages, $all_messages_from[$i]->to);
+            }
+        }
+        for($i=0; $i<count($all_messages_to); $i++){
+            $check_1 = $all_messages_to[$i]->to;
+            $key = in_array($check_1, $check_messages);
+            if(!$key){
+                array_push($check_messages, $all_messages_to[$i]->to);
+            }
+        }
+
+        $data['messages'] = [];
+        for($i=0; $i<count($check_messages); $i++){
+            // 新規メッセージ数カウント
+            $unread_count = \DB::table('messages')->where('from', $check_messages[$i])->where('to', $name)->where('read_flg', 0)->count();
+            // $data['message_to']に全データを格納
+            $org = \DB::table('npo_registers')->where('npo_name', $check_messages[$i])->first();
+            array_push($data['messages'], [$org->title => [$org->subtitle => ['new_messages' => $unread_count]]]);
+        }
+        return view('chat/list', $data);
+    }
 
     /**
      * Fetch all messages
