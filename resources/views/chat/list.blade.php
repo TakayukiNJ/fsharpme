@@ -19,8 +19,12 @@
                                     {{--<input type="text" class="form-control input-xtreme no-border" placeholder="Find Stuff" aria-describedby="basic-addon1">--}}
                                 {{--</div>--}}
                             {{--</form>--}}
-
                             <h6 class="text-muted">Contact List</h6>
+                            @if(!empty(Auth::user()->npo))
+                                <a href="{{ url('/') }}" class="btn btn-outline-default">
+                                    {{ Auth::user()->npo }}のチャットルームはこちら
+                                </a>
+                            @endif
                             <ul class="list-unstyled follows">
 
                                 @for ($i = 0; $i < count($messages); $i++)
