@@ -21,7 +21,7 @@
                             {{--</form>--}}
                             <h6 class="text-muted">Contact List</h6>
                             @if(!empty(Auth::user()->npo))
-                                <a href="{{ url('/') }}" class="btn btn-outline-default">
+                                <a href="{{ url('/') }}/{{ Auth::user()->npo }}/chat/list" class="btn btn-outline-default">
                                     {{ Auth::user()->npo }}のチャットルームはこちら
                                 </a>
                             @endif

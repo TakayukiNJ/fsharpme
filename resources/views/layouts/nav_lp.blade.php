@@ -107,6 +107,12 @@
                             </div>
                         </li>
                     @else
+                        {{-- ここ自動化しないとな。 --}}
+                        @if(Auth::user()->total_deposit)
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://goo.gl/YZLao1" target="_blank">出金金額（月末）：{{Auth::user()->total_deposit}}円</a>
+                            </li>
+                        @endif
                         <li class="nav-item">
                             <a href="{{ url('/') }}/home/chat/list" class="btn btn-just-icon">
                                 <i class="nc-icon nc-email-85"></i>
@@ -119,20 +125,14 @@
                                 <a class="dropdown-item" href="{{ url('/npo_registers/create') }}"><i class="nc-icon nc-money-coins"></i>&nbsp;@lang('app.registerOrg')</a>
                                 {{--<a target="_blank" class="dropdown-item" href="https://form.run/@fsharp"><i class="nc-icon nc-money-coins"></i>&nbsp; 団体登録</a>--}}
                         @else
-                        {{-- ここ自動化しないとな。 --}}
-                        @if(Auth::user()->total_deposit)
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://goo.gl/YZLao1" target="_blank">出金金額（月末）：{{Auth::user()->total_deposit}}円</a>
-                        </li>
-                        @endif
 
                         <!-- message 用編集 -->
                         <!--GRAY-->
-                        <li class="nav-item">
-                            <a href="{{ url('/') }}/home/chat/list" class="btn btn-just-icon">
-                                <i class="nc-icon nc-email-85"></i>
-                            </a>
-                        </li>
+                        {{--<li class="nav-item">--}}
+                            {{--<a href="{{ url('/') }}/home/chat/list" class="btn btn-just-icon">--}}
+                                {{--<i class="nc-icon nc-email-85"></i>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
                         <!--RED-->
                         {{--
 
