@@ -114,7 +114,7 @@
                             <li>合計獲得金額：{{ number_format($project_total_price) }}円</li>
                             @if(Auth::user())
                             @if($npo_owner_info->npo == Auth::user()->npo)
-                            <li>出金可能金額：{{ $npo_owner_info->total_deposit }}円</li>
+                            <li>出金可能金額：{{ number_format($npo_owner_info->total_deposit) }}円</li>
                             <li>※出金可能金額は管理者のみ表示</li>
                             @endif
                             @endif

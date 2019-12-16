@@ -210,11 +210,15 @@ Route::get('/home/{name}', 'HomeController@home_own_timeline');
 
 // 2019年11/14追加
 //Route::get('/home/chat', 'ChatController@chat_list')->middleware('auth');
-Route::get('/home/chat/list', 'ChatController@list')->middleware('auth');;
-Route::post('/home/chat/list', 'ChatController@list')->middleware('auth');;
+Route::get('/home/chat/list', 'ChatController@list')->middleware('auth');
+Route::post('/home/chat/list', 'ChatController@list')->middleware('auth');
 Route::get('/home/chat/to/{title_key}/{subtitle_key}', 'ChatController@chat_to_project_redirect')->middleware('auth');
 Route::get('/chat/to/{project_id}', 'ChatController@chat_to_project')->middleware('auth');
 //Route::get('/home/{name}/chat', 'ChatController@chat_list');
+
+Route::get('/{npo_name}/chat/list', 'ChatController@list_for_npo')->middleware('auth');
+Route::get('/{npo_name}/{project}/chat/list', 'ChatController@list_for_project')->middleware('auth');
+
 
 //ホーム画面投資家や選手のタイムライン
 Route::post('/home/home_outer_timeline/{folder_name}', 'HomeController@home_outer_timeline');

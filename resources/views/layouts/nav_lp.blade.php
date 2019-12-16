@@ -110,7 +110,7 @@
                         {{-- ここ自動化しないとな。 --}}
                         @if(Auth::user()->total_deposit)
                             <li class="nav-item">
-                                <a class="nav-link" href="https://goo.gl/YZLao1" target="_blank">出金金額（月末）：{{Auth::user()->total_deposit}}円</a>
+                                <a class="nav-link" href="https://goo.gl/YZLao1" target="_blank">出金金額（月末）：{{ number_format(Auth::user()->total_deposit) }}円</a>
                             </li>
                         @endif
                         <li class="nav-item">

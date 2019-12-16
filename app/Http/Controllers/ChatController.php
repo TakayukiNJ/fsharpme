@@ -32,7 +32,7 @@ class ChatController extends Controller
 
         $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user)->first();
         $all_messages_from     = \DB::table('messages')->where('from', $name)->orderBy('id', 'DESC')->get();
-        $all_messages_to       = \DB::table('messages')->where('from', $name)->orderBy('id', 'DESC')->get();
+        $all_messages_to       = \DB::table('messages')->where('to', $name)->orderBy('id', 'DESC')->get();
         // 2通以上送っているかどうかチェック
         $check_messages = [];
         for($i=0; $i<count($all_messages_from); $i++){
@@ -100,14 +100,28 @@ class ChatController extends Controller
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function list_for_npo()
+    public function list_for_npo($npo_name)
     {
-        $name = Auth::user()->npo;
+        $npo = Auth::user()->npo;
         $user = Auth::user()->email;
-
+        if ($npo_name != $npo) {
+            return redirect('home/chat/list');
+        }
+        $data['npo_registers'] = \DB::table('npo_registers')->where('title', $npo)->get();
+        return view('chat/toorg', $data);
+    }
+    public function list_for_project($npo_name, $project)
+    {
+        $npo = Auth::user()->npo;
+        $user = Auth::user()->email;
+        if ($npo_name != $npo) {
+            return redirect('home/chat/list');
+        }
+        $data['npo_registers'] = \DB::table('npo_registers')->where('title', $npo)->get();
+        dd($data);
         $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user)->first();
         $all_messages_from     = \DB::table('messages')->where('from', $name)->orderBy('id', 'DESC')->get();
-        $all_messages_to       = \DB::table('messages')->where('from', $name)->orderBy('id', 'DESC')->get();
+        $all_messages_to       = \DB::table('messages')->where('to', $name)->orderBy('id', 'DESC')->get();
         // 2通以上送っているかどうかチェック
         $check_messages = [];
         for($i=0; $i<count($all_messages_from); $i++){
@@ -133,7 +147,7 @@ class ChatController extends Controller
             $org = \DB::table('npo_registers')->where('npo_name', $check_messages[$i])->first();
             array_push($data['messages'], [$org->title => [$org->subtitle => ['new_messages' => $unread_count]]]);
         }
-        return view('chat/list', $data);
+        return view('chat/toorg', $data);
     }
 
     /**
