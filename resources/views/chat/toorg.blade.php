@@ -52,7 +52,10 @@
 {{--                                                @if(0 < $value3)--}}
                                                     {{--<button type="button" class="btn btn-danger btn-just-icon btn-lg"><i class="nc-icon nc-chat-33"></i></button>--}}
                                                 {{--@else--}}
-                                                    <button type="button" class="btn btn-default btn-just-icon btn-lg" onclick="location.href='{{ url('/') }}/{{ $npo_registers[$i]->title }}/{{ $npo_registers[$i]->subtitle }}/chat/list'"><i class="nc-icon nc-chat-33"></i></button>
+                                                    <a href="{{ url('/') }}/{{ $npo_registers[$i]->title }}/{{ $npo_registers[$i]->npo_name }}/chat/list" class="btn btn-outline-default">
+                                                        Go
+                                                    </a>
+                                                    {{--<button type="button" class="btn btn-default btn-just-icon btn-lg" onclick="location.href=''"><i class="nc-icon nc-chat-33"></i></button>--}}
                                                 {{--@endif--}}
                                             </div>
                                         </div>
