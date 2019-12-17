@@ -35,6 +35,7 @@ class ChatController extends Controller
         $all_messages_to       = \DB::table('messages')->where('to', $name)->orderBy('id', 'DESC')->get();
         // 2通以上送っているかどうかチェック
         $check_messages = [];
+        // 受信部分
         for($i=0; $i<count($all_messages_from); $i++){
             $check_1 = $all_messages_from[$i]->to;
             $key = in_array($check_1, $check_messages);
@@ -42,11 +43,12 @@ class ChatController extends Controller
                 array_push($check_messages, $all_messages_from[$i]->to);
             }
         }
+        // 送信部分
         for($i=0; $i<count($all_messages_to); $i++){
-            $check_1 = $all_messages_to[$i]->to;
+            $check_1 = $all_messages_to[$i]->from;
             $key = in_array($check_1, $check_messages);
             if(!$key){
-                array_push($check_messages, $all_messages_to[$i]->to);
+                array_push($check_messages, $all_messages_to[$i]->from);
             }
         }
 
@@ -58,6 +60,8 @@ class ChatController extends Controller
             $org = \DB::table('npo_registers')->where('npo_name', $check_messages[$i])->first();
             array_push($data['messages'], [$org->title => [$org->subtitle => ['new_messages' => $unread_count]]]);
         }
+
+
         return view('chat/list', $data);
     }
 
@@ -114,14 +118,14 @@ class ChatController extends Controller
     {
         $npo = Auth::user()->npo;
         $user = Auth::user()->email;
+        $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user)->first();
+        // ここは、メンバーなら見れるようにした方がいいかな。
         if ($npo_name != $npo) {
             return redirect('home/chat/list');
         }
-        $data['npo_registers'] = \DB::table('npo_registers')->where('title', $npo)->get();
-        dd($data);
-        $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user)->first();
-        $all_messages_from     = \DB::table('messages')->where('from', $name)->orderBy('id', 'DESC')->get();
-        $all_messages_to       = \DB::table('messages')->where('to', $name)->orderBy('id', 'DESC')->get();
+        $all_messages_from     = \DB::table('messages')->where('from', $project)->orderBy('id', 'DESC')->get();
+        $all_messages_to       = \DB::table('messages')->where('to', $project)->orderBy('id', 'DESC')->get();
+//dd($all_messages_to );
         // 2通以上送っているかどうかチェック
         $check_messages = [];
         for($i=0; $i<count($all_messages_from); $i++){
@@ -132,22 +136,22 @@ class ChatController extends Controller
             }
         }
         for($i=0; $i<count($all_messages_to); $i++){
-            $check_1 = $all_messages_to[$i]->to;
+            $check_1 = $all_messages_to[$i]->from;
             $key = in_array($check_1, $check_messages);
             if(!$key){
-                array_push($check_messages, $all_messages_to[$i]->to);
+                array_push($check_messages, $all_messages_to[$i]->from);
             }
         }
-
         $data['messages'] = [];
         for($i=0; $i<count($check_messages); $i++){
             // 新規メッセージ数カウント
-            $unread_count = \DB::table('messages')->where('from', $check_messages[$i])->where('to', $name)->where('read_flg', 0)->count();
+            $unread_count = \DB::table('messages')->where('from', $check_messages[$i])->where('to', $project)->where('read_flg', 0)->count();
             // $data['message_to']に全データを格納
-            $org = \DB::table('npo_registers')->where('npo_name', $check_messages[$i])->first();
-            array_push($data['messages'], [$org->title => [$org->subtitle => ['new_messages' => $unread_count]]]);
+            $person = \DB::table('users')->where('name', $check_messages[$i])->first();
+            array_push($data['messages'], [$person->name => [$person->npo => ['new_messages' => $unread_count]]]);
         }
-        return view('chat/toorg', $data);
+//        dd($data);
+        return view('chat/toproject', $data);
     }
 
     /**
