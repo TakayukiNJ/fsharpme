@@ -97,8 +97,10 @@ class ChatController extends Controller
 //
 //        $messages_from = \DB::table('messages')->select('from as '.$name, 'email as '.$npo_name)->orderBy('id', 'DESC')->get();
 //          $messages_from += $messages_to;
-        dd($messages_from);
-        return view('chat/toorg', $data); // フォームページのビュー
+        $data['message'] = $messages_from;
+        $data['profile_pic'] = $data['personal_info']->image_id;
+//        dd($data);
+        return view('chat/chat_to_project', $data); // フォームページのビュー
     }
 
     /**
@@ -123,9 +125,8 @@ class ChatController extends Controller
         if ($npo_name != $npo) {
             return redirect('home/chat/list');
         }
-        $all_messages_from     = \DB::table('messages')->where('from', $project)->orderBy('id', 'DESC')->get();
-        $all_messages_to       = \DB::table('messages')->where('to', $project)->orderBy('id', 'DESC')->get();
-//dd($all_messages_to );
+        $all_messages_from = \DB::table('messages')->where('from', $project)->orderBy('id', 'DESC')->get();
+        $all_messages_to   = \DB::table('messages')->where('to', $project)->orderBy('id', 'DESC')->get();
         // 2通以上送っているかどうかチェック
         $check_messages = [];
         for($i=0; $i<count($all_messages_from); $i++){
@@ -150,7 +151,6 @@ class ChatController extends Controller
             $person = \DB::table('users')->where('name', $check_messages[$i])->first();
             array_push($data['messages'], [$person->name => [$person->npo => ['new_messages' => $unread_count]]]);
         }
-//        dd($data);
         return view('chat/toproject', $data);
     }
 
