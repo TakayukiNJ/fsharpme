@@ -39,9 +39,10 @@
                                     <div class="avatar big-avatar">
                                         @if(Auth::user()->name == $message[$i]->from)
                                             @if("placeholder.jpg" != $profile_pic)
-                                                <img class="media-object" alt="64x64" src="/img/personal_info/{{ $profile_pic }}">
+                                                <img class="media-object" alt="64x64" src="{{ asset('storage/img/personal_info/')}}/{{ $profile_pic }}">
                                             @else
-                                                <img class="media-object" alt="64x64" src="{{ url('/') }}/../img/placeholder.jpg">
+                                                {{--<img class="media-object" alt="64x64" src="{{ asset('storage/img/')}}/placeholder.jpg">--}}
+                                                <img class="media-object" alt="64x64" src="{{ url('/') }}/../img/placeholder.jpg" alt="default">
                                             @endif
                                         @else
                                             @if("placeholder.jpg" != $profile_pic)
