@@ -13,7 +13,6 @@
                 <div class="row">
                     <div class="col-md-12 ml-auto">
                         <div class="owner text-center">
-
                             <form action="{{action('FollowController@store')}}" method="POST">
                                 <input name="followee" type="hidden" value="{{ $npo_owner_info->npo }}" readonly="readonly">
                                 <div class="name">

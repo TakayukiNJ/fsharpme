@@ -18,7 +18,7 @@
                                 <input name="from" class="form-control" placeholder="Name" value="{{ Auth::user()->name }}" readonly="readonly">
                                 <input name="to" type="hidden" value="{{ $project_info->npo_name }}" readonly="readonly">
                                 <label>内容</label>
-                                <textarea name="message" class="form-control" rows="4" placeholder="ここに交渉内容を記述してください。"></textarea>
+                                <textarea name="message" class="form-control" rows="4" placeholder="ここに内容を記述してください。"></textarea>
                                 <div class="row">
                                     <div class="col-md-4 offset-md-4">
                                         <button class="btn btn-danger btn-lg btn-fill">送信</button>
@@ -38,6 +38,7 @@
                                 <a class="pull-left" href="{{ url('/') }}/{{ $message[$i]->from }}">
                                     <div class="avatar big-avatar">
                                         @if(Auth::user()->name == $message[$i]->from)
+                                            <a href="{{ url('/') }}/home/{{ Auth::user()->name }}">
                                             @if("placeholder.jpg" != $profile_pic)
                                                 <img class="media-object" alt="64x64" src="{{ asset('storage/img/personal_info/')}}/{{ $profile_pic }}">
                                             @else
@@ -45,11 +46,13 @@
                                                 <img class="media-object" alt="64x64" src="{{ url('/') }}/../img/placeholder.jpg" alt="default">
                                             @endif
                                         @else
-                                            @if("placeholder.jpg" != $profile_pic)
-                                                <img class="media-object" alt="64x64" src="/img/personal_info/{{ $profile_pic }}">
+                                            <a href="{{ url('/'.$project_info->title.'/'.$project_info->npo_name) }}">
+                                            @if(!empty($project_info->background_pic))
+                                                <img class="media-object" alt="64x64" src="{{ asset('storage//img/project_back')}}/{{ $project_info->background_pic }}">
                                             @else
-                                                <img class="media-object" alt="64x64" src="{{ url('/') }}/../img/placeholder.jpg">
+                                                <img class="media-object" alt="64x64" src="https://images.unsplash.com/photo-1486310662856-32058c639c65?dpr=2&auto=format&fit=crop&w=1500&h=1125&q=80&cs=tinysrgb&crop=">
                                             @endif
+                                            </a>
                                         @endif
                                     </div>
                                 </a>
