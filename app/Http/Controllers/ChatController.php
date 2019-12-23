@@ -91,7 +91,7 @@ class ChatController extends Controller
         $data['project_info'] = \DB::table('npo_registers')->where('id', $project_id)->first();
 
         $npo_name = $data['project_info']->npo_name;
-        // ここにメッセージを書いていく。to と from 両方からデータ取ってきて sort すればいいのかな。もっと良いやり方考え中。
+        // ここにメッセージを書いていく。
         $messages_from = \DB::table('messages')->whereIn('from', [$name, $npo_name])->whereIn('to', [$name, $npo_name])->orderBy('id', 'DESC')->get();
 //        $messages_to = \DB::table('messages')->where('from', $npo_name)->where('to', $name)->orderBy('id', 'DESC')->get();
 //
@@ -100,6 +100,8 @@ class ChatController extends Controller
         $data['message'] = $messages_from;
         $data['profile_pic'] = $data['personal_info']->image_id;
 //        dd($data);
+        // 既読をつける。
+        \DB::table('messages')->where('from', $npo_name)->where('to', $name)->update(['read_flg' => 1]);
         return view('chat/chat_to_project', $data); // フォームページのビュー
     }
 

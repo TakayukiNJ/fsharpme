@@ -32,7 +32,6 @@
                     <div class="col-md-8 ml-auto mr-auto">
                         <div class="media">
                         </div>
-
                         @for ($i = 0; $i < count($message); $i++)
                             <div class="media">
                                 <a class="pull-left" href="{{ url('/') }}/{{ $message[$i]->from }}">
