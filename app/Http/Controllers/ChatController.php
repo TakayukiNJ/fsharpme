@@ -61,7 +61,6 @@ class ChatController extends Controller
             array_push($data['messages'], [$org->title => [$org->subtitle => ['new_messages' => $unread_count]]]);
         }
 
-
         return view('chat/list', $data);
     }
 
@@ -73,7 +72,7 @@ class ChatController extends Controller
     public function chat_to_project_redirect($title_key, $subtitle_key){
         $project = \DB::table('npo_registers')->where('title', $title_key)->where('subtitle', $subtitle_key)->where('proval', 1)->first();
         if(!$project){
-            return redirect(url('/'.$title_key));
+            return redirect(url('/home/'.$title_key));
         }
         $url = 'chat/to/'.$project->id;
         return redirect($url);
@@ -156,6 +155,31 @@ class ChatController extends Controller
         return view('chat/toproject', $data);
     }
 
+    /**
+     * @param $project_id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function chat_to_person($project_id){
+        $name = Auth::user()->name;
+        $user = Auth::user()->email;
+
+        $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user)->first();
+        $data['project_info'] = \DB::table('npo_registers')->where('id', $project_id)->first();
+
+        $npo_name = $data['project_info']->npo_name;
+        // ここにメッセージを書いていく。
+        $messages_from = \DB::table('messages')->whereIn('from', [$name, $npo_name])->whereIn('to', [$name, $npo_name])->orderBy('id', 'DESC')->get();
+//        $messages_to = \DB::table('messages')->where('from', $npo_name)->where('to', $name)->orderBy('id', 'DESC')->get();
+//
+//        $messages_from = \DB::table('messages')->select('from as '.$name, 'email as '.$npo_name)->orderBy('id', 'DESC')->get();
+//          $messages_from += $messages_to;
+        $data['message'] = $messages_from;
+        $data['profile_pic'] = $data['personal_info']->image_id;
+//        dd($data);
+        // 既読をつける。
+        \DB::table('messages')->where('from', $npo_name)->where('to', $name)->update(['read_flg' => 1]);
+        return view('chat/chat_to_project', $data); // フォームページのビュー
+    }
     /**
      * Fetch all messages
      *
