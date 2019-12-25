@@ -29,7 +29,6 @@
                                 </a>
                             @endif
                             <ul class="list-unstyled follows">
-
                                 @for ($i = 0; $i < count($messages); $i++)
                                     @foreach ($messages[$i] as $title_key => $value1)
                                         @foreach ($value1 as $subtitle_key => $value2)
@@ -60,9 +59,9 @@
                                                         <div class="col-md-2 col-3 nav-item">
                                                             {{--<span class="label label-danger notification-bubble">2</span>--}}
                                                             @if(0 < $value3)
-                                                                <button type="button" class="btn btn-danger btn-just-icon btn-lg" onclick="location.href='/home/chat/to/{{$title_key}}/{{$subtitle_key}}'"><i class="nc-icon nc-chat-33"></i></button>
+                                                                <button type="button" class="btn btn-danger btn-just-icon btn-lg" onclick="location.href='/chat/t/{{ $title_key }}'"><i class="nc-icon nc-chat-33"></i></button>
                                                             @else
-                                                                <button type="button" class="btn btn-default btn-just-icon btn-lg" onclick="location.href='/home/chat/to/{{$title_key}}/{{$subtitle_key}}'"><i class="nc-icon nc-chat-33"></i></button>
+                                                                <button type="button" class="btn btn-default btn-just-icon btn-lg" onclick="location.href='/chat/t/{{ $title_key }}'"><i class="nc-icon nc-chat-33"></i></button>
                                                             @endif
 
                                                         </div>
