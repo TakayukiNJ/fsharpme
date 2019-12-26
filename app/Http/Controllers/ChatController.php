@@ -113,6 +113,7 @@ class ChatController extends Controller
         if ($npo_name != $npo) {
             return redirect('home/chat/list');
         }
+        $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user)->first();
         $data['npo_registers'] = \DB::table('npo_registers')->where('title', $npo)->get();
         return view('chat/list_projects', $data);
     }
@@ -170,7 +171,7 @@ class ChatController extends Controller
 //        dd($data);
         $npo_name = $data['project_info']->npo_name;
         // ここにメッセージを書いていく。
-        $messages_from = \DB::table('messages')->whereIn('from', [$name, $npo_name])->whereIn('to', [$name, $npo_name])->orderBy('id', 'DESC')->get();
+        $messages_from = \DB::table('messages')->whereIn('from', [$name, $npo_name])->whereIn('to', [$name, $user])->orderBy('id', 'DESC')->get();
 //        $messages_to = \DB::table('messages')->where('from', $npo_name)->where('to', $name)->orderBy('id', 'DESC')->get();
 //
 //        $messages_from = \DB::table('messages')->select('from as '.$name, 'email as '.$npo_name)->orderBy('id', 'DESC')->get();

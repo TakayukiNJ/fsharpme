@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="20516ec6-be6d-40be-b8fa-a4ada8341456" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ChatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ChatController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/chat/chat_to_person.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/chat/chat_to_person.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/chat/list.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/chat/toorg.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/chat/toproject.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,8 +22,8 @@
       <file leaf-file-name="ChatController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ChatController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="165" column="42" lean-forward="true" selection-start-line="165" selection-start-column="42" selection-end-line="165" selection-end-column="42" />
+            <state relative-caret-position="276">
+              <caret line="174" column="2" selection-start-line="174" selection-end-line="174" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -334,12 +329,12 @@
       <workItem from="1576902426033" duration="1804000" />
       <workItem from="1576911998022" duration="322000" />
       <workItem from="1576918282989" duration="215000" />
-      <workItem from="1576932969094" duration="8851000" />
+      <workItem from="1576932969094" duration="9348000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103764000" />
+    <option name="totallyTimeSpent" value="104261000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -351,8 +346,8 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.16666667" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8153846" visible="true" weight="0.33441034" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.16666667" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8153846" visible="true" weight="0.33441034" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
@@ -633,8 +628,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ChatController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="165" column="42" lean-forward="true" selection-start-line="165" selection-start-column="42" selection-end-line="165" selection-end-column="42" />
+        <state relative-caret-position="276">
+          <caret line="174" column="2" selection-start-line="174" selection-end-line="174" selection-end-column="2" />
         </state>
       </provider>
     </entry>
