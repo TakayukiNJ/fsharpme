@@ -214,6 +214,7 @@ Route::get('/home/chat/list', 'ChatController@list')->middleware('auth');
 Route::post('/home/chat/list', 'ChatController@list')->middleware('auth');
 Route::get('/home/chat/to/{title_key}/{subtitle_key}', 'ChatController@chat_to_project_redirect')->middleware('auth');
 Route::get('/chat/to/{project_id}', 'ChatController@chat_to_project')->middleware('auth');
+Route::get('/chat/t/{person}', 'ChatController@chat_to_person')->middleware('auth');
 //Route::get('/home/{name}/chat', 'ChatController@chat_list');
 
 Route::get('/{npo_name}/chat/list', 'ChatController@list_for_npo')->middleware('auth');

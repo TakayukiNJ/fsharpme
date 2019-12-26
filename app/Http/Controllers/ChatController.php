@@ -19,7 +19,7 @@ class ChatController extends Controller
     public function index()
     {
         dd(3);
-        return view('chat/list');
+        return view('chat/list_to_project');
     }
 
     /**
@@ -61,7 +61,7 @@ class ChatController extends Controller
             array_push($data['messages'], [$org->title => [$org->subtitle => ['new_messages' => $unread_count]]]);
         }
 
-        return view('chat/list', $data);
+        return view('chat/list_to_project', $data);
     }
 
     /**
@@ -98,7 +98,6 @@ class ChatController extends Controller
 //          $messages_from += $messages_to;
         $data['message'] = $messages_from;
         $data['profile_pic'] = $data['personal_info']->image_id;
-//        dd($data);
         // 既読をつける。
         \DB::table('messages')->where('from', $npo_name)->where('to', $name)->update(['read_flg' => 1]);
         return view('chat/chat_to_project', $data); // フォームページのビュー
@@ -114,8 +113,9 @@ class ChatController extends Controller
         if ($npo_name != $npo) {
             return redirect('home/chat/list');
         }
+        $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user)->first();
         $data['npo_registers'] = \DB::table('npo_registers')->where('title', $npo)->get();
-        return view('chat/toorg', $data);
+        return view('chat/list_projects', $data);
     }
     public function list_for_project($npo_name, $project)
     {
@@ -152,33 +152,35 @@ class ChatController extends Controller
             $person = \DB::table('users')->where('name', $check_messages[$i])->first();
             array_push($data['messages'], [$person->name => [$person->npo => ['new_messages' => $unread_count]]]);
         }
-        return view('chat/toproject', $data);
+        return view('chat/list_to_person', $data);
     }
 
     /**
      * @param $project_id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function chat_to_person($project_id){
-        $name = Auth::user()->name;
-        $user = Auth::user()->email;
+    public function chat_to_person($person){
+        $npo  = Auth::user()->npo;
+
+        $data['user_info'] = \DB::table('users')->where('name', $person)->first();
+        $name = $data['user_info']->name;
+        $user = $data['user_info']->email;
 
         $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user)->first();
-        $data['project_info'] = \DB::table('npo_registers')->where('id', $project_id)->first();
-
+        $data['project_info']  = \DB::table('npo_registers')->where('npo_name', $npo)->first();
+//        dd($data);
         $npo_name = $data['project_info']->npo_name;
         // ここにメッセージを書いていく。
-        $messages_from = \DB::table('messages')->whereIn('from', [$name, $npo_name])->whereIn('to', [$name, $npo_name])->orderBy('id', 'DESC')->get();
+        $messages_from = \DB::table('messages')->whereIn('from', [$name, $npo_name])->whereIn('to', [$name, $user])->orderBy('id', 'DESC')->get();
 //        $messages_to = \DB::table('messages')->where('from', $npo_name)->where('to', $name)->orderBy('id', 'DESC')->get();
 //
 //        $messages_from = \DB::table('messages')->select('from as '.$name, 'email as '.$npo_name)->orderBy('id', 'DESC')->get();
 //          $messages_from += $messages_to;
         $data['message'] = $messages_from;
         $data['profile_pic'] = $data['personal_info']->image_id;
-//        dd($data);
         // 既読をつける。
-        \DB::table('messages')->where('from', $npo_name)->where('to', $name)->update(['read_flg' => 1]);
-        return view('chat/chat_to_project', $data); // フォームページのビュー
+        \DB::table('messages')->where('from', $name)->where('to', $npo_name)->update(['read_flg' => 1]);
+        return view('chat/chat_to_person', $data); // フォームページのビュー
     }
     /**
      * Fetch all messages
