@@ -79,7 +79,7 @@ class Npo_registerController extends Controller {
 	    }
 
         $data['npo_owner_info'] = \DB::table('users')->where('npo', $npo_auth)->first();
-        $npo_registers = Npo_register::orderBy('proval', 'desc')->where('manager', $name_auth)->paginate(9);
+        $npo_registers = Npo_register::orderBy('updated_at', 'desc')->where('manager', $name_auth)->paginate(9);
     	// 金額を計算
 		$data['project_total_price'] = 0;
 		for($array_count=0; $array_count<count($npo_registers); $array_count++){
@@ -554,7 +554,6 @@ class Npo_registerController extends Controller {
 
  		$name_auth = Auth::user()->name;
         $npo_id    = Auth::user()->npo_id;
-		$npo_register->npo_name      = $request->input("npo_name"); // URL
         // $npo_register->support_price = $request->input("support_price"); // 目標金額
         if($npo_register->buyer == 0){
     		$npo_register->proval = $request->input("proval"); // 1だったら公開
@@ -604,10 +603,6 @@ class Npo_registerController extends Controller {
         	}
 		}
         $this -> validate($request, $rules);
-
-		if($npo_register->npo_name){
-		    $npo_register->published = new Carbon(Carbon::now());
-		}
 
         $npo_register->support_limit = $request->input("support_limit"); // 募集寄付数
 
@@ -714,8 +709,12 @@ class Npo_registerController extends Controller {
         $npo_register->body = $request->input("body");
         $npo_register->url  = $request->input("url");
         $npo_register->updated_at = new Carbon(Carbon::now());
-        // $npo_register->proval = $request->input("proval");
+         $npo_register->proval = $request->input("proval");
 
+        if($npo_register->proval != 0){
+            $npo_register->published = new Carbon(Carbon::now());
+            $npo_register->npo_name = $npo_name + 10000; // URL
+        }
 		$npo_register->save();
 		// return view('npo.npo_landing_page', compact('npo_register'));
 // 		if($npo_register->published){
