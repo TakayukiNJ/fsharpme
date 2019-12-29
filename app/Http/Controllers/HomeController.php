@@ -260,20 +260,12 @@ class HomeController extends Controller
         $image_id = "";
         // 画像が空かチェック
         if(!empty($image_file)){
-
             // 画像の名前を取得
-            $image_id = "test_".time()."_".$image_file->getClientOriginalName();
+            $image_id = $name_auth."_".time();
             // 画像をpublicの中に保存
-//            dd($image_id);
-//            $image_file->store('public/img');
-//            $image_file->storeAs('public/img', $image_id);
             $image_file->storeAs('public/img/personal_info', $image_id);
-//            dd($image_file);
 //            Image::make($image_file)->resize(300, 300)->save( './img/personal_info/' . $image_id );
 //            $a = Image::make($image_file)->resize(300, 300);
-//                dd(3);
-            // 画像が入ってた時だけ最初に処理をしてしまう。
-//            dd("a");
             if(!empty($data['personal_info'])){
                 \DB::table('personal_info')->where('user_id', $user_auth)->update(['image_id' => $image_id]);
             }else{

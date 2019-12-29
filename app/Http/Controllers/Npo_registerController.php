@@ -10,6 +10,7 @@ use App\Follow;
 use App;
 use Illuminate\Http\Request;
 use PHPMailer\PHPMailer\PHPMailer;
+//use Faker\Provider\Image;
 use Image;
 use Illuminate\Support\Facades\Mail;
 
@@ -612,6 +613,7 @@ class Npo_registerController extends Controller {
         if(!empty($background_file)){
             // 画像の名前を取得
             $background_pic = time()."_".$background_file->getClientOriginalName();
+            dd($background_file);
             // 画像をpublicの中に保存
             Image::make($background_file)->save( './img/project_back/' . $background_pic );
             // $image_file->move('./img/personal_info/', $image_id); // cloud9だけかな？
