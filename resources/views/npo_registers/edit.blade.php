@@ -80,15 +80,15 @@
                         <br>
                         <div class="fileinput-new thumbnail img-no-padding" style="max-width: 370px; max-height: 250px;">
                             @if($npo_info->background_pic)
-                            <img src='/img/project_back/{{ $npo_info->background_pic }}' alt="{{ Auth::user()->npo }}">
+                                <img src="/img/project_back/{{ $npo_info->background_pic }}" alt="{{ Auth::user()->npo }}">
                             @else
                             <img src="https://images.unsplash.com/photo-1486310662856-32058c639c65?dpr=2&auto=format&fit=crop&w=1500&h=1125&q=80&cs=tinysrgb&crop=" alt="default">
                             @endif
                         </div>
                         <div class="fileinput-preview fileinput-exists thumbnail img-no-padding" style="max-width: 370px; max-height: 250px;"></div>
                         <div>
-                            <span class="btn btn-outline-default btn-round btn-file"><span class="fileinput-new">背景画像変更</span><span class="fileinput-exists">Change</span><input type="file" name="background_pic"></span>
-                            <a href="#paper-kit" class="btn btn-link btn-danger fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
+                            <span class="btn btn-outline-default btn-round btn-file"><span class="fileinput-new">背景画像変更</span><span class="fileinput-exists">背景画像変更</span><input type="file" name="background_pic"></span>
+                            <a href="#cancel" class="btn btn-link btn-danger fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> キャンセル</a>
                         </div>
                     <br>
                     </div>
@@ -227,7 +227,7 @@
                     </div>
                     {{-- 外部公式サイト --}}
                     <div class="form-group @if($errors->has('url')) has-error @endif">
-                       <h6 for="url-field">外部公式サイト（無しでも可能）</h6>
+                       <h6 for="url-field">外部公式サイトURL（無しでも可能）</h6>
                     <input type="text" id="url-field" name="url" class="form-control" value="{{ is_null(old("url")) ? $npo_info->url : old("url") }}"/>
                        @if($errors->has("url"))
                         <span class="help-block icon-danger">{{ $errors->first("url") }}</span>
@@ -509,6 +509,8 @@
                         <span class="help-block icon-danger">{{ $errors->first("proval") }}</span>
                         @endif
                     </div>
+                    @else
+                    <input type="hidden" name="proval" value="1">
                     @endif
                    <div class="well well-sm">
                     <button type="submit" class="btn btn-wd btn-outline-default">保存</button>
