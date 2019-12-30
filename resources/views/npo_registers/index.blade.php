@@ -134,7 +134,7 @@
                                     @endif
                                         @if($npo_register->background_pic)
                                             @if($npo_register->proval > 0)
-                                            <img class="img" src="/img/project_back/{{ $npo_register->background_pic }}" />
+                                            <img class="img" src="{{ asset('storage/img/project_back/'.$npo_register->background_pic) }}" />
                                             @elseif(Auth::user())
                                                 @if($npo_owner_info->npo == Auth::user()->npo)
                                                 <img class="img" src="/img/project_back/{{ $npo_register->background_pic }}" />
