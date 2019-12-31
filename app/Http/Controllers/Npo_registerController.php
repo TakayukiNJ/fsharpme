@@ -127,9 +127,9 @@ class Npo_registerController extends Controller {
 	public function store(Request $request)
 	{
 		$npo_register = new Npo_register();
-
 	    $rules = [
-            'subtitle'      => 'required | min:1 | max:55',
+            'title'      => 'required | alpha_dash| min:1 | max:255',
+            'subtitle'   => 'min:1 | max:255',
 //	        'support_limit' => 'digits_between:1,9',
 	    ];
 
@@ -137,6 +137,7 @@ class Npo_registerController extends Controller {
 
 		$id_auth   = Auth::user()->id;
         $npo_id    = Auth::user()->npo_id;
+        $npo       = Auth::user()->npo;
         $name_auth = Auth::user()->name;
         $user_auth = Auth::user()->email;
         $npo_auth  = Auth::user()->npo;
@@ -555,22 +556,19 @@ class Npo_registerController extends Controller {
 
  		$name_auth = Auth::user()->name;
         $npo_id    = Auth::user()->npo_id;
+        $npo       = Auth::user()->npo;
         // $npo_register->support_price = $request->input("support_price"); // 目標金額
-        if($npo_register->buyer == 0){
-    		$npo_register->proval = $request->input("proval"); // 1だったら公開
-        }else if($npo_register->proval == 0){
-        	$npo_register->proval = 1;
-        }
+
     	// 公開時のバリデーション
     	if($npo_register->published){
 		    $rules = [
                 'title'                   => 'required | min:1 | max:55',
                 'support_limit'           => 'digits_between:1,9',
                 'support_amount'          => 'required | digits_between:1,6', // 個人寄付の金額
-                'support_price_gold'      => 'required | digits_between:5,7', // 企業寄付の金額
-                'support_amount_gold'     => 'required | digits_between:1,2', // 企業寄付の定員数
-                'support_price_pratinum'  => 'required | digits_between:6,8', // 企業（プラチナ）寄付の金額
-    	        'support_amount_pratinum' => 'required | digits_between:1,2', // 企業（プラチナ）寄付の定員数
+//                'support_price_gold'      => 'required | digits_between:5,7', // 企業寄付の金額
+//                'support_amount_gold'     => 'required | digits_between:1,2', // 企業寄付の定員数
+//                'support_price_pratinum'  => 'required | digits_between:6,8', // 企業（プラチナ）寄付の金額
+//    	        'support_amount_pratinum' => 'required | digits_between:1,2', // 企業（プラチナ）寄付の定員数
                 //'url'                     => 'url',
                 // 'npo_name'                => 'alpha_dash',
     		];
@@ -582,10 +580,10 @@ class Npo_registerController extends Controller {
 //        		    'support_contents_detail' => 'date | after:tomorrow',
                     'support_limit'           => 'digits_between:1,9 | integer',
                     'support_amount'          => 'required | digits_between:1,6', // 個人寄付の金額
-                    'support_price_gold'      => 'required | digits_between:5,7', // 企業寄付の金額
-                    'support_amount_gold'     => 'required | digits_between:1,2', // 企業寄付の定員数
-                    'support_price_pratinum'  => 'required | digits_between:6,8', // 企業（プラチナ）寄付の金額
-        	        'support_amount_pratinum' => 'required | digits_between:1,2', // 企業（プラチナ）寄付の定員数
+//                    'support_price_gold'      => 'required | digits_between:5,7', // 企業寄付の金額
+//                    'support_amount_gold'     => 'required | digits_between:1,2', // 企業寄付の定員数
+//                    'support_price_pratinum'  => 'required | digits_between:6,8', // 企業（プラチナ）寄付の金額
+//        	        'support_amount_pratinum' => 'required | digits_between:1,2', // 企業（プラチナ）寄付の定員数
                     //'url'                     => 'url',
                     // 'npo_name'                => 'unique:npo_registers|alpha_dash',
         		];
@@ -594,10 +592,10 @@ class Npo_registerController extends Controller {
                     'title'                   => 'required | min:1 | max:55',
         		    'support_amount'          => 'digits_between:1,10 | integer',
                     'support_limit'           => 'digits_between:1,9 | integer',
-        	        'support_price_gold'      => 'required | digits_between:5,7', // 企業寄付の金額
-                    'support_amount_gold'     => 'required | digits_between:1,2', // 企業寄付の定員数
-                    'support_price_pratinum'  => 'required | digits_between:6,8', // 企業（プラチナ）寄付の金額
-        	        'support_amount_pratinum' => 'required | digits_between:1,2', // 企業（プラチナ）寄付の定員数
+//        	        'support_price_gold'      => 'required | digits_between:5,7', // 企業寄付の金額
+//                    'support_amount_gold'     => 'required | digits_between:1,2', // 企業寄付の定員数
+//                    'support_price_pratinum'  => 'required | digits_between:6,8', // 企業（プラチナ）寄付の金額
+//        	        'support_amount_pratinum' => 'required | digits_between:1,2', // 企業（プラチナ）寄付の定員数
                     //'url'                     => 'url',
                     // 'npo_name'                => 'unique:npo_registers|required | alpha_dash',
         	    ];
@@ -607,15 +605,20 @@ class Npo_registerController extends Controller {
 
         $npo_register->support_limit = $request->input("support_limit"); // 募集寄付数
 
-		// 画像に関して(1月28日追加)
         $background_file = $request->file('background_pic');
         // 画像が空かチェック
         if(!empty($background_file)){
             // 画像の名前を取得
-            $background_pic = time()."_".$background_file->getClientOriginalName();
-            dd($background_file);
+//            $background_pic = time()."_".$background_file->getClientOriginalName();
+            $extention  = $background_file->getClientOriginalExtension();
+            $background_pic = $name_auth."_".time().".".$extention;
             // 画像をpublicの中に保存
-            Image::make($background_file)->save( './img/project_back/' . $background_pic );
+//            dd("a");
+//            $background_file->storeAs('public/img/project_back/', $background_pic);
+
+//            dd($background_pic);
+            // 画像をpublicの中に保存
+            Image::make($background_file)->save(public_path(). '/img/project_back/' . $background_pic );
             // $image_file->move('./img/personal_info/', $image_id); // cloud9だけかな？
             $npo_register->background_pic = $background_pic;
         }else{
@@ -629,7 +632,7 @@ class Npo_registerController extends Controller {
                 // 画像の名前を取得
                 $code_avater = $npo_register->title."_".$code_file->getClientOriginalName();
                 // 画像をpublicの中に保存
-                Image::make($code_file)->save( './img/project_code/' . $code_avater );
+                Image::make($code_file)->save(public_path(). '/img/project_code/' . $code_avater );
                 // $image_file->move('./img/personal_info/', $image_id); // cloud9だけかな？
                 $npo_register->$code = $code_avater;
             }else{
@@ -711,9 +714,9 @@ class Npo_registerController extends Controller {
         $npo_register->body = $request->input("body");
         $npo_register->url  = $request->input("url");
         $npo_register->updated_at = new Carbon(Carbon::now());
-         $npo_register->proval = $request->input("proval");
+        $npo_register->proval = $request->input("proval");
 
-        if($npo_register->proval != 0){
+        if($npo_register->proval != 0 && !($npo_register->npo_name)){
             $npo_register->published = new Carbon(Carbon::now());
             $npo_register->npo_name = $npo_name + 10000; // URL
         }

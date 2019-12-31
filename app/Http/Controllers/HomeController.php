@@ -261,16 +261,22 @@ class HomeController extends Controller
         // 画像が空かチェック
         if(!empty($image_file)){
             // 画像の名前を取得
-            $image_id = $name_auth."_".time();
+//            dd($image_file->getClientOriginalExtension());
+
+            $image_id   = $name_auth."_".time();
+            $extention  = $image_file->getClientOriginalExtension();
+            $image_name = $image_id.".".$extention;
             // 画像をpublicの中に保存
-            $image_file->storeAs('public/img/personal_info', $image_id);
-//            Image::make($image_file)->resize(300, 300)->save( './img/personal_info/' . $image_id );
-//            $a = Image::make($image_file)->resize(300, 300);
+//          dd($image_id);
+            $image_file->storeAs('public/img/personal_info', $image_name);
+//            dd(public_path().'./storage/');
+//            Image::make($image_file)->resize(300, 300)->save(public_path().'/img/personal_info/'.$image_name);
+//          $a = Image::make($image_file)->resize(300, 300);
             if(!empty($data['personal_info'])){
-                \DB::table('personal_info')->where('user_id', $user_auth)->update(['image_id' => $image_id]);
+                \DB::table('personal_info')->where('user_id', $user_auth)->update(['image_id' => $image_name]);
             }else{
                 \DB::table('personal_info')->insert([
-                    'image_id'              => $image_id,
+                    'image_id'              => $image_name,
                     'user_id'               => $user_auth,
                     'user_name_sei_kanji'   => $user_name_sei_kanji,
                     'user_name_mei_kanji'   => $user_name_mei_kanji,
