@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="20516ec6-be6d-40be-b8fa-a4ada8341456" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/fsharpv3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fsharpv3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Npo_registerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Npo_registerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/npo_registers/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/npo_registers/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,14 +18,19 @@
     <favorites_list name="fsharpv3" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.42343268">
+    <splitter split-orientation="horizontal" split-proportion="0.7934224">
       <split-first>
         <leaf>
           <file leaf-file-name="npo_landing_page.blade.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="178">
-                  <caret line="202" column="60" selection-start-line="202" selection-start-column="41" selection-end-line="202" selection-end-column="60" />
+                <state relative-caret-position="188">
+                  <caret line="584" column="47" selection-start-line="584" selection-start-column="47" selection-end-line="584" selection-end-column="47" />
+                  <folding>
+                    <element signature="e#35795#35802#1#HTML" expanded="true" />
+                    <element signature="e#36839#36846#1#HTML" expanded="true" />
+                    <element signature="e#38382#38389#1#HTML" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -45,8 +42,8 @@
           <file leaf-file-name="Npo_registerController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Npo_registerController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="178">
-                  <caret line="557" column="41" selection-start-line="557" selection-start-column="35" selection-end-line="557" selection-end-column="41" />
+                <state relative-caret-position="-166">
+                  <caret line="819" column="48" selection-start-line="819" selection-start-column="48" selection-end-line="819" selection-end-column="48" />
                   <folding>
                     <element signature="e#39#61#0#PHP" expanded="true" />
                   </folding>
@@ -60,7 +57,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>url</find>
       <find>$from</find>
       <find>bac</find>
       <find>url(</find>
@@ -90,6 +86,7 @@
       <find>subtitle</find>
       <find>certificated_npo</find>
       <find>npo_id</find>
+      <find>modal</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -116,7 +113,6 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/head_chat.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/npo_registers/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/lang/en/app.php" />
-        <option value="$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/common_chat.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" />
         <option value="$PROJECT_DIR$/app/Comment.php" />
@@ -137,6 +133,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/resources/views/npo_registers/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Npo_registerController.php" />
+        <option value="$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php" />
       </list>
     </option>
   </component>
@@ -419,12 +416,12 @@
       <workItem from="1576911998022" duration="322000" />
       <workItem from="1576918282989" duration="215000" />
       <workItem from="1576932969094" duration="10074000" />
-      <workItem from="1577517782139" duration="15205000" />
+      <workItem from="1577517782139" duration="20754000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120192000" />
+    <option name="totallyTimeSpent" value="125741000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -436,8 +433,8 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.16666667" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8136752" visible="true" weight="0.21405493" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.16666667" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8136752" visible="true" weight="0.21405493" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
@@ -681,13 +678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="202" column="60" selection-start-line="202" selection-start-column="41" selection-end-line="202" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/npo_registers/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -697,10 +687,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Npo_registerController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="557" column="41" selection-start-line="557" selection-start-column="35" selection-end-line="557" selection-end-column="41" />
+        <state relative-caret-position="-166">
+          <caret line="819" column="48" selection-start-line="819" selection-start-column="48" selection-end-line="819" selection-end-column="48" />
           <folding>
             <element signature="e#39#61#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="584" column="47" selection-start-line="584" selection-start-column="47" selection-end-line="584" selection-end-column="47" />
+          <folding>
+            <element signature="e#35795#35802#1#HTML" expanded="true" />
+            <element signature="e#36839#36846#1#HTML" expanded="true" />
+            <element signature="e#38382#38389#1#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
