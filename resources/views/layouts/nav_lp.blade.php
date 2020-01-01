@@ -124,8 +124,9 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle"  data-toggle="dropdown" href="javascript:void(0)">{{ Auth::user()->name }}</a>
                             <ul class="dropdown-menu dropdown-menu-right dropdown-danger">
+                                @if(Auth::user()->email_verified_at)
                                 <a class="dropdown-item" href="{{ url('/npo_registers/create') }}"><i class="nc-icon nc-money-coins"></i>&nbsp;@lang('app.registerOrg')</a>
-                                {{--<a target="_blank" class="dropdown-item" href="https://form.run/@fsharp"><i class="nc-icon nc-money-coins"></i>&nbsp; 団体登録</a>--}}
+                                @endif
                         @else
 
                         <!-- message 用編集 -->
@@ -224,7 +225,9 @@
                                 <a class="dropdown-item" href="{{ url('/') }}/{{ Auth::user()->npo }}"><i class="nc-icon nc-money-coins"></i>{{ Auth::user()->npo }}</a>
                         @endif
                                 <a class="dropdown-item" href="{{ url('home') }}/{{ Auth::user()->name }}"><i class="nc-icon nc-badge"></i> @lang('app.mypage')</a>
+                                @if(Auth::user()->email_verified_at)
                                 <a class="dropdown-item" href="{{ url('home/home_register') }}"><i class="nc-icon nc-settings"></i> @lang('setting')</a>
+                                @endif
                                 <a class="dropdown-item" href="{{ url('/logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();"><i class="nc-icon nc-spaceship"></i> @lang('app.logout')</a>
                                 <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">

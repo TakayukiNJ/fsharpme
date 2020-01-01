@@ -8,6 +8,7 @@ use App\Message;
 use Auth;
 use App\Events\MessageSent;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
 
 class ChatController extends Controller
 {
@@ -97,7 +98,10 @@ class ChatController extends Controller
 //        $messages_from = \DB::table('messages')->select('from as '.$name, 'email as '.$npo_name)->orderBy('id', 'DESC')->get();
 //          $messages_from += $messages_to;
         $data['message'] = $messages_from;
-        $data['profile_pic'] = $data['personal_info']->image_id;
+        $data['profile_pic'] = "";
+        if($data['personal_info']) {
+            $data['profile_pic'] = $data['personal_info']->image_id;
+        }
         // 既読をつける。
         \DB::table('messages')->where('from', $npo_name)->where('to', $name)->update(['read_flg' => 1]);
         return view('chat/chat_to_project', $data); // フォームページのビュー
@@ -159,7 +163,7 @@ class ChatController extends Controller
      * @param $project_id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function chat_to_person($person){
+    public function chat_to_person($npoName, $project, $person){
         $npo  = Auth::user()->npo;
 
         $data['user_info'] = \DB::table('users')->where('name', $person)->first();
@@ -167,17 +171,19 @@ class ChatController extends Controller
         $user = $data['user_info']->email;
 
         $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user)->first();
-        $data['project_info']  = \DB::table('npo_registers')->where('npo_name', $npo)->first();
-//        dd($data);
+        $data['project_info']  = \DB::table('npo_registers')->where('title', $npoName)->where('npo_name', $project)->first();
         $npo_name = $data['project_info']->npo_name;
         // ここにメッセージを書いていく。
-        $messages_from = \DB::table('messages')->whereIn('from', [$name, $npo_name])->whereIn('to', [$name, $user])->orderBy('id', 'DESC')->get();
+        $messages_from = \DB::table('messages')->whereIn('from', [$name, $npo_name])->whereIn('to', [$name, $npo_name])->orderBy('id', 'DESC')->get();
 //        $messages_to = \DB::table('messages')->where('from', $npo_name)->where('to', $name)->orderBy('id', 'DESC')->get();
 //
 //        $messages_from = \DB::table('messages')->select('from as '.$name, 'email as '.$npo_name)->orderBy('id', 'DESC')->get();
 //          $messages_from += $messages_to;
         $data['message'] = $messages_from;
-        $data['profile_pic'] = $data['personal_info']->image_id;
+        $data['profile_pic'] = "";
+        if($data['personal_info']) {
+            $data['profile_pic'] = $data['personal_info']->image_id;
+        }
         // 既読をつける。
         \DB::table('messages')->where('from', $name)->where('to', $npo_name)->update(['read_flg' => 1]);
         return view('chat/chat_to_person', $data); // フォームページのビュー
@@ -213,32 +219,56 @@ class ChatController extends Controller
 
     public function sendMessage(Request $request)
     {
-        $npo  = Auth::user()->npo;
+        $name   = Auth::user()->name;
+        $email  = Auth::user()->email;
         $from = $request->from;
         $to = $request->to;
         $message = $request->message;
-      // $message = $user->messages()->create([
-      //   'message' => $request->input('message')
-      // ]);
-      // broadcast(new MessageSent($user, $message))->toOthers();
-      \DB::table('messages')->insert(
-          [
-          'from'        => $from,
-          'to'          => $to,
-          'message'     => $message,
-          'read_flg'    => 0,                         // これ使わなそうだけど一応
-          'delete_flg'  => 0,                         // これ使わなそうだけど一応
-          'created_at'  => new Carbon(Carbon::now()), // 送った時刻
-          'updated_at'  => new Carbon(Carbon::now())  // これ使わなそうだけど一応
-          ]
-      );
+        // $message = $user->messages()->create([
+        //   'message' => $request->input('message')
+        // ]);
+        // broadcast(new MessageSent($user, $message))->toOthers();
+        \DB::table('messages')->insert(
+            [
+            'from'        => $from,
+            'to'          => $to,
+            'message'     => $message,
+            'read_flg'    => 0,                         // これ使わなそうだけど一応
+            'delete_flg'  => 0,                         // これ使わなそうだけど一応
+            'created_at'  => new Carbon(Carbon::now()), // 送った時刻
+            'updated_at'  => new Carbon(Carbon::now())  // これ使わなそうだけど一応
+            ]
+        );
+        if($name == $from){
+            $npo_registers  = \DB::table('npo_registers')->where('npo_name', $to)->first();
+            $npoUserInfo    = \DB::table('users')->where('npo', $npo_registers->title)->first();
+            $email = $npoUserInfo->email;
+            $id    = $npo_registers->id;
+            $reply = $npo_registers->title.'/'.$to.'/chat/t/'.$npoUserInfo->name;
+        }else{
+            $reply = 'home/chat/list/';
+        }
 
-      if($npo == $from){
-          return back();
-      }else{
-          $npo_registers  = \DB::table('npo_registers')->where('npo_name', $to)->first();
-          $id = $npo_registers->id;
+        $subject = $to." 様へ".$from." 様より新着メッセージがありました。";
+        Mail::send(['text' => 'emails.message'], [
+                'from'        => $from,
+                'to'          => $to,
+                'message'     => $message,
+                'reply'       => $reply,
+            ]
+            , function($message) use($email, $subject) {
+                $message
+                    ->from('g181tg2061@dhw.ac.jp')
+                    ->to($email)
+                    ->bcc('nj.takayuki@gmail.com')
+                    ->subject($subject);
+            }
+        );
+
+      if($name == $from){
           return redirect('chat/to/'.$id);
+      }else{
+          return back();
       }
     }
 }
