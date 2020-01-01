@@ -213,22 +213,32 @@ class ChatController extends Controller
 
     public function sendMessage(Request $request)
     {
+        $npo  = Auth::user()->npo;
+        $from = $request->from;
+        $to = $request->to;
+        $message = $request->message;
       // $message = $user->messages()->create([
       //   'message' => $request->input('message')
       // ]);
-
       // broadcast(new MessageSent($user, $message))->toOthers();
       \DB::table('messages')->insert(
           [
-          'from'        => $request->from,
-          'to'          => $request->to,
-          'message'     => $request->message,
+          'from'        => $from,
+          'to'          => $to,
+          'message'     => $message,
           'read_flg'    => 0,                         // これ使わなそうだけど一応
           'delete_flg'  => 0,                         // これ使わなそうだけど一応
           'created_at'  => new Carbon(Carbon::now()), // 送った時刻
           'updated_at'  => new Carbon(Carbon::now())  // これ使わなそうだけど一応
           ]
       );
-      return back();
+
+      if($npo == $from){
+          return back();
+      }else{
+          $npo_registers  = \DB::table('npo_registers')->where('npo_name', $to)->first();
+          $id = $npo_registers->id;
+          return redirect('chat/to/'.$id);
+      }
     }
 }

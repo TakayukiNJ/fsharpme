@@ -12,13 +12,17 @@
                 <h2 class="title">　</h2>
                 <div class="row">
                     <div class="col-md-8 ml-auto mr-auto">
+                        <br>
+                        <h5 class="text-center">
+                            <a href="{{ url('/') }}/{{ $project_info->title }}/{{ $project_info->npo_name }}">{{ $project_info->subtitle }}</a>へのメッセージ
+                        </h5>
                         @if(!Auth::guest())
                             <form class="contact-form" action="{{action('ChatController@sendMessage')}}" method="POST">
                                 <label>ユーザー名</label>
                                 <input name="from" class="form-control" placeholder="Name" value="{{ Auth::user()->name }}" readonly="readonly">
                                 <input name="to" type="hidden" value="{{ $project_info->npo_name }}" readonly="readonly">
                                 <label>内容</label>
-                                <textarea name="message" class="form-control" rows="4" placeholder="ここに内容を記述してください。"></textarea>
+                                <textarea name="message" class="form-control" rows="4" placeholder="ここに内容を記述してください。" required></textarea>
                                 <div class="row">
                                     <div class="col-md-4 offset-md-4">
                                         <button class="btn btn-danger btn-lg btn-fill">送信</button>
