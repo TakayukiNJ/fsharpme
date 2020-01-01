@@ -113,11 +113,13 @@
                                 <a class="nav-link" href="https://goo.gl/YZLao1" target="_blank">出金金額（月末）：{{ number_format(Auth::user()->total_deposit) }}円</a>
                             </li>
                         @endif
+                        @if(Auth::user()->email_verified_at)
                         <li class="nav-item">
                             <a href="{{ url('/') }}/home/chat/list" class="btn btn-just-icon">
                                 <i class="nc-icon nc-email-85"></i>
                             </a>
                         </li>
+                        @endif
                         @if ((Auth::user()->npo) == "")
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle"  data-toggle="dropdown" href="javascript:void(0)">{{ Auth::user()->name }}</a>

@@ -210,11 +210,11 @@ Route::get('/home/{name}', 'HomeController@home_own_timeline');
 
 // 2019年11/14追加
 //Route::get('/home/chat', 'ChatController@chat_list')->middleware('auth');
-Route::get('/home/chat/list', 'ChatController@list')->middleware('auth');
-Route::post('/home/chat/list', 'ChatController@list')->middleware('auth');
-Route::get('/home/chat/to/{title_key}/{subtitle_key}', 'ChatController@chat_to_project_redirect')->middleware('auth');
-Route::get('/chat/to/{project_id}', 'ChatController@chat_to_project')->middleware('auth');
-Route::get('/chat/t/{person}', 'ChatController@chat_to_person')->middleware('auth');
+Route::get('/home/chat/list', 'ChatController@list')->middleware('verified');
+Route::post('/home/chat/list', 'ChatController@list')->middleware('verified');
+Route::get('/home/chat/to/{title_key}/{subtitle_key}', 'ChatController@chat_to_project_redirect')->middleware('verified');
+Route::get('/chat/to/{project_id}', 'ChatController@chat_to_project')->middleware('verified');
+Route::get('/chat/t/{person}', 'ChatController@chat_to_person')->middleware('verified');
 //Route::get('/home/{name}/chat', 'ChatController@chat_list');
 
 Route::get('/{npo_name}/chat/list', 'ChatController@list_for_npo')->middleware('auth');
@@ -403,7 +403,8 @@ Route::get('/follow/store/2019', 'FollowController@store');
 Route::post('/follow/store/2019', 'FollowController@store');
 
 
-Auth::routes();
+//Auth::routes();
+Auth::routes(['verify' => true]);
 
 //Route::get('/home', 'HomeController@index')->name('home');
 

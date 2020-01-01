@@ -32,9 +32,8 @@ class HomeController extends Controller
         // }else{
         //     $name = "";
         // }
-        // dd($name);
 
-        $this->middleware('auth', ['except' => ['terms', 'privacy_policy', 'specified_commercial_transactions_law', 'npo_landing_page', 'home_own_timeline']]);
+        $this->middleware('verified', ['except' => ['terms', 'privacy_policy', 'specified_commercial_transactions_law', 'npo_landing_page', 'home_own_timeline']]);
     }
 
     /**
@@ -587,11 +586,13 @@ class HomeController extends Controller
             $auth_npo = $this_user->npo;
             $data["this_auth"] = $this_user;
         }else{
-
             // ログインしていない場合、タイトルURLに飛ばす
+            $verify = Auth::user()->email_verified_at;
             if(!Auth::user()){
                 //dd(1);
                 return redirect('login');
+            }else if(!$verify){
+                return view('/auth/verify');
             }
             // ログインしている個人
             $id       = Auth::user()->id;
