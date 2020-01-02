@@ -15,7 +15,7 @@
     					<div class="fileinput fileinput-new" data-provides="fileinput" name="image_id">
                             <div class="fileinput-new img-no-padding">
                                 @if($image_id)
-                                    <img src='/img/personal_info/{{ $image_id }}' alt="{{ Auth::user()->name }}">
+                                    <img src="{{ asset('/storage/img/personal_info/'.$image_id) }}" alt="{{ $image_id }}">
                                 @else
                                     <img src="{{ url('/') }}/../img/placeholder.jpg" alt="default">
                                 @endif
@@ -29,7 +29,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6 ml-auto mr-auto">
                     {{-- 自己紹介・説明文 --}}
                     <div class="form-group @if($errors->has('description')) has-error @endif">
@@ -125,8 +125,8 @@
                                         @endif
                                     </div>
                                 </div>
-                                
-                                
+
+
                             {{-- ユーザー名 --}}
                             <div class="form-group">
                                 <label>ユーザー名</label>
@@ -161,7 +161,7 @@
                                    <span class="help-block form-control-feedback">{{ $errors->first("home_tel") }}</span>
                                 @endif
                             </div>
-                            
+
                             {{-- 銀行名 --}}
                             <div class="form-group @if($errors->has('bank_name')) has-error @endif">
                                 <label for="bank_name-field">銀行名</label>
@@ -217,7 +217,7 @@
     </div>
 </div>
 
-            
+
 
 <form name="subwindow">
 {{ csrf_field() }}

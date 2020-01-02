@@ -11,9 +11,9 @@ Fsharpにご登録されている{{ $npo_name }}に
 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 支援者：{{ $auth_after->name }}様
 支援先：{{ $npo_name }}
-支援者メールアドレス：{{ $auth_after->email }}
 支援者URL：{{ url('/') }}/home/{{ $auth_after->name }}
 支援先URL：{{ url()->previous() }}
+メッセージ：{{ url()->previous() }}/chat/t/{{ $auth_after->name }}
 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
 ＊このメールに対して、ご質問や身に覚えなのない方は、お手数ですがご返信ください。

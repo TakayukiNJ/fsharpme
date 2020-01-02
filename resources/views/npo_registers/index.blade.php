@@ -13,7 +13,6 @@
                 <div class="row">
                     <div class="col-md-12 ml-auto">
                         <div class="owner text-center">
-
                             <form action="{{action('FollowController@store')}}" method="POST">
                                 <input name="followee" type="hidden" value="{{ $npo_owner_info->npo }}" readonly="readonly">
                                 <div class="name">
@@ -114,7 +113,7 @@
                             <li>合計獲得金額：{{ number_format($project_total_price) }}円</li>
                             @if(Auth::user())
                             @if($npo_owner_info->npo == Auth::user()->npo)
-                            <li>出金可能金額：{{ $npo_owner_info->total_deposit }}円</li>
+                            <li>出金可能金額：{{ number_format($npo_owner_info->total_deposit) }}円</li>
                             <li>※出金可能金額は管理者のみ表示</li>
                             @endif
                             @endif
@@ -135,7 +134,7 @@
                                     @endif
                                         @if($npo_register->background_pic)
                                             @if($npo_register->proval > 0)
-                                            <img class="img" src="/img/project_back/{{ $npo_register->background_pic }}" />
+                                            <img class="img" src="{{ asset('storage/img/project_back/'.$npo_register->background_pic) }}" />
                                             @elseif(Auth::user())
                                                 @if($npo_owner_info->npo == Auth::user()->npo)
                                                 <img class="img" src="/img/project_back/{{ $npo_register->background_pic }}" />
@@ -200,13 +199,15 @@
             				</div>
         				</div>
                     @endforeach
-                    {!! $npo_registers->render() !!}
                 @else
                 <!--<h3 class="text-center alert alert-info">Empty!</h3>-->
                 <br>
                 <br>
                 @endif
 			</div>
+            <div class="text-center">
+                {!! $npo_registers->render() !!}
+            </div>
         </div>
     </div>
 </div>

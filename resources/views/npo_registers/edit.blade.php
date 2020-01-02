@@ -63,7 +63,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="pricing-5 section-gray">
             <div class="container">
             <h4>詳細編集</h4>
@@ -80,15 +80,15 @@
                         <br>
                         <div class="fileinput-new thumbnail img-no-padding" style="max-width: 370px; max-height: 250px;">
                             @if($npo_info->background_pic)
-                            <img src='/img/project_back/{{ $npo_info->background_pic }}' alt="{{ Auth::user()->npo }}">
+                                <img src="/img/project_back/{{ $npo_info->background_pic }}" alt="{{ Auth::user()->npo }}">
                             @else
                             <img src="https://images.unsplash.com/photo-1486310662856-32058c639c65?dpr=2&auto=format&fit=crop&w=1500&h=1125&q=80&cs=tinysrgb&crop=" alt="default">
                             @endif
                         </div>
                         <div class="fileinput-preview fileinput-exists thumbnail img-no-padding" style="max-width: 370px; max-height: 250px;"></div>
                         <div>
-                            <span class="btn btn-outline-default btn-round btn-file"><span class="fileinput-new">背景画像変更</span><span class="fileinput-exists">Change</span><input type="file" name="background_pic"></span>
-                            <a href="#paper-kit" class="btn btn-link btn-danger fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
+                            <span class="btn btn-outline-default btn-round btn-file"><span class="fileinput-new">背景画像変更</span><span class="fileinput-exists">背景画像変更</span><input type="file" name="background_pic"></span>
+                            <a href="#cancel" class="btn btn-link btn-danger fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> キャンセル</a>
                         </div>
                     <br>
                     </div>
@@ -161,17 +161,17 @@
                 <div class="col-md-7 col-sm-7">
                     <br>
                     {{-- FsharpのURL --}}
-                    <div class="form-group @if($errors->has('npo_name')) has-error @endif">
-                    @if($npo_info->proval < 1)
-                        <label for="npo_name-field">ユニークURL（「https://fsharp.me/[団体名]/***」の***部分。設定後変更不可） <span class="icon-danger">*</span></label>
-                        <input type="text" id="npo_name-field" name="npo_name" class="form-control" placeholder="test_project" value="{{ is_null(old("npo_name")) ? $npo_info->npo_name : old("npo_name") }}" {{ !$npo_info->npo_name ? '' : 'readonly="readonly"'}} required/>
-                        @if($errors->has("npo_name"))
-                        <span class="help-block icon-danger">この{{ $errors->first("npo_name") }}（重複不可）</span>
-                        @endif
-                    @else
-                        <input type="hidden" id="npo_name-field" name="npo_name" class="form-control" placeholder="test_project" value="{{ is_null(old("npo_name")) ? $npo_info->npo_name : old("npo_name") }}" {{ !$npo_info->npo_name ? '' : 'readonly="readonly"'}} required/>
-                    @endif
-                    </div>
+                    {{--<div class="form-group @if($errors->has('npo_name')) has-error @endif">--}}
+                    {{--@if($npo_info->proval < 1)--}}
+                        {{--<label for="npo_name-field">ユニークURL（「https://fsharp.me/[団体名]/***」の***部分。設定後変更不可） <span class="icon-danger">*</span></label>--}}
+                        {{--<input type="text" id="npo_name-field" name="npo_name" class="form-control" placeholder="test_project" value="{{ is_null(old("npo_name")) ? $npo_info->npo_name : old("npo_name") }}" {{ !$npo_info->npo_name ? '' : 'readonly="readonly"'}} required/>--}}
+                        {{--@if($errors->has("npo_name"))--}}
+                        {{--<span class="help-block icon-danger">この{{ $errors->first("npo_name") }}（重複不可）</span>--}}
+                        {{--@endif--}}
+                    {{--@else--}}
+                        {{--<input type="hidden" id="npo_name-field" name="npo_name" class="form-control" placeholder="test_project" value="{{ is_null(old("npo_name")) ? $npo_info->npo_name : old("npo_name") }}" {{ !$npo_info->npo_name ? '' : 'readonly="readonly"'}} required/>--}}
+                    {{--@endif--}}
+                    {{--</div>--}}
                     {{-- 特典利用期限 --}}
                     <div class="row price-row">
                         <div class="col-md-6">
@@ -227,7 +227,7 @@
                     </div>
                     {{-- 外部公式サイト --}}
                     <div class="form-group @if($errors->has('url')) has-error @endif">
-                       <h6 for="url-field">外部公式サイト（無しでも可能）</h6>
+                       <h6 for="url-field">外部公式サイトURL（無しでも可能）</h6>
                     <input type="text" id="url-field" name="url" class="form-control" value="{{ is_null(old("url")) ? $npo_info->url : old("url") }}"/>
                        @if($errors->has("url"))
                         <span class="help-block icon-danger">{{ $errors->first("url") }}</span>
@@ -430,7 +430,7 @@
         <div class="col-md-12">
                     <h1><i class="glyphicon glyphicon-edit"></i>チームメンバー</h1>
                     @for ($i = 1; $i < 11; $i++)
-                        <?php 
+                        <?php
                            $member          = "member".$i;
                            $member_pos      = $member."_pos";
                            $member_detail   = $member."_detail";
@@ -438,7 +438,7 @@
                            $member_facebook = $member."_facebook";
                            $member_linkedin = $member."_linkedin";
                            // member追加は一人だけにしたい処理
-                           $member_check    = "member1"; 
+                           $member_check    = "member1";
                            if($i > 1){
                               $member_check_1  = $i - 1;
                               $member_check    = "member".$member_check_1;
@@ -491,7 +491,7 @@
                             @endif
                         @endif
                     @endfor
-                    
+
                     {{-- 公開非公開 --}}
                     @if($npo_info->buyer == 0)
                     <div class="form-group @if($errors->has('proval')) has-error @endif">
@@ -509,6 +509,8 @@
                         <span class="help-block icon-danger">{{ $errors->first("proval") }}</span>
                         @endif
                     </div>
+                    @else
+                    <input type="hidden" name="proval" value="1">
                     @endif
                    <div class="well well-sm">
                     <button type="submit" class="btn btn-wd btn-outline-default">保存</button>

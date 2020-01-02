@@ -255,7 +255,7 @@
                                                      </form>
                                                     {{-- data-description="寄付後にユーザー名と画像が自動記載"--}}
                                                 @endif
-                                                
+
                                                 <style type="text/css">
                                                 button.stripe-button-el,
                                                 button.stripe-button-el>span {
@@ -263,7 +263,7 @@
                                                   background-image: none;
                                                 }
                                                 </style>
-                                                
+
                                             </div>
                                         </div>
                                     </div>
@@ -394,7 +394,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -408,61 +408,122 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-6">
                             <div class="card card-blog">
-    							<div class="card-image">
-    							    @if($npo_info->code1)
-    								{{--<a href="#pablo">--}}
-    									<img class="img" src="{{ url('/') }}/img/project_code/{{$npo_info->code1}}">
-    								{{--</a>--}}
-    								@endif
-                                </div>
-    							<div class="card-body text-center">
-                                    <h4 class="card-title">
-                                        {{ $npo_info->blue_card_title }}
-                                    </h4>
-                                    <div class="card-description">
-                                        {!! nl2br(e(trans($npo_info->blue_card_body))) !!}
+                                <a href="/{{ $npo_info->npo_name }}" data-toggle="modal" data-target="#code1" aria-label="Close">
+                                    <div class="card-image">
+                                        @if($npo_info->code1)
+                                        {{--<a href="#pablo">--}}
+                                            <img class="img" src="{{ url('/') }}/img/project_code/{{$npo_info->code1}}">
+                                        {{--</a>--}}
+                                        @endif
                                     </div>
-    							</div>
+                                    <div class="card-body text-center">
+                                        <h4 class="card-title">
+                                            {{ $npo_info->blue_card_title }}
+                                        </h4>
+                                    </div>
+                                </a>
     						</div>
                         </div>
                         <div class="col-md-4 col-sm-6">
                             <div class="card card-blog">
-    							<div class="card-image">
-    							    @if($npo_info->code2)
-    								{{--<a href="#pablo">--}}
-    									<img class="img" src="{{ url('/') }}/img/project_code//{{$npo_info->code2}}">
-    								{{--</a>--}}
-    							    @endif
-                                </div>
-    							<div class="card-body text-center">
-                                    <h4 class="card-title">
-                                        {{ $npo_info->green_card_title }}
-                                    </h4>
-                                    <div class="card-description">
-                                        {!! nl2br(e(trans($npo_info->green_card_body))) !!}
+                                <a href="/{{ $npo_info->npo_name }}" data-toggle="modal" data-target="#code2" aria-label="Close">
+                                    <div class="card-image">
+                                        @if($npo_info->code2)
+                                            <img class="img" src="{{ url('/') }}/img/project_code//{{$npo_info->code2}}">
+                                        @endif
                                     </div>
-    							</div>
+                                    <div class="card-body text-center">
+                                        <h4 class="card-title">
+                                            {{ $npo_info->green_card_title }}
+                                        </h4>
+                                    </div>
+                                </a>
     						</div>
                         </div>
                         <div class="col-md-4 col-sm-6">
                             <div class="card card-blog">
-    							<div class="card-image">
-    							    @if($npo_info->code3)
-    								{{--<a href="#pablo">--}}
-									<img class="img" src="{{ url('/') }}/img/project_code/{{$npo_info->code3}}">
-    								{{--</a>--}}
-    								@endif
-                                </div>
-    							<div class="card-body text-center">
-                                    <h4 class="card-title">
-                                        {{ $npo_info->yellow_card_title }}
-                                    </h4>
-                                    <div class="card-description">
-                                        {!! nl2br(e(trans($npo_info->yellow_card_body))) !!}
+                                <a href="/{{ $npo_info->npo_name }}" data-toggle="modal" data-target="#code3" aria-label="Close">
+                                    <div class="card-image">
+                                        @if($npo_info->code3)
+                                            <img class="img" src="{{ url('/') }}/img/project_code/{{$npo_info->code3}}">
+                                        @endif
                                     </div>
-    							</div>
-    						</div>
+                                    <div class="card-body text-center">
+                                        <h4 class="card-title">
+                                            {{ $npo_info->yellow_card_title }}
+                                        </h4>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
+                        {{-- 画像をクリックした時のポップアップの中身（3つ分） --}}
+                        <div class="modal fade" id="code1" tabindex="-1" role="dialog" aria-hidden="false">
+                            <div class="modal-dialog modal-register">
+                                <div class="modal-content">
+                                    <div class="modal-header no-border-header text-center">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <h3 class="modal-title text-center">{{ $npo_info->blue_card_title }}</h3><br>
+                                        <p>{!! nl2br(e(trans($npo_info->blue_card_body))) !!}</p>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="card card-blog">
+                                            <div class="card-image">
+                                                @if($npo_info->code1)
+                                                    <img class="img" src="{{ url('/') }}/img/project_code/{{$npo_info->code1}}">
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="code2" tabindex="-1" role="dialog" aria-hidden="false">
+                            <div class="modal-dialog modal-register">
+                                <div class="modal-content">
+                                    <div class="modal-header no-border-header text-center">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <h3 class="modal-title text-center">{{ $npo_info->green_card_title }}</h3><br>
+                                        <p>{!! nl2br(e(trans($npo_info->green_card_body))) !!}</p>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="card card-blog">
+                                            <div class="card-image">
+                                                @if($npo_info->code2)
+                                                    <img class="img" src="{{ url('/') }}/img/project_code/{{$npo_info->code2}}">
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="code3" tabindex="-1" role="dialog" aria-hidden="false">
+                            <div class="modal-dialog modal-register">
+                                <div class="modal-content">
+                                    <div class="modal-header no-border-header text-center">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <h3 class="modal-title text-center">{{ $npo_info->yellow_card_title }}</h3><br>
+                                        <p>{!! nl2br(e(trans($npo_info->yellow_card_body))) !!}</p>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="card card-blog">
+                                            <div class="card-image">
+                                                @if($npo_info->code3)
+                                                    <img class="img" src="{{ url('/') }}/img/project_code/{{$npo_info->code3}}">
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- ポップアップの中身修了 --}}
                     </div>
                 </div>
             </div>
@@ -487,9 +548,9 @@
                                         <div class="card-img-top">
                                             <a href="{{ url('/home') }}/{{$npo_info->$member}}">
                                                 @if($personal_info_image_id[$i])
-                                                    <img class="img" src="{{ !$personal_info_image_id[$i] ? 'img/placeholder.jpg' : '/img/personal_info/'.$personal_info_image_id[$i]}}"/>
+                                                    <img class="img" src="{{ !$personal_info_image_id[$i] ? 'img/placeholder.jpg' : asset('storage/img/personal_info/'.$personal_info_image_id[$i]) }}"/>
                                                 @else
-                                                <img class="img" src="{{ url('/') }}/../img/placeholder.jpg"/>
+                                                    <img class="img" src="{{ url('/') }}/../img/placeholder.jpg"/>
                                                 @endif
                                             </a>
                                         </div>
@@ -516,7 +577,40 @@
                 </div>
             </div>
         </div>
-        
+
+        @if(!Auth::guest())
+            <button type="button" class="btn btn-outline-default" href="/{{ $npo_info->npo_name }}" class="badge" data-toggle="modal" data-target="#message" aria-label="Close">
+                メッセージを送る
+            </button>{{-- 画像をクリックした時のポップアップの中身（3つ分） --}}
+            <div class="modal fade" id="message" tabindex="-1" role="dialog" aria-hidden="false">
+                <div class="modal-dialog modal-register">
+                    <div class="modal-content">
+                        <div class="modal-header no-border-header text-center">
+                            <h5 class="modal-title text-center">
+                                <a href="{{ url('/') }}/{{ $npo_info->title }}/{{ $npo_info->npo_name }}">{{ $npo_info->subtitle }}</a>へのメッセージ
+                            </h5>
+                            <form class="contact-form" action="{{action('ChatController@sendMessage')}}" method="POST">
+                                <label>ユーザー名</label>
+                                <input name="from" class="form-control" value="{{ Auth::user()->name }}" readonly="readonly">
+                                <input name="to" type="hidden" value="{{ $npo_info->npo_name }}" readonly="readonly">
+                                <label>内容</label>
+                                <textarea name="message" class="form-control" rows="4" placeholder="ここに交渉内容を記述してください。" required></textarea>
+                                <div class="row">
+                                    <div class="col-md-12 offset-md-4">
+                                        <button class="btn btn-danger btn-lg btn-fill">送信</button>
+                                    </div>
+                                </div>
+                                {!! csrf_field() !!}
+                            </form>
+                        </div>
+                        <div class="modal-body">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- ポップアップの中身修了 --}}
+        @endif
+{{--
         <div class="cd-section section-white" id="chats">
             <div class="container">
                 <div class="space-top"></div>
@@ -539,11 +633,11 @@
                         </form>
 	                    @endif
 	                </div>
-	                
+
                     <div class="col-md-8 ml-auto mr-auto">
                     <div class="media">
                     </div>
-                    
+
                     @for ($i = 1; $i < count($message); $i++)
                     <div class="media">
                         <a class="pull-left" href="#paper-kit">
@@ -565,13 +659,13 @@
                         </div>
                         <p> {{ $created[$i] }}</p>
                     </div>
-                    
+
                     @endfor
                     </div>
                 </div>
             </div>
         </div>
-        
+    --}}
     </div>
     {{--
     @if($mail_message == "")

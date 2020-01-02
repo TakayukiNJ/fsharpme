@@ -15,7 +15,7 @@
                         <div class="fileinput-new img-no-padding text-center">
                             @if($this_personal_info)
                                 @if($this_personal_info->image_id)
-                                    <img src='/img/personal_info/{{ $this_personal_info->image_id }}' alt="{{ $this_auth->name }}">
+                                    <img src="{{ asset('storage/img/personal_info/'.$this_personal_info->image_id) }}" alt="{{ $this_auth->name }}">
                                 @else
                                     <img src="{{ url('/') }}/../img/placeholder.jpg" alt="default">
                                 @endif
@@ -188,15 +188,31 @@
                 </div>
             </div>
             @if(Auth::user())
-            @if(Auth::user()->name == $this_auth->name)
-            <div class="row">
-                <div class="col-md-6 ml-auto mr-auto text-center">
-                    <!--<p>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>-->
-                    <!--<br />-->
-                    <a href="{{ url('/home/home_register') }}" class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i> マイページ設定</a>
-                </div>
-            </div>
-            @endif
+                @if(Auth::user()->name == $this_auth->name)
+                    @if(Auth::user()->email_verified_at)
+                        <div class="row">
+                            <div class="col-md-6 ml-auto mr-auto text-center">
+                                <!--<p>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>-->
+                                <!--<br />-->
+                                <a href="{{ url('/home/home_register') }}" class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i> マイページ設定</a>
+                            </div>
+                        </div>
+                    @else
+                        @if (session('resent'))
+                            <div class="alert alert-success text-center" role="alert">
+                                新しい認証のリンクを、登録したメールアドレスに送信しました。
+                            </div>
+                        @endif
+                        <div class="row">
+                            <div class="col-md-6 ml-auto mr-auto text-center">
+                                <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
+                                    @csrf
+                                    <button type="submit" class="btn btn-outline-default btn-round">メール認証</button>.
+                                </form>
+                            </div>
+                        </div>
+                    @endif
+                @endif
             @endif
 
             <br/>
@@ -501,7 +517,7 @@
                                                 @if($this_user_npo_info_proval[$i]->support_contents_detail)
                                                     <br>期限：{{ Carbon\Carbon::parse($this_user_npo_info_proval[$i]->support_contents_detail)->format('Y年m月d日H:i') }}
                                                 @endif
-                                                    
+
         									</small></h6>
                                         </div>
                                         <div class="col-md-3 col-2">
@@ -566,7 +582,7 @@ function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
 }
- 
+
 function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("myOverlay").style.display = "none";

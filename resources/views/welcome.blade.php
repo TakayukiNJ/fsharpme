@@ -2,7 +2,6 @@
 @include('layouts.welcome_head')
 @include('layouts.welcome_script')
 @include('layouts.nav_lp')
-@include('layouts.welcome_script')
 @section('welcome_content')
 <body class="presentation-page loading">
     <div class="page-header section-dark" style="background-image: url('/img/farid-askerov.jpg')">
@@ -12,7 +11,7 @@
     				<h1 class="presentation-title"></h1>
     				<!--<div class="type">F♯</div>-->
     			</div>
-    			<h2 class="presentation-subtitle text-center">社会活動のための資金と人材を獲得できるWebサービス「F♯」</h2>
+    			<h2 class="presentation-subtitle text-center">社会問題解決のためのプロジェクト資金調達サービス「F♯」</h2>
     			<div class="w3-panel w3-large">
                     <br>
                     <button type="button" class="btn-lg btn btn-neutral" data-toggle="modal" data-target="#howtoModal">
@@ -38,7 +37,7 @@
 									<p>④プロジェクト編集・公開</p>
 									<p>⑤拡散</p>
                                     <div class="modal-footer no-border-footer">
-                                        <p>質問がございました、お気軽にご連絡ください→g181tg2061@dhw.ac.jp</p>
+                                        <p>質問がございましたら、お気軽にご連絡ください→g181tg2061@dhw.ac.jp</p>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +80,7 @@
     		</div>
     	</div>
     </div>
-    
+
     <div id="features" class="team-5 section-image" style="background-image: url('/img/sections/martin-knize.jpg')">
         <div class="projects-1">
             <div class="container">
@@ -131,7 +130,7 @@
 							</div>
 							<div class="description">
 								<h4 class="info-title">支援後のリターン</h4>
-								<p>プロジェクトによっては、リターンがあるものや、個数に限りがございます。（やり取りは、プロジェクトページのメッセージで行ってください。）</p>
+								<p>プロジェクトによっては、リターンがあるものや、個数に限りがございます。（やり取りは、メッセージで行ってください。）</p>
 							</div>
 						</div>
 					</div>

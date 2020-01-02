@@ -32,9 +32,8 @@ class HomeController extends Controller
         // }else{
         //     $name = "";
         // }
-        // dd($name);
 
-        $this->middleware('auth', ['except' => ['terms', 'privacy_policy', 'specified_commercial_transactions_law', 'npo_landing_page', 'home_own_timeline']]);
+        $this->middleware('verified', ['except' => ['terms', 'privacy_policy', 'specified_commercial_transactions_law', 'npo_landing_page', 'home_own_timeline']]);
     }
 
     /**
@@ -212,19 +211,20 @@ class HomeController extends Controller
     // 自己紹介登録をリニューアル(2019年1月25日)
     public function home_register_update(Request $request)
     {
-        $rules = [
-            'image_id' => 'image',
-            'post_up' => 'numeric',
-            'home_tel' => 'numeric',
-            'bank_account_number' => 'numeric',
-        ];
-        $this -> validate($request, $rules);
+        //$this->middleware('auth');
+//        $rules = [
+//            'image_id' => 'image',
+//            'post_up' => 'numeric',
+//            'home_tel' => 'numeric',
+//            'bank_account_number' => 'numeric',
+//        ];
+//        $this -> validate($request, $rules);
+;
 
         $id_auth   = Auth::user()->id;
         $name_auth = Auth::user()->name;
         $user_auth = Auth::user()->email;
         $npo_auth  = Auth::user()->npo;
-        $this->middleware('auth');
 
         $data['npo_info_personal'] = [];
         $data['npo_info_enterprise'] = [];
@@ -260,16 +260,22 @@ class HomeController extends Controller
         // 画像が空かチェック
         if(!empty($image_file)){
             // 画像の名前を取得
-            $image_id = time()."_".$image_file->getClientOriginalName();
+//            dd($image_file->getClientOriginalExtension());
+
+            $image_id   = $name_auth."_".time();
+            $extention  = $image_file->getClientOriginalExtension();
+            $image_name = $image_id.".".$extention;
             // 画像をpublicの中に保存
-            // dd($resize_file);
-            Image::make($image_file)->resize(300, 300)->save( './img/personal_info/' . $image_id );
-            // 画像が入ってた時だけ最初に処理をしてしまう。
+//          dd($image_id);
+            $image_file->storeAs('public/img/personal_info', $image_name);
+//            dd(public_path().'./storage/');
+//            Image::make($image_file)->resize(300, 300)->save(public_path().'/img/personal_info/'.$image_name);
+//          $a = Image::make($image_file)->resize(300, 300);
             if(!empty($data['personal_info'])){
-                \DB::table('personal_info')->where('user_id', $user_auth)->update(['image_id' => $image_id]);
+                \DB::table('personal_info')->where('user_id', $user_auth)->update(['image_id' => $image_name]);
             }else{
                 \DB::table('personal_info')->insert([
-                    'image_id'              => $image_id,
+                    'image_id'              => $image_name,
                     'user_id'               => $user_auth,
                     'user_name_sei_kanji'   => $user_name_sei_kanji,
                     'user_name_mei_kanji'   => $user_name_mei_kanji,
@@ -580,6 +586,14 @@ class HomeController extends Controller
             $auth_npo = $this_user->npo;
             $data["this_auth"] = $this_user;
         }else{
+            // ログインしていない場合、タイトルURLに飛ばす
+            $verify = Auth::user()->email_verified_at;
+            if(!Auth::user()){
+                //dd(1);
+                return redirect('login');
+            }else if(!$verify){
+                return view('/auth/verify');
+            }
             // ログインしている個人
             $id       = Auth::user()->id;
             $name     = Auth::user()->name;
