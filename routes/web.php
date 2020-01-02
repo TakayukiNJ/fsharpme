@@ -219,6 +219,7 @@ Route::get('/chat/t/{person}', 'ChatController@chat_to_person')->middleware('ver
 
 Route::get('/{npo_name}/chat/list', 'ChatController@list_for_npo')->middleware('auth');
 Route::get('/{npo_name}/{project}/chat/list', 'ChatController@list_for_project')->middleware('auth');
+Route::get('/{npo_name}/{project}/chat/t/{person}', 'ChatController@chat_to_person')->middleware('auth');
 
 
 //ホーム画面投資家や選手のタイムライン

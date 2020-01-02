@@ -42,7 +42,7 @@
                                     <div class="avatar big-avatar">
                                         @if(Auth::user()->name == $message[$i]->from)
                                             <a href="{{ url('/') }}/home/{{ Auth::user()->name }}">
-                                            @if("placeholder.jpg" != $profile_pic)
+                                            @if($profile_pic)
                                                 <img class="media-object" alt="64x64" src="{{ asset('storage/img/personal_info/')}}/{{ $profile_pic }}">
                                             @else
                                                 {{--<img class="media-object" alt="64x64" src="{{ asset('storage/img/')}}/placeholder.jpg">--}}

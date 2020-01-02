@@ -57,13 +57,7 @@
                                                             </h5>
                                                         </div>
                                                         <div class="col-md-2 col-3 nav-item">
-                                                            {{--<span class="label label-danger notification-bubble">2</span>--}}
-                                                            @if(0 < $value3)
-                                                                <button type="button" class="btn btn-danger btn-just-icon btn-lg" onclick="location.href='/chat/t/{{ $title_key }}'"><i class="nc-icon nc-chat-33"></i></button>
-                                                            @else
-                                                                <button type="button" class="btn btn-default btn-just-icon btn-lg" onclick="location.href='/chat/t/{{ $title_key }}'"><i class="nc-icon nc-chat-33"></i></button>
-                                                            @endif
-
+                                                            <button type="button" class="btn @if(0 < $value3) btn-danger @else btn-default @endif btn-just-icon btn-lg" onclick="location.href='./t/{{ $title_key }}'"><i class="nc-icon nc-chat-33"></i></button>
                                                         </div>
                                                     </div>
                                                 </li>

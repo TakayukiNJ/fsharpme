@@ -383,7 +383,8 @@ class Npo_registerController extends Controller {
             $data['personal_info'] = \DB::table('personal_info')->where('user_id', $user_auth)->first();
         }
         // 本番環境の時にここと、paymentの3パターンを変える
-        $stripe_key = "pk_test_tfM2BWAFRlYSPO939BW5jIj5";
+        $stripe_key = config('stripe.pk_key');
+//        $stripe_key = "pk_test_tfM2BWAFRlYSPO939BW5jIj5";
         $data['stripe_key'] = $stripe_key;
         // データベースからnpo_nameに該当するユーザーの情報をまとめて抜き出して
     	$currentNpoInfo     = \DB::table('npo_registers')->where('npo_name', $npo_name)->first();
@@ -839,7 +840,8 @@ class Npo_registerController extends Controller {
             return view('/errors/503');
         }
         // ストライプ側の処理
-        \Stripe\Stripe::setApiKey("sk_test_FoGhfwb6NnvDUnFHoeufcBss");
+        $stripe_sk_key = config('stripe.sk_key');
+        \Stripe\Stripe::setApiKey($stripe_sk_key);
 
         // Get the credit card details submitted by the form
         $token = $_POST['stripeToken'];
