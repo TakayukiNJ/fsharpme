@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="20516ec6-be6d-40be-b8fa-a4ada8341456" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/config/stripe.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Npo_registerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Npo_registerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Notifications/CustomResetPassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications/CustomResetPassword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/npo_registers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/npo_registers/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,14 +24,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5426516">
       <split-first>
         <leaf>
-          <file leaf-file-name="Npo_registerController.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Npo_registerController.php">
+          <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/resources/views/npo_registers/index.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="178">
-                  <caret line="385" column="46" selection-start-line="385" selection-start-column="46" selection-end-line="385" selection-end-column="46" />
-                  <folding>
-                    <element signature="e#39#61#0#PHP" expanded="true" />
-                  </folding>
+                <state relative-caret-position="355">
+                  <caret line="136" column="133" lean-forward="true" selection-start-line="136" selection-start-column="133" selection-end-line="136" selection-end-column="133" />
                 </state>
               </provider>
             </entry>
@@ -40,11 +37,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name=".env" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/.env">
+          <file leaf-file-name="welcome.blade.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="299">
-                  <caret line="76" column="50" selection-start-line="76" selection-start-column="50" selection-end-line="76" selection-end-column="50" />
+                <state relative-caret-position="195">
+                  <caret line="159" column="104" lean-forward="true" selection-start-line="159" selection-start-column="69" selection-end-line="159" selection-end-column="104" />
                 </state>
               </provider>
             </entry>
@@ -55,12 +52,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>update(</find>
-      <find>else if</find>
-      <find>update</find>
-      <find>Image</find>
-      <find>img/</find>
-      <find>npo_name</find>
       <find>create(</find>
       <find>最大支援数（公開中変更不可、9桁まで）</find>
       <find>title</find>
@@ -85,6 +76,12 @@
       <find>chat/to</find>
       <find>fsharpv3</find>
       <find>pk_</find>
+      <find>pk</find>
+      <find>sk</find>
+      <find>_code</find>
+      <find>_back</find>
+      <find>logo</find>
+      <find>public_path(). '/img/proj</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -114,11 +111,9 @@
         <option value="$PROJECT_DIR$/resources/views/chat/list.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home/home_register.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/chat/toproject.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/npo_registers/index.blade.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/resources/views/npo_registers/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/emails/verify.blade.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/resources/lang/ja.json" />
@@ -142,7 +137,9 @@
         <option value="$PROJECT_DIR$/public/index.php" />
         <option value="$PROJECT_DIR$/config/stripe.php" />
         <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Npo_registerController.php" />
+        <option value="$PROJECT_DIR$/resources/views/npo_registers/index.blade.php" />
       </list>
     </option>
   </component>
@@ -288,6 +285,19 @@
               <item name="fsharpv3" type="b2602c69:ProjectViewProjectNode" />
               <item name="fsharpv3" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fsharpv3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fsharpv3" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fsharpv3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fsharpv3" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Notifications" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -303,18 +313,27 @@
             <path>
               <item name="fsharpv3" type="b2602c69:ProjectViewProjectNode" />
               <item name="fsharpv3" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="fsharpv3" type="b2602c69:ProjectViewProjectNode" />
               <item name="fsharpv3" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="fsharpv3" type="b2602c69:ProjectViewProjectNode" />
               <item name="fsharpv3" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="logs" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="npo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fsharpv3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fsharpv3" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="npo_registers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -389,12 +408,12 @@
       <workItem from="1576911998022" duration="322000" />
       <workItem from="1576918282989" duration="215000" />
       <workItem from="1576932969094" duration="10074000" />
-      <workItem from="1577517782139" duration="44030000" />
+      <workItem from="1577517782139" duration="46871000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149017000" />
+    <option name="totallyTimeSpent" value="151858000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -406,8 +425,8 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.16666667" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8136752" visible="true" weight="0.21405493" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.16666667" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8136752" visible="true" weight="0.21405493" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
@@ -429,12 +448,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/TrustProxies.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -525,13 +538,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="716" lean-forward="true" selection-start-line="714" selection-start-column="11" selection-end-line="716" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/auth/verify.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
@@ -560,13 +566,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
           <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="49" column="29" lean-forward="true" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -704,6 +703,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="68" column="23" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Npo_registerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1871">
+          <caret line="635" column="46" selection-start-line="635" selection-start-column="46" selection-end-line="635" selection-end-column="46" />
+          <folding>
+            <element signature="e#39#61#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="11" column="116" lean-forward="true" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/npo_registers/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-586" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/stripe.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -711,20 +739,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="76" column="50" selection-start-line="76" selection-start-column="50" selection-end-line="76" selection-end-column="50" />
+        <state relative-caret-position="195">
+          <caret line="159" column="104" lean-forward="true" selection-start-line="159" selection-start-column="69" selection-end-line="159" selection-end-column="104" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Npo_registerController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/npo_registers/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="385" column="46" selection-start-line="385" selection-start-column="46" selection-end-line="385" selection-end-column="46" />
-          <folding>
-            <element signature="e#39#61#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="355">
+          <caret line="136" column="133" lean-forward="true" selection-start-line="136" selection-start-column="133" selection-end-line="136" selection-end-column="133" />
         </state>
       </provider>
     </entry>

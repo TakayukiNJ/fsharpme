@@ -619,7 +619,7 @@ class Npo_registerController extends Controller {
 
 //            dd($background_pic);
             // 画像をpublicの中に保存
-            Image::make($background_file)->save(public_path(). '/img/project_back/' . $background_pic );
+            Image::make($background_file)->save('./img/project_back/' . $background_pic );
             // $image_file->move('./img/personal_info/', $image_id); // cloud9だけかな？
             $npo_register->background_pic = $background_pic;
         }else{
@@ -633,7 +633,7 @@ class Npo_registerController extends Controller {
                 // 画像の名前を取得
                 $code_avater = $npo_register->title."_".$code_file->getClientOriginalName();
                 // 画像をpublicの中に保存
-                Image::make($code_file)->save(public_path(). '/img/project_code/' . $code_avater );
+                Image::make($code_file)->save('./img/project_code/' . $code_avater );
                 // $image_file->move('./img/personal_info/', $image_id); // cloud9だけかな？
                 $npo_register->$code = $code_avater;
             }else{
