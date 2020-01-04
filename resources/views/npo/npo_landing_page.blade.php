@@ -31,7 +31,7 @@
                                 <h2 class="title">{!! nl2br(e(trans($npo_info->subtitle))) !!}</h2>
                                 <h5 class="description">
                                     @if($npo_info->avater)
-                                    <img src="{{ url('/') }}/img/project_logo/{{$npo_info->avater}}" class="img-thumbnail img-no-padding img-responsive" alt="Rounded Image" width="32" height="32">
+                                    <img src="{{ url('/') }}/img/project_back/{{$npo_info->avater}}" class="img-thumbnail img-no-padding img-responsive" alt="Rounded Image" width="32" height="32">
                                     @endif
                                     {!! nl2br(e(trans($npo_info->title))) !!}
                                 </h5>
