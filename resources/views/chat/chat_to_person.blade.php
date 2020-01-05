@@ -50,7 +50,7 @@
                                             @else
                                                 <a href="{{ url('/'.$project_info->title.'/'.$project_info->npo_name) }}">
                                                     @if(!empty($project_info->background_pic))
-                                                        <img class="media-object" alt="64x64" src="{{ asset('storage//img/project_back')}}/{{ $project_info->background_pic }}">
+                                                        <img class="media-object" alt="64x64" src="{{ url('/') }}/../img/project_back/{{ $project_info->background_pic }}">
                                                     @else
                                                         <img class="media-object" alt="64x64" src="https://images.unsplash.com/photo-1486310662856-32058c639c65?dpr=2&auto=format&fit=crop&w=1500&h=1125&q=80&cs=tinysrgb&crop=">
                                                     @endif

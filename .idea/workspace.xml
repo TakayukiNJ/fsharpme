@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="20516ec6-be6d-40be-b8fa-a4ada8341456" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Npo_registerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Npo_registerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/npo_registers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/npo_registers/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/chat/chat_to_person.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/chat/chat_to_person.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/chat/chat_to_project.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/chat/chat_to_project.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,11 +23,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5426516">
       <split-first>
         <leaf>
-          <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/resources/views/npo_registers/index.blade.php">
+          <file leaf-file-name="chat_to_project.blade.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/resources/views/chat/chat_to_project.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="355">
-                  <caret line="136" column="133" lean-forward="true" selection-start-line="136" selection-start-column="133" selection-end-line="136" selection-end-column="133" />
+                <state relative-caret-position="408">
+                  <caret line="53" column="126" selection-start-line="53" selection-start-column="126" selection-end-line="53" selection-end-column="126" />
                 </state>
               </provider>
             </entry>
@@ -41,7 +40,10 @@
             <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="195">
-                  <caret line="159" column="104" lean-forward="true" selection-start-line="159" selection-start-column="69" selection-end-line="159" selection-end-column="104" />
+                  <caret line="159" column="104" selection-start-line="159" selection-start-column="69" selection-end-line="159" selection-end-column="104" />
+                  <folding>
+                    <element signature="e#1320#1327#1#HTML" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -128,10 +130,8 @@
         <option value="$PROJECT_DIR$/resources/views/chat/list_to_project.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/chat/list_to_person.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/emails/payment-to.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/chat/chat_to_project.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/emails/message.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ChatController.php" />
-        <option value="$PROJECT_DIR$/resources/views/chat/chat_to_person.blade.php" />
         <option value="$PROJECT_DIR$/app/Notifications/CustomResetPassword.php" />
         <option value="$PROJECT_DIR$/public/.htaccess" />
         <option value="$PROJECT_DIR$/public/index.php" />
@@ -140,6 +140,8 @@
         <option value="$PROJECT_DIR$/resources/views/npo/npo_landing_page.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Npo_registerController.php" />
         <option value="$PROJECT_DIR$/resources/views/npo_registers/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/chat/chat_to_person.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/chat/chat_to_project.blade.php" />
       </list>
     </option>
   </component>
@@ -269,6 +271,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -308,11 +311,6 @@
             <path>
               <item name="fsharpv3" type="b2602c69:ProjectViewProjectNode" />
               <item name="fsharpv3" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fsharpv3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fsharpv3" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -326,20 +324,12 @@
               <item name="fsharpv3" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="npo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fsharpv3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fsharpv3" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="npo_registers" type="462c0819:PsiDirectoryNode" />
+              <item name="chat" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -408,12 +398,13 @@
       <workItem from="1576911998022" duration="322000" />
       <workItem from="1576918282989" duration="215000" />
       <workItem from="1576932969094" duration="10074000" />
-      <workItem from="1577517782139" duration="46871000" />
+      <workItem from="1577517782139" duration="47362000" />
+      <workItem from="1578209760919" duration="728000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151858000" />
+    <option name="totallyTimeSpent" value="153077000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -426,12 +417,11 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.16666667" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8136752" visible="true" weight="0.21405493" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8119658" visible="true" weight="0.21728595" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" sideWeight="0.18632479" side_tool="true" visible="true" weight="0.21405493" />
+      <window_info id="Favorites" order="2" sideWeight="0.18803419" side_tool="true" visible="true" weight="0.21728595" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -439,6 +429,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -478,9 +469,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="489">
           <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
-          <folding>
-            <element signature="e#23#78#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -559,9 +547,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage/framework/views/c05a67d5782b1d7e50651b76124adc2f91255ee3.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/framework/views/c05a67d5782b1d7e50651b76124adc2f91255ee3.php" />
     <entry file="file://$PROJECT_DIR$/resources/lang/ja.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -594,9 +580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="43" column="51" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
-          <folding>
-            <element signature="e#36#82#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -621,23 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ChatController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="176" column="117" selection-start-line="176" selection-start-column="117" selection-end-line="176" selection-end-column="117" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/chat/chat_to_project.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="786">
-          <caret line="58" column="41" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/emails/message.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -656,9 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-          <folding>
-            <element signature="e#37#66#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -680,16 +643,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="49502" column="67" lean-forward="true" selection-start-line="49502" selection-start-column="67" selection-end-line="49502" selection-end-column="67" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/chat/chat_to_person.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="36" column="34" lean-forward="true" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -714,9 +667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1871">
           <caret line="635" column="46" selection-start-line="635" selection-start-column="46" selection-end-line="635" selection-end-column="46" />
-          <folding>
-            <element signature="e#39#61#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -742,14 +692,44 @@
     <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="159" column="104" lean-forward="true" selection-start-line="159" selection-start-column="69" selection-end-line="159" selection-end-column="104" />
+          <caret line="159" column="104" selection-start-line="159" selection-start-column="69" selection-end-line="159" selection-end-column="104" />
+          <folding>
+            <element signature="e#1320#1327#1#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/npo_registers/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="136" column="133" lean-forward="true" selection-start-line="136" selection-start-column="133" selection-end-line="136" selection-end-column="133" />
+        <state relative-caret-position="139">
+          <caret line="125" column="61" lean-forward="true" selection-start-line="125" selection-start-column="61" selection-end-line="125" selection-end-column="61" />
+          <folding>
+            <element signature="e#4333#4340#1#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ChatController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1392">
+          <caret line="176" column="117" selection-start-line="176" selection-start-column="117" selection-end-line="176" selection-end-column="117" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/chat/chat_to_person.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="52" column="99" lean-forward="true" selection-start-line="52" selection-start-column="99" selection-end-line="52" selection-end-column="133" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/chat/chat_to_project.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="53" column="126" selection-start-line="53" selection-start-column="126" selection-end-line="53" selection-end-column="126" />
         </state>
       </provider>
     </entry>
