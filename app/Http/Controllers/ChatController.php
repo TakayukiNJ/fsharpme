@@ -249,7 +249,7 @@ class ChatController extends Controller
             $reply = 'home/chat/list/';
         }
 
-        $subject = $to." 様へ".$from." 様より新着メッセージがありました。";
+        $subject = $from." 様より新着メッセージがありました。";
         Mail::send(['text' => 'emails.message'], [
                 'from'        => $from,
                 'to'          => $to,

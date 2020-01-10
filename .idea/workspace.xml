@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="20516ec6-be6d-40be-b8fa-a4ada8341456" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/chat/chat_to_person.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/chat/chat_to_person.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/chat/chat_to_project.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/chat/chat_to_project.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ChatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ChatController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,14 +20,17 @@
     <favorites_list name="fsharpv3" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5426516">
+    <splitter split-orientation="horizontal" split-proportion="0.15583076">
       <split-first>
         <leaf>
-          <file leaf-file-name="chat_to_project.blade.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/resources/views/chat/chat_to_project.blade.php">
+          <file leaf-file-name="ChatController.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ChatController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="53" column="126" selection-start-line="53" selection-start-column="126" selection-end-line="53" selection-end-column="126" />
+                <state relative-caret-position="206">
+                  <caret line="251" column="19" selection-start-line="251" selection-start-column="19" selection-end-line="251" selection-end-column="19" />
+                  <folding>
+                    <element signature="e#40#68#0#PHP" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -39,8 +42,8 @@
           <file leaf-file-name="welcome.blade.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
-                  <caret line="159" column="104" selection-start-line="159" selection-start-column="69" selection-end-line="159" selection-end-column="104" />
+                <state relative-caret-position="429">
+                  <caret line="84" column="48" selection-start-line="84" selection-start-column="48" selection-end-line="84" selection-end-column="48" />
                   <folding>
                     <element signature="e#1320#1327#1#HTML" expanded="true" />
                   </folding>
@@ -54,7 +57,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>create(</find>
       <find>最大支援数（公開中変更不可、9桁まで）</find>
       <find>title</find>
       <find>subtitle</find>
@@ -84,6 +86,7 @@
       <find>_back</find>
       <find>logo</find>
       <find>public_path(). '/img/proj</find>
+      <find>様へ</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -115,7 +118,6 @@
         <option value="$PROJECT_DIR$/resources/views/chat/toproject.blade.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/resources/views/npo_registers/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/emails/verify.blade.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/resources/lang/ja.json" />
@@ -131,7 +133,6 @@
         <option value="$PROJECT_DIR$/resources/views/chat/list_to_person.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/emails/payment-to.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/emails/message.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ChatController.php" />
         <option value="$PROJECT_DIR$/app/Notifications/CustomResetPassword.php" />
         <option value="$PROJECT_DIR$/public/.htaccess" />
         <option value="$PROJECT_DIR$/public/index.php" />
@@ -142,6 +143,8 @@
         <option value="$PROJECT_DIR$/resources/views/npo_registers/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/chat/chat_to_person.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/chat/chat_to_project.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ChatController.php" />
+        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
       </list>
     </option>
   </component>
@@ -399,12 +402,12 @@
       <workItem from="1576918282989" duration="215000" />
       <workItem from="1576932969094" duration="10074000" />
       <workItem from="1577517782139" duration="47362000" />
-      <workItem from="1578209760919" duration="728000" />
+      <workItem from="1578209760919" duration="2357000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153077000" />
+    <option name="totallyTimeSpent" value="154706000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -420,6 +423,7 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8119658" visible="true" weight="0.21728595" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.18803419" side_tool="true" visible="true" weight="0.21728595" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -429,7 +433,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -689,32 +692,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="159" column="104" selection-start-line="159" selection-start-column="69" selection-end-line="159" selection-end-column="104" />
-          <folding>
-            <element signature="e#1320#1327#1#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/npo_registers/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
           <caret line="125" column="61" lean-forward="true" selection-start-line="125" selection-start-column="61" selection-end-line="125" selection-end-column="61" />
           <folding>
             <element signature="e#4333#4340#1#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ChatController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1392">
-          <caret line="176" column="117" selection-start-line="176" selection-start-column="117" selection-end-line="176" selection-end-column="117" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -728,8 +711,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/chat/chat_to_project.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="53" column="126" selection-start-line="53" selection-start-column="126" selection-end-line="53" selection-end-column="126" />
+        <state relative-caret-position="267">
+          <caret line="47" column="93" selection-start-line="47" selection-start-column="93" selection-end-line="47" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ChatController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="251" column="19" selection-start-line="251" selection-start-column="19" selection-end-line="251" selection-end-column="19" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="84" column="48" selection-start-line="84" selection-start-column="48" selection-end-line="84" selection-end-column="48" />
+          <folding>
+            <element signature="e#1320#1327#1#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
