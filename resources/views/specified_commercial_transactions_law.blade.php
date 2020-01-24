@@ -38,7 +38,7 @@ g181tg2061@dhw.ac.jp
 
 <b>本社所在地</b>
 <ul>
-〒151-0053 東京都渋谷区代々木1丁目5-8 セボン代々木105
+〒189-0011 東京都東村山市恩多町4-41-45
 </ul>
 
 <b>商品代金（寄付金）以外の必要料金</b>
@@ -68,7 +68,7 @@ g181tg2061@dhw.ac.jp
 
 <div style="text-align: right;" align="right">以上</div>
 <br>
-<div style="text-align: right;" align="right">作成日：2018年11月21日
+<div style="text-align: right;" align="right">作成日：2018年11月21日<br>変更日：2020年01月24日
 <br><br><br><br><br><br><br>
 </div>
 

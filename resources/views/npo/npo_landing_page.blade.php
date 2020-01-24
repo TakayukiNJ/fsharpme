@@ -219,10 +219,8 @@
                                                 <h1 class="card-title">{{ number_format($npo_info->support_amount) }}円</h1>
                                                 <ul>
                                                     <li>残り購入可能数：<b>{{ number_format($npo_info->support_limit - $npo_info->buyer) }}</b></li>
-                                                    @if($npo_info->support_contents)
-                                                    <li><b>リターン: {{ $npo_info->support_contents or '未設定' }}</b></li>
-                                                    @endif
-                                                    @if($npo_info->support_contents_detail)
+                                                    <li><b>リターン:@if($npo_info->support_contents) {{ $npo_info->support_contents }} @else バッジ & SDGsスコア獲得 @endif</b></li>
+                                                        @if($npo_info->support_contents_detail)
                                                     <li><b>特典利用期限: {{ Carbon\Carbon::parse($npo_info->support_contents_detail)->format('Y年m月d日H:i') }}</b></li>
                                                     @endif
                                                 </ul>
