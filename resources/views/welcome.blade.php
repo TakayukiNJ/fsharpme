@@ -216,7 +216,7 @@
                 <h2 class="presentation-subtitle text-center">【東京駅から徒歩2分】<br>2020年2月「社会派エンジニア養成スクール」開校</h2>
                 <div class="w3-panel w3-large text-center">
                     <br>
-                    <a type="button" class="btn-lg btn btn-outline-neutral" href="https://gs4good.tokyo">
+                    <a type="button" class="btn btn-outline-neutral" href="https://gs4good.tokyo">
                         詳細はこちら
                     </a>
                 </div>
